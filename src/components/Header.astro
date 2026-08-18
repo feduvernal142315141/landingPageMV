@@ -2,11 +2,107 @@
 import { site } from "../data/site";
 ---
 
-<header id="header" class="border-b border-navy/5 bg-white">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-    <a href="/" class="flex items-center gap-2">
+<header class="sticky top-0 z-50 border-b border-navy/5 bg-white/90 backdrop-blur">
+  <nav
+    class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3"
+    aria-label="Main navigation"
+  >
+    <a href="/" class="flex shrink-0 items-center gap-2" aria-label={`${site.name} home`}>
       <img src={site.logo} alt={`${site.name} logo`} class="h-9 w-auto" />
     </a>
-    <p class="text-sm text-navy/40">Header — to be implemented</p>
+
+    <ul class="hidden items-center gap-6 lg:flex">
+      {
+        site.nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-sm font-medium text-navy/70 transition hover:text-primary"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <a
+        href={site.loginUrl}
+        class="rounded-lg px-4 py-2 text-sm font-semibold text-navy/80 transition hover:bg-surface hover:text-primary"
+      >
+        Login
+      </a>
+      <a
+        href={site.demoUrl}
+        class="rounded-lg bg-gradient-to-r from-primary to-accent px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:shadow-md"
+      >
+        Request a Demo
+      </a>
+    </div>
+
+    <button
+      id="mobile-menu-button"
+      type="button"
+      class="rounded-lg p-2 text-navy transition hover:bg-surface lg:hidden"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg
+        class="h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" hidden class="border-t border-navy/5 bg-white lg:hidden">
+    <ul class="space-y-1 px-6 py-4">
+      {
+        site.nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="block rounded-lg px-3 py-2 text-sm font-medium text-navy/80 transition hover:bg-surface hover:text-primary"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+      <li class="pt-2">
+        <a
+          href={site.loginUrl}
+          class="block rounded-lg px-3 py-2 text-sm font-semibold text-navy/80 transition hover:bg-surface"
+        >
+          Login
+        </a>
+      </li>
+      <li>
+        <a
+          href={site.demoUrl}
+          class="block rounded-lg bg-gradient-to-r from-primary to-accent px-3 py-2 text-center text-sm font-semibold text-white"
+        >
+          Request a Demo
+        </a>
+      </li>
+    </ul>
   </div>
 </header>
+
+<script>
+  const button = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+
+  button?.addEventListener("click", () => {
+    const isOpen = menu ? !menu.hidden : false;
+    if (menu) menu.hidden = isOpen;
+    button.setAttribute("aria-expanded", String(!isOpen));
+  });
+</script>
