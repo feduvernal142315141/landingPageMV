@@ -48,22 +48,19 @@ export const showcase = [
   {
     id: "reports",
     title: "Real-time progress graphs",
-    description:
-      "Visualize client progress with live graphs generated from session data. (Screenshot coming soon)",
+    description: "Visualize client progress with live graphs generated from session data.",
     screenshot: "/screenshots/reports.png",
   },
   {
     id: "service-plan",
     title: "Service plans that follow your clients",
-    description:
-      "Design detailed service plans with the assessments and data already in the system. (Screenshot coming soon)",
+    description: "Design detailed service plans with the assessments and data already in the system.",
     screenshot: "/screenshots/service-plan.png",
   },
   {
     id: "data-collection",
     title: "Data collection made simple",
-    description:
-      "Flexible programs and customizable targets that keep data organized and accessible. (Screenshot coming soon)",
+    description: "Flexible programs and customizable targets that keep data organized and accessible.",
     screenshot: "/screenshots/data-collection.png",
   },
 ] as const;

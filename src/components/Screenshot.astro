@@ -1,3 +1,28 @@
-<div class="rounded-2xl border border-dashed border-navy/20 bg-white/60 p-16 text-center">
-  <p class="text-sm text-navy/40">Screenshot — coming soon</p>
-</div>
+---
+import { existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+
+interface Props {
+  src?: string;
+  alt?: string;
+  label?: string;
+}
+
+const { src, alt = "MenteVior app screenshot", label = "Screenshot coming soon" } = Astro.props;
+
+const hasImage =
+  src !== undefined &&
+  existsSync(fileURLToPath(new URL(`../../public${src}`, import.meta.url)));
+---
+
+{
+  hasImage ? (
+    <figure class="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-xl">
+      <img src={src} alt={alt} class="h-auto w-full" loading="lazy" />
+    </figure>
+  ) : (
+    <div class="flex items-center justify-center rounded-2xl border border-dashed border-navy/20 bg-white/60 p-16">
+      <p class="text-sm font-medium text-navy/40">{label}</p>
+    </div>
+  )
+}
