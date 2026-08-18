@@ -15,7 +15,12 @@ export const site = {
     email: "hello@mentevior.com",
     phone: "+1 (555) 000-0000",
   },
-  trustBadges: ["HIPAA Compliant", "CASP Aligned", "Secure Cloud", "All-in-One Platform"],
+  trustBadges: [
+    "HIPAA badge — pending",
+    "CASP badge — pending",
+    "Security badge — pending",
+    "Trust badge — pending",
+  ],
   social: [
     { label: "LinkedIn", href: "#" },
     { label: "Instagram", href: "#" },
