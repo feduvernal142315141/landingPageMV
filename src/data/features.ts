@@ -44,6 +44,33 @@ export const features: Feature[] = [
   },
 ];
 
+export const whys = [
+  {
+    icon: "layers",
+    title: "All-in-one platform",
+    description:
+      "Scheduling, session notes, data collection, service plans, supervision and billing — one integrated system, no more switching tools.",
+  },
+  {
+    icon: "line-chart",
+    title: "Real-time data and graphs",
+    description:
+      "Monitor client progress with live graphs generated from session data, so clinical decisions are always informed.",
+  },
+  {
+    icon: "shield",
+    title: "Documentation you can rely on",
+    description:
+      "Structured notes and clinical records that keep your practice organized and audit-ready.",
+  },
+  {
+    icon: "headset",
+    title: "Made for every practice size",
+    description:
+      "From solo practitioners to growing clinics, workflows that adapt to how your team operates.",
+  },
+] as const;
+
 export const showcase = [
   {
     id: "reports",
