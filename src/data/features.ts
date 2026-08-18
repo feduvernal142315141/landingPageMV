@@ -71,6 +71,24 @@ export const whys = [
   },
 ] as const;
 
+export const testimonials = [
+  {
+    quote: "Testimonial placeholder — quote coming soon.",
+    name: "Full Name",
+    role: "Role / Clinic",
+  },
+  {
+    quote: "Testimonial placeholder — quote coming soon.",
+    name: "Full Name",
+    role: "Role / Clinic",
+  },
+  {
+    quote: "Testimonial placeholder — quote coming soon.",
+    name: "Full Name",
+    role: "Role / Clinic",
+  },
+] as const;
+
 export const showcase = [
   {
     id: "reports",
