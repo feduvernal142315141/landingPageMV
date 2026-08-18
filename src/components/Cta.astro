@@ -1,3 +1,35 @@
-<section id="contact" aria-label="Call to action" class="bg-gradient-to-br from-primary to-accent">
-  <p class="py-24 text-center text-sm text-white/60">Cta — to be implemented</p>
+---
+import { site } from "../data/site";
+---
+
+<section
+  id="contact"
+  aria-label="Call to action"
+  class="relative overflow-hidden bg-gradient-to-br from-primary to-accent"
+>
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-16 left-1/4 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
+    <div class="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-navy/20 blur-3xl" />
+  </div>
+
+  <div class="relative mx-auto max-w-3xl px-6 py-20 text-center lg:py-28">
+    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+      Let's start working together to transform your ABA practice
+    </h2>
+    <p class="mt-4 text-lg text-white/85">See MenteVior in action with a personalized demo.</p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href={site.demoUrl}
+        class="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm transition hover:shadow-lg"
+      >
+        Request a Demo
+      </a>
+      <a
+        href={`mailto:${site.contact.email}`}
+        class="rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+      >
+        Contact us
+      </a>
+    </div>
+  </div>
 </section>
