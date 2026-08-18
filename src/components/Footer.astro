@@ -1,12 +1,89 @@
 ---
 import { site } from "../data/site";
+
+const socialIcons: Record<string, string> = {
+  LinkedIn:
+    '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
+  Instagram:
+    '<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>',
+  Facebook:
+    '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+};
 ---
 
 <footer id="footer" class="bg-navy-soft">
-  <div class="mx-auto max-w-7xl px-6 py-12">
-    <p class="text-sm text-white/40">Footer — to be implemented</p>
+  <div class="mx-auto max-w-7xl px-6 py-14">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div class="lg:col-span-2">
+        <a href="/" class="flex items-center gap-2" aria-label={`${site.name} home`}>
+          <img src={site.logo} alt={`${site.name} logo`} class="h-9 w-auto" />
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
+          All-in-one ABA practice management: scheduling, session notes, data collection, service
+          plans, supervision and billing.
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          {
+            site.social.map((s) => (
+              <a
+                href={s.href}
+                aria-label={s.label}
+                class="rounded-lg border border-white/10 p-2 text-white/70 transition hover:border-white/30 hover:text-white"
+              >
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  set:html={socialIcons[s.label] ?? '<circle cx="12" cy="12" r="10"/>'}
+                />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-white/80">Product</h3>
+        <ul class="mt-4 space-y-2">
+          {
+            site.nav.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-sm text-white/60 transition hover:text-white"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-white/80">Contact</h3>
+        <ul class="mt-4 space-y-2 text-sm text-white/60">
+          <li>
+            <a href={`mailto:${site.contact.email}`} class="transition hover:text-white">
+              {site.contact.email}
+            </a>
+          </li>
+          <li>{site.contact.phone}</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="border-t border-white/10 py-6 text-center text-xs text-white/30">
-    © {new Date().getFullYear()} {site.name}. All rights reserved.
+
+  <div class="border-t border-white/10 py-6">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 sm:flex-row">
+      <p class="text-xs text-white/40">
+        © {new Date().getFullYear()} {site.name}. All rights reserved.
+      </p>
+      <a href={site.loginUrl} class="text-xs text-white/40 transition hover:text-white">Login</a>
+    </div>
   </div>
 </footer>
