@@ -1,0 +1,23 @@
+export const site = {
+  name: "MenteVior",
+  tagline: "All-in-One ABA Practice Management",
+  logo: "/logoMenteVior.png",
+  loginUrl: "#",
+  demoUrl: "#",
+  nav: [
+    { label: "Features", href: "#features" },
+    { label: "Reports", href: "#reports" },
+    { label: "Service Plan", href: "#service-plan" },
+    { label: "Data Collection", href: "#data-collection" },
+    { label: "Contact", href: "#contact" },
+  ],
+  contact: {
+    email: "hello@mentevior.com",
+    phone: "+1 (555) 000-0000",
+  },
+  social: [
+    { label: "LinkedIn", href: "#" },
+    { label: "Instagram", href: "#" },
+    { label: "Facebook", href: "#" },
+  ],
+} as const;
