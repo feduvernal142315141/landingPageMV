@@ -1,3 +1,47 @@
-<section id="hero" aria-label="Hero" class="bg-white">
-  <p class="py-24 text-center text-sm text-navy/40">Hero — to be implemented</p>
+---
+import { site } from "../data/site";
+import Screenshot from "./Screenshot.astro";
+---
+
+<section id="hero" aria-label="Hero" class="relative overflow-hidden bg-white">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-24 right-0 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
+    <div class="absolute top-40 -left-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-6 py-20 lg:py-28">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary">
+        {site.tagline}
+      </p>
+      <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-navy sm:text-5xl lg:text-6xl">
+        Built to elevate your{" "}
+        <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          ABA practice
+        </span>
+      </h1>
+      <p class="mt-6 text-lg leading-relaxed text-navy/70">
+        Streamline clinical work and practice operations with scheduling, session notes, data
+        collection, service plans, supervision and billing — all in one integrated system.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href={site.demoUrl}
+          class="rounded-lg bg-gradient-to-r from-primary to-accent px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:shadow-lg"
+        >
+          Request a Demo
+        </a>
+        <a
+          href="#features"
+          class="rounded-lg border border-navy/10 bg-white px-6 py-3 text-sm font-semibold text-navy/80 transition hover:border-primary/40 hover:text-primary"
+        >
+          Explore Features
+        </a>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-14 max-w-4xl">
+      <Screenshot />
+    </div>
+  </div>
 </section>
