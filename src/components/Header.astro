@@ -4,7 +4,7 @@ import { site } from "../data/site";
 
 <header class="sticky top-1 z-50 px-2 pt-1">
   <nav
-    class="flex items-center justify-between gap-4 rounded-b-2xl border border-navy/10 bg-white/60 px-6 py-3 shadow-lg shadow-navy/5 backdrop-blur-xl"
+    class="flex items-center justify-between gap-4 rounded-b-2xl border border-navy/10 bg-white/70 px-6 py-3 shadow-lg shadow-navy/5 backdrop-blur-sm"
     aria-label="Main navigation"
   >
     <a
@@ -12,8 +12,8 @@ import { site } from "../data/site";
       class="flex shrink-0 items-center gap-1 whitespace-nowrap"
       aria-label={`${site.name} home`}
     >
-      <img src="/MenteVior-logo.png" alt={`${site.name} logo`} class="h-16 w-auto" />
-      <img src="/MenteVior-name.png" alt={site.name} class="h-8 w-auto" />
+      <img src="/MenteVior-logo.png" alt={`${site.name} logo`} class="h-12 w-auto lg:h-16" />
+      <img src="/MenteVior-name.png" alt={site.name} class="h-6 w-auto lg:h-8" />
     </a>
 
     <ul class="hidden items-center gap-6 lg:flex">
@@ -34,48 +34,43 @@ import { site } from "../data/site";
     <button
       id="mobile-menu-button"
       type="button"
-      class="rounded-lg p-2 text-navy transition hover:bg-surface lg:hidden"
+      class="relative h-10 w-10 rounded-lg text-navy transition-colors hover:bg-surface lg:hidden"
       aria-label="Toggle menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
-      <svg
-        id="menu-open"
-        class="h-6 w-6"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-      >
-        <path d="M4 7h16M4 12h16M4 17h16" />
-      </svg>
-      <svg
-        id="menu-close"
-        class="hidden h-6 w-6"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-      >
-        <path d="M6 6l12 12M6 18L18 6" />
-      </svg>
+      <span class="nav-bar" aria-hidden="true"></span>
+      <span class="nav-bar" aria-hidden="true"></span>
+      <span class="nav-bar" aria-hidden="true"></span>
     </button>
   </nav>
+</header>
 
-  <div
-    id="mobile-menu"
-    hidden
-    class="rounded-b-2xl border border-t-0 border-navy/10 bg-white/60 px-6 py-4 shadow-lg shadow-navy/5 backdrop-blur-xl lg:hidden"
-  >
-    <ul class="space-y-1">
+<div
+  id="mobile-menu-backdrop"
+  aria-hidden="true"
+  class="fixed inset-0 z-30 bg-navy/40 opacity-0 transition-opacity duration-300 lg:hidden"
+></div>
+
+<aside
+  id="mobile-menu"
+  aria-hidden="true"
+  class="fixed inset-y-0 left-0 z-[60] w-80 max-w-[75vw] -translate-x-full overflow-hidden bg-navy transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:hidden"
+>
+  <div class="relative flex h-full flex-col px-5 pt-20">
+    <span
+      class="absolute left-[66px] top-[26px] inline-flex items-center rounded-full bg-white/95 px-4 py-1.5 shadow-md shadow-black/10"
+    >
+      <img src="/MenteVior-name.png" alt={site.name} class="h-6 w-auto" />
+    </span>
+    <ul class="mt-8 space-y-1">
       {
-        site.nav.map((item) => (
+        site.nav.map((item, i) => (
           <li>
             <a
               href={item.href}
-              class="block rounded-lg px-3 py-2.5 text-base font-medium text-navy/80 transition hover:bg-surface hover:text-primary"
+              class="menu-link block rounded-lg px-3 py-2 text-sm font-medium text-white/90 -translate-x-4 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/5 hover:text-tertiary"
+              style={`transition-delay: ${100 + i * 70}ms`}
             >
               {item.label}
             </a>
@@ -83,20 +78,108 @@ import { site } from "../data/site";
         ))
       }
     </ul>
+    <p class="mt-auto pb-6 text-center text-xs text-white/40">
+      © {new Date().getFullYear()} {site.name}. All rights reserved.
+    </p>
   </div>
-</header>
+</aside>
+
+<style>
+  .nav-bar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 22px;
+    height: 2px;
+    border-radius: 9999px;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+    transition:
+      transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 200ms ease;
+  }
+
+  .nav-bar:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-7px);
+  }
+
+  .nav-bar:nth-child(2) {
+    transform: translate(-50%, -50%);
+  }
+
+  .nav-bar:nth-child(3) {
+    transform: translate(-50%, -50%) translateY(7px);
+  }
+
+  #mobile-menu-button.open .nav-bar:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  #mobile-menu-button.open .nav-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu-button.open .nav-bar:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #mobile-menu,
+    #mobile-menu-backdrop,
+    #mobile-menu .menu-link,
+    .nav-bar {
+      transition: none !important;
+    }
+  }
+</style>
 
 <script>
   const button = document.getElementById("mobile-menu-button");
   const menu = document.getElementById("mobile-menu");
-  const openIcon = document.getElementById("menu-open");
-  const closeIcon = document.getElementById("menu-close");
+  const backdrop = document.getElementById("mobile-menu-backdrop");
+  const links = menu ? Array.from(menu.querySelectorAll<HTMLElement>(".menu-link")) : [];
+
+  const setOpen = (open: boolean) => {
+    if (!menu || !button || !backdrop) return;
+
+    menu.classList.toggle("-translate-x-full", !open);
+    menu.classList.toggle("translate-x-0", open);
+    menu.setAttribute("aria-hidden", String(!open));
+    if (open) {
+      menu.removeAttribute("inert");
+    } else {
+      menu.setAttribute("inert", "");
+    }
+
+    backdrop.classList.toggle("opacity-0", !open);
+    backdrop.classList.toggle("opacity-100", open);
+    backdrop.classList.toggle("pointer-events-none", !open);
+    backdrop.classList.toggle("pointer-events-auto", open);
+    backdrop.setAttribute("aria-hidden", String(!open));
+
+    button.classList.toggle("open", open);
+    button.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+
+    links.forEach((link, i) => {
+      link.classList.toggle("opacity-0", !open);
+      link.classList.toggle("opacity-100", open);
+      link.classList.toggle("-translate-x-4", !open);
+      link.classList.toggle("translate-x-0", open);
+      link.style.transitionDelay = open ? `${100 + i * 70}ms` : "0ms";
+    });
+  };
 
   button?.addEventListener("click", () => {
-    const isOpen = menu ? !menu.hidden : false;
-    if (menu) menu.hidden = isOpen;
-    button.setAttribute("aria-expanded", String(!isOpen));
-    openIcon?.classList.toggle("hidden", isOpen);
-    closeIcon?.classList.toggle("hidden", !isOpen);
+    const isOpen = menu ? !menu.classList.contains("-translate-x-full") : false;
+    setOpen(!isOpen);
   });
+
+  links.forEach((link) => link.addEventListener("click", () => setOpen(false)));
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
+
+  backdrop?.addEventListener("click", () => setOpen(false));
 </script>
