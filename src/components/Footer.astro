@@ -9,29 +9,48 @@ const socialIcons: Record<string, string> = {
   Facebook:
     '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
 };
+
+const iconMail =
+  '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>';
+
+const iconPhone =
+  '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>';
 ---
 
 <footer id="footer" class="relative overflow-hidden bg-navy-soft">
-  <img
-    src={site.logo}
-    alt=""
+  <div
     aria-hidden="true"
-    class="pointer-events-none absolute top-1/2 left-1/2 h-[330px] w-auto -translate-x-1/2 -translate-y-1/2 opacity-40 lg:left-auto lg:right-8 lg:translate-x-0"
-  />
-  <div class="relative mx-auto max-w-7xl px-6 py-14">
-    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-      <div class="lg:col-span-2">
-        <p class="max-w-sm text-sm leading-relaxed text-white/60">
-          All-in-one ABA practice management: scheduling, session notes, data collection, service
-          plans, supervision and billing.
+    class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 py-16">
+    <div class="grid grid-cols-2 gap-10 lg:grid-cols-12 lg:gap-12">
+      <div class="col-span-2 lg:col-span-5">
+        <a href="/" class="inline-flex items-center gap-2" aria-label={`${site.name} home`}>
+          <img
+            src="/MenteVior-logo.png"
+            alt={`${site.name} logo`}
+            class="h-12 w-auto brightness-[10] contrast-[0.9]"
+          />
+          <img
+            src="/MenteVior-name.png"
+            alt={site.name}
+            class="h-6 w-auto brightness-[10] contrast-[0.9]"
+          />
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
+          Built to help ABA teams focus on patients, not paperwork.
         </p>
-        <div class="mt-6 flex items-center gap-3">
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
+          HIPAA-compliant · Secure by design
+        </p>
+        <div class="mt-7 flex items-center gap-3">
           {
             site.social.map((s) => (
               <a
                 href={s.href}
                 aria-label={s.label}
-                class="rounded-lg border border-white/10 p-2 text-white/70 transition hover:border-white/30 hover:text-white"
+                class="rounded-xl border border-white/10 bg-white/5 p-2.5 text-white/70 transition hover:-translate-y-0.5 hover:border-tertiary/50 hover:text-tertiary"
               >
                 <svg
                   class="h-5 w-5"
@@ -49,9 +68,9 @@ const socialIcons: Record<string, string> = {
         </div>
       </div>
 
-      <div>
-        <h3 class="text-sm font-semibold uppercase tracking-widest text-white/80">Product</h3>
-        <ul class="mt-4 space-y-2">
+      <div class="lg:col-span-3">
+        <h3 class="text-xs font-semibold uppercase tracking-widest text-white/80">Product</h3>
+        <ul class="mt-5 space-y-3">
           {
             site.nav.map((item) => (
               <li>
@@ -67,23 +86,72 @@ const socialIcons: Record<string, string> = {
         </ul>
       </div>
 
-      <div>
-        <h3 class="text-sm font-semibold uppercase tracking-widest text-white/80">Contact</h3>
-        <ul class="mt-4 space-y-2 text-sm text-white/60">
+      <div class="lg:col-span-4">
+        <h3 class="text-xs font-semibold uppercase tracking-widest text-white/80">Contact</h3>
+        <ul class="mt-5 space-y-3 text-sm text-white/60">
           <li>
-            <a href={`mailto:${site.contact.email}`} class="transition hover:text-white">
+            <a
+              href={`mailto:${site.contact.email}`}
+              class="group inline-flex items-center gap-2.5 transition hover:text-white"
+            >
+              <svg
+                class="h-4 w-4 text-white/40 transition group-hover:text-tertiary"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                set:html={iconMail}
+              />
               {site.contact.email}
             </a>
           </li>
-          <li>{site.contact.phone}</li>
+          <li class="inline-flex items-center gap-2.5">
+            <svg
+              class="h-4 w-4 text-white/40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              set:html={iconPhone}
+            />
+            {site.contact.phone}
+          </li>
         </ul>
+        <a
+          href={site.demoUrl}
+          class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-tertiary transition hover:text-white"
+        >
+          Request a demo
+          <svg
+            class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
     </div>
-  </div>
 
-  <div class="border-t border-white/10 py-6">
-    <p class="text-center text-xs text-white/40">
-      © {new Date().getFullYear()} {site.name}. All rights reserved.
-    </p>
+    <div
+      class="mt-16 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-8 sm:flex-row"
+    >
+      <p class="text-xs text-white/40">
+        © {new Date().getFullYear()} {site.name}. All rights reserved.
+      </p>
+      <div class="flex items-center gap-6 text-xs text-white/40">
+        <a href="#" class="transition hover:text-white/80">Privacy</a>
+        <a href="#" class="transition hover:text-white/80">Terms</a>
+        <a href="#top" class="transition hover:text-white/80">Back to top ↑</a>
+      </div>
+    </div>
   </div>
 </footer>
