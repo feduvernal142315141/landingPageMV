@@ -2,9 +2,9 @@
 import { site } from "../data/site";
 ---
 
-<header class="sticky top-0 z-50 border-b border-navy/5 bg-white/90 backdrop-blur">
+<header class="sticky top-1 z-50 px-2 pt-1">
   <nav
-    class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3"
+    class="flex items-center justify-between gap-4 rounded-b-2xl border border-navy/10 bg-white/60 px-6 py-3 shadow-lg shadow-navy/5 backdrop-blur-xl"
     aria-label="Main navigation"
   >
     <a
@@ -40,6 +40,7 @@ import { site } from "../data/site";
       aria-controls="mobile-menu"
     >
       <svg
+        id="menu-open"
         class="h-6 w-6"
         viewBox="0 0 24 24"
         fill="none"
@@ -49,17 +50,32 @@ import { site } from "../data/site";
       >
         <path d="M4 7h16M4 12h16M4 17h16" />
       </svg>
+      <svg
+        id="menu-close"
+        class="hidden h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <path d="M6 6l12 12M6 18L18 6" />
+      </svg>
     </button>
   </nav>
 
-  <div id="mobile-menu" hidden class="border-t border-navy/5 bg-white lg:hidden">
-    <ul class="space-y-1 px-6 py-4">
+  <div
+    id="mobile-menu"
+    hidden
+    class="rounded-b-2xl border border-t-0 border-navy/10 bg-white/60 px-6 py-4 shadow-lg shadow-navy/5 backdrop-blur-xl lg:hidden"
+  >
+    <ul class="space-y-1">
       {
         site.nav.map((item) => (
           <li>
             <a
               href={item.href}
-              class="block rounded-lg px-3 py-2 text-sm font-medium text-navy/80 transition hover:bg-surface hover:text-primary"
+              class="block rounded-lg px-3 py-2.5 text-base font-medium text-navy/80 transition hover:bg-surface hover:text-primary"
             >
               {item.label}
             </a>
@@ -73,10 +89,14 @@ import { site } from "../data/site";
 <script>
   const button = document.getElementById("mobile-menu-button");
   const menu = document.getElementById("mobile-menu");
+  const openIcon = document.getElementById("menu-open");
+  const closeIcon = document.getElementById("menu-close");
 
   button?.addEventListener("click", () => {
     const isOpen = menu ? !menu.hidden : false;
     if (menu) menu.hidden = isOpen;
     button.setAttribute("aria-expanded", String(!isOpen));
+    openIcon?.classList.toggle("hidden", isOpen);
+    closeIcon?.classList.toggle("hidden", !isOpen);
   });
 </script>
