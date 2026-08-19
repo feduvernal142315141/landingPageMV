@@ -11,14 +11,17 @@ const socialIcons: Record<string, string> = {
 };
 ---
 
-<footer id="footer" class="bg-navy-soft">
-  <div class="mx-auto max-w-7xl px-6 py-14">
+<footer id="footer" class="relative overflow-hidden bg-navy-soft">
+  <img
+    src={site.logo}
+    alt=""
+    aria-hidden="true"
+    class="pointer-events-none absolute left-1/2 top-1/2 h-[330px] w-auto -translate-x-1/2 -translate-y-1/2 opacity-15 brightness-[10] contrast-[0.9]"
+  />
+  <div class="relative mx-auto max-w-7xl px-6 py-14">
     <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
       <div class="lg:col-span-2">
-        <a href="/" class="flex items-center gap-2" aria-label={`${site.name} home`}>
-          <img src={site.logo} alt={`${site.name} logo`} class="h-60 w-auto" />
-        </a>
-        <p class="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
+        <p class="max-w-sm text-sm leading-relaxed text-white/60">
           All-in-one ABA practice management: scheduling, session notes, data collection, service
           plans, supervision and billing.
         </p>
