@@ -57,12 +57,13 @@ import { site } from "../data/site";
   aria-hidden="true"
   class="fixed inset-y-0 left-0 z-[60] w-80 max-w-[75vw] -translate-x-full overflow-hidden bg-navy transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:hidden"
 >
-  <div class="relative flex h-full flex-col px-5 pt-20">
-    <span
-      class="absolute left-[66px] top-[26px] inline-flex items-center rounded-full bg-white/95 px-4 py-1.5 shadow-md shadow-black/10"
-    >
-      <img src="/MenteVior-name.png" alt={site.name} class="h-6 w-auto" />
-    </span>
+  <img
+      src="/logoMenteVior.png"
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute left-1/2 top-1/2 h-80 w-auto -translate-x-1/2 -translate-y-1/2 opacity-15 brightness-[10] contrast-[0.9]"
+    />
+    <div class="relative flex h-full flex-col px-5 pt-20">
     <ul class="mt-8 space-y-1">
       {
         site.nav.map((item, i) => (
