@@ -16,7 +16,7 @@ const socialIcons: Record<string, string> = {
     <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
       <div class="lg:col-span-2">
         <a href="/" class="flex items-center gap-2" aria-label={`${site.name} home`}>
-          <img src={site.logo} alt={`${site.name} logo`} class="h-9 w-auto" />
+          <img src={site.logo} alt={`${site.name} logo`} class="h-60 w-auto" />
         </a>
         <p class="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
           All-in-one ABA practice management: scheduling, session notes, data collection, service
@@ -79,11 +79,8 @@ const socialIcons: Record<string, string> = {
   </div>
 
   <div class="border-t border-white/10 py-6">
-    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 sm:flex-row">
-      <p class="text-xs text-white/40">
-        © {new Date().getFullYear()} {site.name}. All rights reserved.
-      </p>
-      <a href={site.loginUrl} class="text-xs text-white/40 transition hover:text-white">Login</a>
-    </div>
+    <p class="text-center text-xs text-white/40">
+      © {new Date().getFullYear()} {site.name}. All rights reserved.
+    </p>
   </div>
 </footer>

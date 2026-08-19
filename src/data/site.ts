@@ -2,7 +2,6 @@ export const site = {
   name: "MenteVior",
   tagline: "All-in-One ABA Practice Management",
   logo: "/logoMenteVior.png",
-  loginUrl: "#",
   demoUrl: "#",
   nav: [
     { label: "Features", href: "#features" },
