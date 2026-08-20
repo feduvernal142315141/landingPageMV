@@ -1,4 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/MenteVior-logo.png";
+import nameImg from "../assets/MenteVior-name.png";
+
 interface Props {
   logoClass?: string;
   nameClass?: string;
@@ -21,13 +25,13 @@ const filter = inverted ? " brightness-[10] contrast-[0.9]" : "";
 {
   href ? (
     <a href={href} class={className} aria-label="MenteVior home">
-      <img src="/MenteVior-logo.png" alt="MenteVior logo" class={`${logoClass}${filter}`} />
-      <img src="/MenteVior-name.png" alt="MenteVior" class={`${nameClass}${filter}`} />
+      <Image src={logo} alt="MenteVior logo" width={249} height={250} format="webp" class={`${logoClass}${filter}`} />
+      <Image src={nameImg} alt="MenteVior" width={229} height={36} format="webp" class={`${nameClass}${filter}`} />
     </a>
   ) : (
     <div class={className}>
-      <img src="/MenteVior-logo.png" alt="MenteVior logo" class={`${logoClass}${filter}`} />
-      <img src="/MenteVior-name.png" alt="MenteVior" class={`${nameClass}${filter}`} />
+      <Image src={logo} alt="MenteVior logo" width={249} height={250} format="webp" class={`${logoClass}${filter}`} />
+      <Image src={nameImg} alt="MenteVior" width={229} height={36} format="webp" class={`${nameClass}${filter}`} />
     </div>
   )
 }

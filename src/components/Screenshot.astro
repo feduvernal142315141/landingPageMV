@@ -1,6 +1,6 @@
 ---
-import { existsSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
 interface Props {
   src?: string;
@@ -10,15 +10,29 @@ interface Props {
 
 const { src, alt = "MenteVior app screenshot", label = "Screenshot coming soon" } = Astro.props;
 
-const hasImage =
-  src !== undefined &&
-  existsSync(fileURLToPath(new URL(`../../public${src}`, import.meta.url)));
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/screenshots/*.{png,webp,jpg,jpeg,avif}",
+  { eager: true },
+);
+
+const filename = src?.split("/").pop();
+const key = filename
+  ? Object.keys(images).find((k) => k.endsWith(`/${filename}`))
+  : undefined;
+const image = key ? images[key]?.default : undefined;
 ---
 
 {
-  hasImage ? (
+  image ? (
     <figure class="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-xl">
-      <img src={src} alt={alt} class="h-auto w-full" loading="lazy" />
+      <Image
+        src={image}
+        alt={alt}
+        widths={[640, 960, 1280]}
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        class="h-auto w-full"
+        loading="lazy"
+      />
     </figure>
   ) : (
     <div class="flex items-center justify-center rounded-2xl border border-dashed border-navy/20 bg-white/60 p-16">
