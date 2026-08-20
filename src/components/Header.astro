@@ -16,13 +16,13 @@ import Copyright from "./Copyright.astro";
       nameClass="h-6 w-auto lg:h-[1.7rem]"
     />
 
-    <ul class="hidden items-center gap-6 lg:flex lg:-ml-[100px]">
+    <ul class="hidden items-center gap-6 lg:flex lg:-ml-[200px] lg:mr-10">
       {
         site.nav.map((item) => (
           <li>
             <a
               href={item.href}
-              class="text-sm font-bold tracking-[-0.01em] text-navy transition hover:text-primary"
+              class="text-lg font-bold tracking-[-0.01em] text-navy transition hover:text-primary"
             >
               {item.label}
             </a>
