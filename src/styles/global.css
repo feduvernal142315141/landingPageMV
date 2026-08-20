@@ -16,6 +16,7 @@
 
 html {
   scroll-padding-top: 6rem;
+  background-color: #0b1f33;
 }
 
 @media (prefers-reduced-motion: no-preference) {

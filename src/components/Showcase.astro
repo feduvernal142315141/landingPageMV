@@ -5,16 +5,26 @@ import Section from "./Section.astro";
 import SectionHeading from "./SectionHeading.astro";
 ---
 
-<Section id="showcase" ariaLabel="Product showcase" class="bg-surface">
-  <SectionHeading eyebrow="Product in action" title="See what MenteVior can do for you" />
+<Section
+  id="showcase"
+  ariaLabel="Product showcase"
+  class="relative overflow-hidden bg-navy-soft"
+  containerClass="relative"
+>
+  <div slot="decor" aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-16 left-1/4 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+    <div class="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
+  </div>
+
+  <SectionHeading eyebrow="Product in action" title="See what MenteVior can do for you" dark />
 
   <div class="mt-14 space-y-20">
     {
       showcase.map((item, index) => (
         <div id={item.id} class="grid items-center gap-10 lg:grid-cols-2">
           <div class={index % 2 === 1 ? "lg:order-2" : ""}>
-            <h3 class="text-2xl font-bold text-navy">{item.title}</h3>
-            <p class="mt-3 leading-relaxed text-navy/70">{item.description}</p>
+            <h3 class="text-2xl font-bold text-white">{item.title}</h3>
+            <p class="mt-3 leading-relaxed text-white/70">{item.description}</p>
           </div>
           <Screenshot src={item.screenshot} alt={item.alt} label={`${item.title} — screenshot coming soon`} />
         </div>

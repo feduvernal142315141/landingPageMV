@@ -5,20 +5,31 @@ import Section from "./Section.astro";
 import SectionHeading from "./SectionHeading.astro";
 ---
 
-<Section id="features" ariaLabel="Features" class="bg-white">
+<Section
+  id="features"
+  ariaLabel="Features"
+  class="relative overflow-hidden bg-navy"
+  containerClass="relative"
+>
+  <div slot="decor" aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-24 right-1/4 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
+    <div class="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+  </div>
+
   <SectionHeading
     eyebrow="Features"
     title="Everything your ABA practice needs"
     subtitle="One integrated system for the tools your team uses every day."
+    dark
   />
 
   <ul class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {
       features.map((feature) => (
-        <li class="rounded-2xl border border-navy/5 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+        <li class="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-white/10">
           <IconBadge name={feature.icon} />
-          <h3 class="mt-4 text-lg font-bold text-navy">{feature.title}</h3>
-          <p class="mt-2 text-sm leading-relaxed text-navy/70">{feature.description}</p>
+          <h3 class="mt-4 text-lg font-bold text-white">{feature.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-white/70">{feature.description}</p>
         </li>
       ))
     }
