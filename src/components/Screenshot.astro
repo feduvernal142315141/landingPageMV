@@ -6,9 +6,15 @@ interface Props {
   src?: string;
   alt?: string;
   label?: string;
+  loading?: "lazy" | "eager";
 }
 
-const { src, alt = "MenteVior app screenshot", label = "Screenshot coming soon" } = Astro.props;
+const {
+  src,
+  alt = "MenteVior app screenshot",
+  label = "Screenshot coming soon",
+  loading = "lazy",
+} = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../assets/screenshots/*.{png,webp,jpg,jpeg,avif}",
@@ -31,7 +37,7 @@ const image = key ? images[key]?.default : undefined;
         widths={[640, 960, 1280]}
         sizes="(min-width: 1024px) 50vw, 100vw"
         class="h-auto w-full"
-        loading="lazy"
+        loading={loading}
       />
     </figure>
   ) : (
