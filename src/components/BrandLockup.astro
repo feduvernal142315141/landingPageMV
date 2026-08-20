@@ -1,0 +1,33 @@
+---
+interface Props {
+  logoClass?: string;
+  nameClass?: string;
+  inverted?: boolean;
+  href?: string;
+  class?: string;
+}
+
+const {
+  logoClass = "h-12 w-auto",
+  nameClass = "h-6 w-auto",
+  inverted = false,
+  href,
+  class: className = "flex items-center gap-2",
+} = Astro.props;
+
+const filter = inverted ? " brightness-[10] contrast-[0.9]" : "";
+---
+
+{
+  href ? (
+    <a href={href} class={className} aria-label="MenteVior home">
+      <img src="/MenteVior-logo.png" alt="MenteVior logo" class={`${logoClass}${filter}`} />
+      <img src="/MenteVior-name.png" alt="MenteVior" class={`${nameClass}${filter}`} />
+    </a>
+  ) : (
+    <div class={className}>
+      <img src="/MenteVior-logo.png" alt="MenteVior logo" class={`${logoClass}${filter}`} />
+      <img src="/MenteVior-name.png" alt="MenteVior" class={`${nameClass}${filter}`} />
+    </div>
+  )
+}

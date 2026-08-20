@@ -1,5 +1,6 @@
 ---
 import { site } from "../data/site";
+import Button from "./Button.astro";
 ---
 
 <section
@@ -20,12 +21,7 @@ import { site } from "../data/site";
       Talk to our team and discover what MenteVior can do for your practice.
     </p>
     <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-      <a
-        href={`mailto:${site.contact.email}`}
-        class="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[0_8px_24px_rgba(3,126,204,0.4)] transition hover:shadow-[0_10px_28px_rgba(3,126,204,0.5)]"
-      >
-        Contact us
-      </a>
+      <Button href={`mailto:${site.contact.email}`} variant="white">Contact us</Button>
     </div>
   </div>
 </section>

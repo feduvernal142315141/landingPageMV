@@ -1,5 +1,6 @@
 ---
 import { site } from "../data/site";
+import Button from "./Button.astro";
 ---
 
 <section id="hero" aria-label="Hero" class="relative bg-navy lg:min-h-[960px]">
@@ -41,18 +42,8 @@ import { site } from "../data/site";
         your clinicians can focus on what matters most: the patient.
       </p>
       <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a
-          href={site.demoUrl}
-          class="rounded-lg bg-gradient-to-r from-primary via-accent to-tertiary px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(3,126,204,0.4)] transition hover:shadow-[0_10px_28px_rgba(3,126,204,0.5)]"
-        >
-          Request a Demo
-        </a>
-        <a
-          href="#features"
-          class="rounded-lg border border-navy/10 bg-white px-6 py-3 text-sm font-semibold text-navy/80 transition hover:border-primary/40 hover:text-primary"
-        >
-          Explore Features
-        </a>
+        <Button href={site.demoUrl}>Request a Demo</Button>
+        <Button href="#features" variant="outline">Explore Features</Button>
       </div>
     </div>
   </div>
