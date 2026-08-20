@@ -3,6 +3,7 @@ export interface Feature {
   title: string;
   description: string;
   screenshot?: string;
+  alt?: string;
 }
 
 export const features: Feature[] = [
@@ -95,17 +96,20 @@ export const showcase = [
     title: "Real-time progress graphs",
     description: "Visualize client progress with live graphs generated from session data.",
     screenshot: "/screenshots/reports.png",
+    alt: "MenteVior real-time progress graphs showing client session data",
   },
   {
     id: "service-plan",
     title: "Service plans that follow your clients",
     description: "Design detailed service plans with the assessments and data already in the system.",
     screenshot: "/screenshots/service-plan.png",
+    alt: "MenteVior service plan editor with prefilled assessments and client data",
   },
   {
     id: "data-collection",
     title: "Data collection made simple",
     description: "Flexible programs and customizable targets that keep data organized and accessible.",
     screenshot: "/screenshots/data-collection.png",
+    alt: "MenteVior data collection screen with customizable targets and programs",
   },
 ] as const;
