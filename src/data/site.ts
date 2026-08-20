@@ -5,7 +5,7 @@ export const site = {
   logo: "/logoMenteVior.png",
   demoUrl: "#",
   nav: [
-    { label: "Features", href: "#features" },
+    { label: "Solutions", href: "#solutions" },
     { label: "Reports", href: "#reports" },
     { label: "Service Plan", href: "#service-plan" },
     { label: "Data Collection", href: "#data-collection" },
