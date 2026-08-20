@@ -6,9 +6,6 @@ export const site = {
   demoUrl: "#",
   nav: [
     { label: "Solutions", href: "#solutions" },
-    { label: "Reports", href: "#reports" },
-    { label: "Service Plan", href: "#service-plan" },
-    { label: "Data Collection", href: "#data-collection" },
     { label: "Contact", href: "#contact" },
   ],
   contact: {

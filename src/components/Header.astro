@@ -4,19 +4,19 @@ import BrandLockup from "./BrandLockup.astro";
 import Copyright from "./Copyright.astro";
 ---
 
-<header class="sticky top-1 z-50 px-2 pt-1">
+<header class="sticky top-0 z-50 w-full border-b border-navy/10 bg-white shadow-sm">
   <nav
-    class="flex items-center justify-between gap-4 rounded-b-2xl border border-navy/10 bg-white/70 px-6 py-3 shadow-lg shadow-navy/5 backdrop-blur-sm"
+    class="flex items-center justify-between gap-4 px-6 py-3"
     aria-label="Main navigation"
   >
     <BrandLockup
       href="/"
-      class="flex shrink-0 items-center gap-1 whitespace-nowrap"
-      logoClass="h-12 w-auto lg:h-16"
-      nameClass="h-6 w-auto lg:h-8"
+      class="flex shrink-0 items-center gap-1 whitespace-nowrap lg:ml-10"
+      logoClass="h-12 w-auto lg:h-[3.4rem]"
+      nameClass="h-6 w-auto lg:h-[1.7rem]"
     />
 
-    <ul class="hidden items-center gap-6 lg:flex">
+    <ul class="hidden items-center gap-6 lg:flex lg:-ml-[100px]">
       {
         site.nav.map((item) => (
           <li>
