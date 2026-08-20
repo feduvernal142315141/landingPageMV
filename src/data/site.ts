@@ -6,18 +6,12 @@ export const site = {
   demoUrl: "#",
   nav: [
     { label: "Solutions", href: "#solutions" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact Us", href: "#contact" },
   ],
   contact: {
     email: "hello@mentevior.com",
     phone: "+1 (555) 000-0000",
   },
-  trustBadges: [
-    "HIPAA badge — pending",
-    "CASP badge — pending",
-    "Security badge — pending",
-    "Trust badge — pending",
-  ],
   social: [
     { label: "LinkedIn", href: "#" },
     { label: "Instagram", href: "#" },

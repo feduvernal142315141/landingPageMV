@@ -29,22 +29,31 @@ import SocialLinks from "./SocialLinks.astro";
         </div>
       </div>
 
-      <div class="lg:col-span-3">
+      <div class="lg:col-span-2">
         <FooterHeading>Product</FooterHeading>
         <ul class="mt-5 space-y-3">
-          {
-            site.nav.map((item) => (
-              <li>
-                <a href={item.href} class="text-sm text-white/60 transition hover:text-white">
-                  {item.label}
-                </a>
-              </li>
-            ))
-          }
+          <li>
+            <a href="/" class="text-sm text-white/60 transition hover:text-white">Home</a>
+          </li>
+          <li>
+            <a href="#solutions" class="text-sm text-white/60 transition hover:text-white">Solutions</a>
+          </li>
         </ul>
       </div>
 
-      <div class="lg:col-span-4">
+      <div class="lg:col-span-2">
+        <FooterHeading>Legal</FooterHeading>
+        <ul class="mt-5 space-y-3">
+          <li>
+            <a href="#" class="text-sm text-white/60 transition hover:text-white">Privacy</a>
+          </li>
+          <li>
+            <a href="#" class="text-sm text-white/60 transition hover:text-white">Terms</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3">
         <FooterHeading>Contact</FooterHeading>
         <ul class="mt-5 space-y-3 text-sm text-white/60">
           <li>
@@ -78,15 +87,8 @@ import SocialLinks from "./SocialLinks.astro";
       </div>
     </div>
 
-    <div
-      class="mt-16 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-8 sm:flex-row"
-    >
-      <Copyright class="text-xs text-white/70" />
-      <div class="flex items-center gap-6 text-xs text-white/70">
-        <a href="#" class="transition hover:text-white/80">Privacy</a>
-        <a href="#" class="transition hover:text-white/80">Terms</a>
-        <a href="#top" class="transition hover:text-white/80">Back to top ↑</a>
-      </div>
+    <div class="mt-16 border-t border-white/10 pt-8">
+      <Copyright class="text-center text-xs text-white/70" />
     </div>
   </div>
 </footer>
