@@ -1,6 +1,7 @@
 export const site = {
   name: "MenteVior",
   tagline: "All-in-One ABA Practice Management",
+  url: "https://landingpagemv.vercel.app",
   logo: "/logoMenteVior.png",
   demoUrl: "#",
   nav: [
