@@ -1,0 +1,14 @@
+---
+import { site } from "../data/site";
+
+interface Props {
+  class?: string;
+  name?: string;
+}
+
+const { class: className = "", name = site.name } = Astro.props;
+---
+
+<p class={className}>
+  © {new Date().getFullYear()} {name}. All rights reserved.
+</p>

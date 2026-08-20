@@ -1,37 +1,37 @@
 ---
 import { whys } from "../data/features";
-import Icon from "./Icon.astro";
+import IconBadge from "./IconBadge.astro";
+import Section from "./Section.astro";
 import SectionHeading from "./SectionHeading.astro";
 ---
 
-<section id="why" aria-label="Why MenteVior" class="relative overflow-hidden bg-dark-accent">
-  <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+<Section
+  id="why"
+  ariaLabel="Why MenteVior"
+  class="relative overflow-hidden bg-dark-accent"
+  containerClass="relative"
+>
+  <div slot="decor" aria-hidden="true" class="pointer-events-none absolute inset-0">
     <div class="absolute -top-20 left-1/3 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
     <div class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
   </div>
 
-  <div class="relative mx-auto max-w-7xl px-6 py-20 lg:py-28">
-    <SectionHeading
-      eyebrow="Why MenteVior"
-      title="Built to help your practice grow"
-      subtitle="Focus on your clients while MenteVior takes care of the rest."
-      dark
-    />
+  <SectionHeading
+    eyebrow="Why MenteVior"
+    title="Built to help your practice grow"
+    subtitle="Focus on your clients while MenteVior takes care of the rest."
+    dark
+  />
 
-    <div class="mt-14 grid gap-6 sm:grid-cols-2">
-      {
-        whys.map((item) => (
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <span
-              class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white"
-            >
-              <Icon name={item.icon} />
-            </span>
-            <h3 class="mt-4 text-lg font-bold text-white">{item.title}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-white/70">{item.description}</p>
-          </div>
-        ))
-      }
-    </div>
+  <div class="mt-14 grid gap-6 sm:grid-cols-2">
+    {
+      whys.map((item) => (
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <IconBadge name={item.icon} />
+          <h3 class="mt-4 text-lg font-bold text-white">{item.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-white/70">{item.description}</p>
+        </div>
+      ))
+    }
   </div>
-</section>
+</Section>

@@ -1,6 +1,7 @@
 ---
 import { site } from "../data/site";
 import BrandLockup from "./BrandLockup.astro";
+import Copyright from "./Copyright.astro";
 ---
 
 <header class="sticky top-1 z-50 px-2 pt-1">
@@ -77,9 +78,7 @@ import BrandLockup from "./BrandLockup.astro";
         ))
       }
     </ul>
-    <p class="mt-auto pb-6 text-center text-xs text-white/40">
-      © {new Date().getFullYear()} {site.name}. All rights reserved.
-    </p>
+    <Copyright class="mt-auto pb-6 text-center text-xs text-white/40" />
   </div>
 </aside>
 

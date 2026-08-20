@@ -1,33 +1,26 @@
 ---
 import { features } from "../data/features";
-import Icon from "./Icon.astro";
+import IconBadge from "./IconBadge.astro";
+import Section from "./Section.astro";
 import SectionHeading from "./SectionHeading.astro";
 ---
 
-<section id="features" aria-label="Features" class="bg-white">
-  <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
-    <SectionHeading
-      eyebrow="Features"
-      title="Everything your ABA practice needs"
-      subtitle="One integrated system for the tools your team uses every day."
-    />
+<Section id="features" ariaLabel="Features" class="bg-white">
+  <SectionHeading
+    eyebrow="Features"
+    title="Everything your ABA practice needs"
+    subtitle="One integrated system for the tools your team uses every day."
+  />
 
-    <ul class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        features.map((feature) => (
-          <li
-            class="rounded-2xl border border-navy/5 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-          >
-            <span
-              class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white"
-            >
-              <Icon name={feature.icon} />
-            </span>
-            <h3 class="mt-4 text-lg font-bold text-navy">{feature.title}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-navy/70">{feature.description}</p>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-</section>
+  <ul class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map((feature) => (
+        <li class="rounded-2xl border border-navy/5 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <IconBadge name={feature.icon} />
+          <h3 class="mt-4 text-lg font-bold text-navy">{feature.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-navy/70">{feature.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Section>

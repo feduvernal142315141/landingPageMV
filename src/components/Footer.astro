@@ -1,8 +1,11 @@
 ---
 import { site } from "../data/site";
 import BrandLockup from "./BrandLockup.astro";
-import Icon from "./Icon.astro";
 import Button from "./Button.astro";
+import Copyright from "./Copyright.astro";
+import FooterHeading from "./FooterHeading.astro";
+import Icon from "./Icon.astro";
+import SocialLinks from "./SocialLinks.astro";
 ---
 
 <footer id="footer" class="relative overflow-hidden bg-navy-soft">
@@ -21,31 +24,18 @@ import Button from "./Button.astro";
         <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
           HIPAA-compliant · Secure by design
         </p>
-        <div class="mt-7 flex items-center gap-3">
-          {
-            site.social.map((s) => (
-              <a
-                href={s.href}
-                aria-label={s.label}
-                class="rounded-xl border border-white/10 bg-white/5 p-2.5 text-white/70 transition hover:-translate-y-0.5 hover:border-tertiary/50 hover:text-tertiary"
-              >
-                <Icon name={s.label.toLowerCase()} class="h-5 w-5" />
-              </a>
-            ))
-          }
+        <div class="mt-7">
+          <SocialLinks />
         </div>
       </div>
 
       <div class="lg:col-span-3">
-        <h3 class="text-xs font-semibold uppercase tracking-widest text-white/80">Product</h3>
+        <FooterHeading>Product</FooterHeading>
         <ul class="mt-5 space-y-3">
           {
             site.nav.map((item) => (
               <li>
-                <a
-                  href={item.href}
-                  class="text-sm text-white/60 transition hover:text-white"
-                >
+                <a href={item.href} class="text-sm text-white/60 transition hover:text-white">
                   {item.label}
                 </a>
               </li>
@@ -55,7 +45,7 @@ import Button from "./Button.astro";
       </div>
 
       <div class="lg:col-span-4">
-        <h3 class="text-xs font-semibold uppercase tracking-widest text-white/80">Contact</h3>
+        <FooterHeading>Contact</FooterHeading>
         <ul class="mt-5 space-y-3 text-sm text-white/60">
           <li>
             <a
@@ -91,9 +81,7 @@ import Button from "./Button.astro";
     <div
       class="mt-16 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-8 sm:flex-row"
     >
-      <p class="text-xs text-white/40">
-        © {new Date().getFullYear()} {site.name}. All rights reserved.
-      </p>
+      <Copyright class="text-xs text-white/40" />
       <div class="flex items-center gap-6 text-xs text-white/40">
         <a href="#" class="transition hover:text-white/80">Privacy</a>
         <a href="#" class="transition hover:text-white/80">Terms</a>

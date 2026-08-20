@@ -1,25 +1,24 @@
 ---
 import { showcase } from "../data/features";
 import Screenshot from "./Screenshot.astro";
+import Section from "./Section.astro";
 import SectionHeading from "./SectionHeading.astro";
 ---
 
-<section id="showcase" aria-label="Product showcase" class="bg-surface">
-  <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
-    <SectionHeading eyebrow="Product in action" title="See what MenteVior can do for you" />
+<Section id="showcase" ariaLabel="Product showcase" class="bg-surface">
+  <SectionHeading eyebrow="Product in action" title="See what MenteVior can do for you" />
 
-    <div class="mt-14 space-y-20">
-      {
-        showcase.map((item, index) => (
-          <div id={item.id} class="grid items-center gap-10 lg:grid-cols-2">
-            <div class={index % 2 === 1 ? "lg:order-2" : ""}>
-              <h3 class="text-2xl font-bold text-navy">{item.title}</h3>
-              <p class="mt-3 leading-relaxed text-navy/70">{item.description}</p>
-            </div>
-            <Screenshot src={item.screenshot} label={`${item.title} — screenshot coming soon`} />
+  <div class="mt-14 space-y-20">
+    {
+      showcase.map((item, index) => (
+        <div id={item.id} class="grid items-center gap-10 lg:grid-cols-2">
+          <div class={index % 2 === 1 ? "lg:order-2" : ""}>
+            <h3 class="text-2xl font-bold text-navy">{item.title}</h3>
+            <p class="mt-3 leading-relaxed text-navy/70">{item.description}</p>
           </div>
-        ))
-      }
-    </div>
+          <Screenshot src={item.screenshot} label={`${item.title} — screenshot coming soon`} />
+        </div>
+      ))
+    }
   </div>
-</section>
+</Section>

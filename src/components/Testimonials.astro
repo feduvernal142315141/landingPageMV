@@ -1,24 +1,23 @@
 ---
 import { testimonials } from "../data/features";
+import Section from "./Section.astro";
 import SectionHeading from "./SectionHeading.astro";
 ---
 
-<section id="testimonials" aria-label="Testimonials" class="bg-white">
-  <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
-    <SectionHeading eyebrow="Testimonials" title="Why practices trust MenteVior" />
+<Section id="testimonials" ariaLabel="Testimonials" class="bg-white">
+  <SectionHeading eyebrow="Testimonials" title="Why practices trust MenteVior" />
 
-    <div class="mt-14 grid gap-6 md:grid-cols-3">
-      {
-        testimonials.map((t) => (
-          <figure class="flex flex-col rounded-2xl border border-navy/5 bg-surface p-6">
-            <blockquote class="flex-1 text-sm leading-relaxed text-navy/70">"{t.quote}"</blockquote>
-            <figcaption class="mt-6 border-t border-navy/10 pt-4">
-              <p class="font-semibold text-navy">{t.name}</p>
-              <p class="text-sm text-navy/50">{t.role}</p>
-            </figcaption>
-          </figure>
-        ))
-      }
-    </div>
+  <div class="mt-14 grid gap-6 md:grid-cols-3">
+    {
+      testimonials.map((t) => (
+        <figure class="flex flex-col rounded-2xl border border-navy/5 bg-surface p-6">
+          <blockquote class="flex-1 text-sm leading-relaxed text-navy/70">"{t.quote}"</blockquote>
+          <figcaption class="mt-6 border-t border-navy/10 pt-4">
+            <p class="font-semibold text-navy">{t.name}</p>
+            <p class="text-sm text-navy/50">{t.role}</p>
+          </figcaption>
+        </figure>
+      ))
+    }
   </div>
-</section>
+</Section>

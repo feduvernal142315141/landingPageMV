@@ -1,0 +1,17 @@
+---
+interface Props {
+  id?: string;
+  ariaLabel?: string;
+  class?: string;
+  containerClass?: string;
+}
+
+const { id, ariaLabel, class: className = "", containerClass = "" } = Astro.props;
+---
+
+<section id={id} aria-label={ariaLabel} class={className}>
+  <slot name="decor" />
+  <div class={`mx-auto max-w-7xl px-6 py-20 lg:py-28 ${containerClass}`}>
+    <slot />
+  </div>
+</section>
