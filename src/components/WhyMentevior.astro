@@ -2,7 +2,6 @@
 import { whys } from "../data/solutions";
 import IconBadge from "./IconBadge.astro";
 import Section from "./Section.astro";
-import SectionHeading from "./SectionHeading.astro";
 ---
 
 <Section
@@ -16,12 +15,16 @@ import SectionHeading from "./SectionHeading.astro";
     <div class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
   </div>
 
-  <SectionHeading
-    eyebrow="Why MenteVior"
-    title="Built to help your practice grow"
-    subtitle="Focus on your clients while MenteVior takes care of the rest."
-    dark
-  />
+  <div class="flex flex-col items-center">
+    <h2 class="text-3xl font-bold tracking-tight sm:text-2xl text-white">
+      Why Choose MenteVior?
+    </h2>
+  </div>
+  <div class="mt-6 mx-auto max-w-2xl text-center">
+    <h3 class="text-xl font-black tracking-tight sm:text-2xl text-navy">
+      The reasons our clients stay with us
+    </h3>
+  </div>
 
   <div class="mt-14 grid gap-6 sm:grid-cols-2">
     {
