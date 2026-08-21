@@ -26,13 +26,12 @@ import Section from "./Section.astro";
     </h3>
   </div>
 
-  <div class="mt-14 grid gap-6 sm:grid-cols-2">
+  <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {
       whys.map((item) => (
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <IconBadge name={item.icon} />
+        <div class="group flex flex-col items-center rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/50 hover:bg-white/[0.08] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.45)]">
+          <IconBadge name={item.icon} class="transition-transform duration-300 group-hover:scale-110" />
           <h3 class="mt-4 text-lg font-bold text-white">{item.title}</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/70">{item.description}</p>
         </div>
       ))
     }

@@ -3,13 +3,14 @@ import Icon from "./Icon.astro";
 
 interface Props {
   name: string;
+  class?: string;
 }
 
-const { name } = Astro.props;
+const { name, class: className = "" } = Astro.props;
 ---
 
 <span
-  class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white"
+  class={`inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white ${className}`}
 >
   <Icon name={name} />
 </span>

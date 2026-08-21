@@ -83,28 +83,28 @@ export const solutions: Solution[] = [
 
 export const whys = [
   {
-    icon: "layers",
-    title: "All-in-one platform",
-    description:
-      "Scheduling, session notes, data collection, service plans, supervision and billing — one integrated system, no more switching tools.",
+    icon: "cloud",
+    title: "Enterprise-grade security in the cloud",
   },
   {
-    icon: "line-chart",
-    title: "Real-time data and graphs",
-    description:
-      "Monitor client progress with live graphs generated from session data, so clinical decisions are always informed.",
+    icon: "smartphone",
+    title: "Seamless on web, Android & iOS",
+  },
+  {
+    icon: "layers",
+    title: "One platform for your entire practice",
+  },
+  {
+    icon: "gauge",
+    title: "Real-time data, live progress graphs",
   },
   {
     icon: "shield",
-    title: "Documentation you can rely on",
-    description:
-      "Structured notes and clinical records that keep your practice organized and audit-ready.",
+    title: "Documentation to keep you audit-ready",
   },
   {
-    icon: "headset",
-    title: "Made for every practice size",
-    description:
-      "From solo practitioners to growing clinics, workflows that adapt to how your team operates.",
+    icon: "trending-up",
+    title: "Designed to scale with your practice",
   },
 ] as const;
 
