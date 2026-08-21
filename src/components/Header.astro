@@ -1,6 +1,7 @@
 ---
 import { site } from "../data/site";
 import BrandLockup from "./BrandLockup.astro";
+import Button from "./Button.astro";
 import Copyright from "./Copyright.astro";
 ---
 
@@ -11,12 +12,12 @@ import Copyright from "./Copyright.astro";
   >
     <BrandLockup
       href="/"
-      class="flex shrink-0 items-center gap-1 whitespace-nowrap lg:ml-10"
-      logoClass="h-12 w-auto lg:h-[3.4rem]"
-      nameClass="h-6 w-auto lg:h-[1.7rem]"
+      class="flex shrink-0 items-center gap-1 whitespace-nowrap lg:ml-[4.5rem]"
+      logoClass="h-12 w-auto lg:h-[3.2rem]"
+      nameClass="h-6 w-auto lg:h-[1.5rem]"
     />
 
-    <ul class="hidden items-center gap-6 lg:flex lg:-ml-[200px] lg:mr-10">
+    <ul class="hidden items-center gap-6 lg:flex lg:flex-1 lg:justify-center">
       {
         site.nav.map((item) => (
           <li>
@@ -30,6 +31,8 @@ import Copyright from "./Copyright.astro";
         ))
       }
     </ul>
+
+    <Button href={site.demoUrl} class="hidden lg:inline-flex lg:mr-[4.5rem]">Request a Demo</Button>
 
     <button
       id="mobile-menu-button"
@@ -55,7 +58,7 @@ import Copyright from "./Copyright.astro";
 <aside
   id="mobile-menu"
   aria-hidden="true"
-  class="fixed inset-y-0 left-0 z-[60] w-80 max-w-[75vw] -translate-x-full overflow-hidden bg-navy-soft transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:hidden"
+  class="fixed inset-y-0 left-0 z-[60] w-80 max-w-[75vw] -translate-x-full overflow-hidden bg-navy-dark transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:hidden"
 >
     <div class="relative flex h-full flex-col px-5 pt-20">
     <BrandLockup
