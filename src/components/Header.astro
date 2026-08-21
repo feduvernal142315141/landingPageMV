@@ -5,16 +5,16 @@ import Button from "./Button.astro";
 import Copyright from "./Copyright.astro";
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-navy/10 bg-white shadow-sm">
+<header id="site-header" class="sticky top-0 z-50 w-full border-b border-navy/10 bg-white shadow-sm transition-[padding,box-shadow] duration-300 ease-in-out">
   <nav
-    class="flex items-center justify-between gap-4 px-6 py-3"
+    class="flex items-center justify-between gap-4 px-6 py-[22px] transition-[padding] duration-300 ease-in-out"
     aria-label="Main navigation"
   >
     <BrandLockup
       href="/"
       class="flex shrink-0 items-center gap-1 whitespace-nowrap lg:ml-[4.5rem]"
-      logoClass="h-10 w-auto lg:h-[3.2rem]"
-      nameClass="h-5 w-auto lg:h-[1.5rem]"
+      logoClass="h-10 w-auto lg:h-[3.2rem] brand-logo transition-[height] duration-300 ease-in-out"
+      nameClass="h-5 w-auto lg:h-[1.5rem] brand-name transition-[height] duration-300 ease-in-out"
     />
 
     <ul class="hidden items-center gap-6 lg:flex lg:flex-1 lg:justify-center">
@@ -136,6 +136,23 @@ import Copyright from "./Copyright.astro";
       transition: none !important;
     }
   }
+
+  #site-header.scrolled nav {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  #site-header.scrolled nav .brand-logo {
+    height: 2rem;
+  }
+
+  #site-header.scrolled nav .brand-name {
+    height: 1.2rem;
+  }
+
+  #site-header.scrolled {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
 </style>
 
 <script>
@@ -210,4 +227,11 @@ import Copyright from "./Copyright.astro";
   });
 
   backdrop?.addEventListener("click", () => setOpen(false));
+
+  const siteHeader = document.getElementById("site-header");
+  if (siteHeader) {
+    window.addEventListener("scroll", () => {
+      siteHeader.classList.toggle("scrolled", window.scrollY > 50);
+    }, { passive: true });
+  }
 </script>
