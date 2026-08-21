@@ -1,6 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import Section from "./Section.astro";
-import SectionHeading from "./SectionHeading.astro";
+import logo from "../assets/MenteVior-logo.png";
 ---
 
 <Section
@@ -9,14 +10,29 @@ import SectionHeading from "./SectionHeading.astro";
   class="relative overflow-hidden bg-navy-soft"
   containerClass="relative"
 >
-  <SectionHeading
-    eyebrow="What is MenteVior"
-    title="Your all-in-one ABA practice management platform"
-    subtitle="MenteVior brings scheduling, session notes, data collection, service plans, supervision and billing into one integrated system — built for ABA providers."
-    dark
-  />
+  <div class="flex flex-col items-center gap-6">
+    <Image src={logo} alt="MenteVior logo" width={249} height={250} format="webp" class="h-20 w-auto brightness-[10] contrast-[0.9]" />
+    <h2 class="text-xl font-bold tracking-tight sm:text-2xl bg-gradient-to-r from-accent-light to-tertiary bg-clip-text text-transparent">
+      What is MenteVior?
+    </h2>
+  </div>
 
-  <div class="mt-14">
-    <p class="text-center text-white/60">Content coming soon.</p>
+  <div class="mt-14 max-w-3xl text-left">
+    <h3 class="text-3xl font-black tracking-tight text-white sm:text-4xl">
+      All-in-One ABA Practice<br />
+      Management Software
+    </h3>
+    <p class="mt-4 text-xl font-medium text-white/90">
+      Simplify Your Workflow and Focus on Delivering<br />
+      Exceptional Care
+    </p>
+    <p class="mt-6 text-lg font-medium leading-relaxed text-white/80">
+      MenteVior is an intuitive, HIPAA-secure, cloud-based platform<br />
+      built for ABA providers. From scheduling and session notes to<br />
+      data collection, service plans, supervision, and billing.<br />
+      Everything you need in a single, accessible platform. The result:<br />
+      a calmer, more compliant practice that's organized,<br />
+      audit-ready, and effortless.
+    </p>
   </div>
 </Section>
