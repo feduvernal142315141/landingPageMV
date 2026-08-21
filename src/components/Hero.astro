@@ -34,9 +34,17 @@ import Button from "./Button.astro";
       </span>
     </h1>
     <p class="mt-6 max-w-2xl text-2xl font-medium leading-relaxed text-white">
-      All-in-one software for ABA providers<br />
-      to manage scheduling, session notes, data collection,<br />
-      supervision, and billing.
+      <span class="lg:hidden">
+        All-in-one software for<br />
+        ABA providers to manage scheduling, session<br />
+        notes, data collection,<br />
+        supervision, and billing.
+      </span>
+      <span class="hidden lg:block">
+        All-in-one software for ABA providers<br />
+        to manage scheduling, session notes, data collection,<br />
+        supervision, and billing.
+      </span>
     </p>
     <div class="mt-8 flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap lg:justify-start">
       <Button href={site.demoUrl} class="lg:hidden">Request a Demo</Button>
