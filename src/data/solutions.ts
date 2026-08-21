@@ -99,7 +99,7 @@ export const whys = [
     title: "Real-time data, live progress graphs",
   },
   {
-    icon: "shield",
+    icon: "file-text",
     title: "Documentation to keep you audit-ready",
   },
   {
