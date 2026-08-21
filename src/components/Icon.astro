@@ -4,13 +4,15 @@ import { icons } from "../data/icons";
 interface Props {
   name: string;
   class?: string;
+  style?: string;
 }
 
-const { name, class: className = "h-6 w-6" } = Astro.props;
+const { name, class: className = "h-6 w-6", style } = Astro.props;
 ---
 
 <svg
   class={className}
+  style={style}
   viewBox="0 0 24 24"
   fill="none"
   stroke="currentColor"
