@@ -5,8 +5,9 @@ export const site = {
   logo: "/logoMenteVior.png",
   demoUrl: "#",
   nav: [
+    { label: "Features", href: "#features" },
     { label: "Solutions", href: "#solutions" },
-    { label: "Contact Us", href: "#contact" },
+    { label: "Contact Us", href: "#contact-section" },
   ],
   contact: {
     email: "hello@mentevior.com",
