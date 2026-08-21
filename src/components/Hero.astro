@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { site } from "../data/site";
 import heroImg from "../assets/hero.webp";
 import Button from "./Button.astro";
 ---
@@ -40,6 +41,7 @@ import Button from "./Button.astro";
       billing — one HIPAA-secure platform, organized, audit-ready, effortless.
     </p>
     <div class="mt-8 flex flex-wrap items-center gap-4">
+      <Button href={site.demoUrl} class="lg:hidden">Request a Demo</Button>
       <Button href="#features" variant="hero" icon="sparkles">Explore Features</Button>
       <Button href="#solutions" variant="hero" icon="compass">Explore Solutions</Button>
     </div>

@@ -13,8 +13,8 @@ import Copyright from "./Copyright.astro";
     <BrandLockup
       href="/"
       class="flex shrink-0 items-center gap-1 whitespace-nowrap lg:ml-[4.5rem]"
-      logoClass="h-12 w-auto lg:h-[3.2rem]"
-      nameClass="h-6 w-auto lg:h-[1.5rem]"
+      logoClass="h-10 w-auto lg:h-[3.2rem]"
+      nameClass="h-5 w-auto lg:h-[1.5rem]"
     />
 
     <ul class="hidden items-center gap-6 lg:flex lg:flex-1 lg:justify-center">
@@ -32,7 +32,9 @@ import Copyright from "./Copyright.astro";
       }
     </ul>
 
-    <Button href={site.demoUrl} class="hidden lg:inline-flex lg:mr-[4.5rem]">Request a Demo</Button>
+    <div class="hidden lg:block lg:mr-[4.5rem]">
+      <Button href={site.demoUrl}>Request a Demo</Button>
+    </div>
 
     <button
       id="mobile-menu-button"
@@ -64,8 +66,8 @@ import Copyright from "./Copyright.astro";
     <BrandLockup
       href="/"
       class="mt-8 flex items-center gap-2 px-3"
-      logoClass="h-10 w-auto"
-      nameClass="h-5 w-auto"
+      logoClass="h-7 w-auto"
+      nameClass="h-3.5 w-auto"
       inverted
     />
     <ul class="mt-8 space-y-1">
