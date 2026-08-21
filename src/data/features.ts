@@ -1,56 +1,62 @@
 export interface Feature {
   icon: string;
   title: string;
-  points: [string, string];
+  points: [string, string, string?];
 }
 
 export const features: Feature[] = [
   {
     icon: "layout-dashboard",
-    title: "Your Practice at a Glance",
+    title: "Command Center for Your Practice",
     points: [
-      "See sessions, authorizations and compliance in one place",
-      "Switch between your view and the full team view",
+      "Unified dashboard view",
+      "Personal & team views",
+      "Real-time compliance",
     ],
   },
   {
     icon: "trending-up",
-    title: "Live Progress Tracking",
+    title: "Progress Made Visible",
     points: [
-      "Trend charts showing 12 weeks of session activity",
-      "Progress meters that flag what needs attention",
+      "12-week trend charts",
+      "Smart attention alerts",
+      "Progress at glance",
     ],
   },
   {
     icon: "calendar",
-    title: "Drag & Drop Scheduling",
+    title: "Intuitive Drag-and-Drop Scheduling",
     points: [
-      "Week and month calendar views for your team",
-      "Drag any appointment to reschedule instantly",
+      "Week & month views",
+      "Drag to reschedule",
+      "Zero friction scheduling",
     ],
   },
   {
     icon: "shield",
-    title: "Team Permissions",
+    title: "Access Control, Simplified",
     points: [
-      "Control who sees what with module-level access",
-      "Configure roles visually without the complexity",
+      "Module-level permissions",
+      "Visual role builder",
+      "Instant role updates",
     ],
   },
   {
     icon: "book-open",
-    title: "Activity History",
+    title: "Every Action, Documented",
     points: [
-      "Every signature and document change tracked",
-      "Full traceability per client, always accessible",
+      "Auto audit trail",
+      "Export-ready records",
+      "Full traceability",
     ],
   },
   {
     icon: "list-checks",
-    title: "Guided Setup",
+    title: "Guided Workflows That Adapt to You",
     points: [
-      "Multi-step flows for complex tasks like client intake",
-      "Visual progress so you always know where you are",
+      "Multi-step guided flows",
+      "Adapts to patterns",
+      "Suggests next steps",
     ],
   },
 ] as const;
