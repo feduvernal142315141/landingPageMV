@@ -44,4 +44,102 @@ import Button from "./Button.astro";
       <Button href="#solutions" variant="hero" icon="compass">Explore Solutions</Button>
     </div>
   </div>
+
+  <!-- Chalk flower animation (desktop only) -->
+  <div class="absolute right-[160px] top-[100px] lg:top-[140px] w-[350px] h-[400px] hidden lg:block pointer-events-none" aria-hidden="true">
+    <svg viewBox="0 0 350 400" class="w-full h-full chalk-svg" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="chalk-filter" color-interpolation-filters="sRGB" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="3" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+
+      <!-- Flower 1: 5 rounded petals (top-left) -->
+      <g class="flower-group flower-1" transform="translate(70, 60)">
+        <path class="chalk draw petal-1" pathLength="1" d="M0,0 C-18,-12 -30,-30 -22,-55 C-10,-60 10,-35 0,0" />
+        <path class="chalk draw petal-2" pathLength="1" d="M0,0 C15,-18 35,-25 52,-15 C50,5 20,10 0,0" />
+        <path class="chalk draw petal-3" pathLength="1" d="M0,0 C18,12 28,30 20,50 C8,48 -5,22 0,0" />
+        <path class="chalk draw petal-4" pathLength="1" d="M0,0 C-15,18 -35,22 -48,12 C-45,-5 -15,-10 0,0" />
+        <path class="chalk draw petal-5" pathLength="1" d="M0,0 C-12,-18 -8,-42 5,-52 C18,-42 15,-18 0,0" />
+        <circle class="chalk draw center" cx="0" cy="0" r="5" pathLength="1" fill="none" />
+      </g>
+
+      <!-- Flower 2: 4 big rounded petals (center) -->
+      <g class="flower-group flower-2" transform="translate(200, 180)">
+        <path class="chalk draw petal-1" pathLength="1" d="M0,0 C-22,-15 -35,-40 -25,-70 C-8,-75 15,-40 0,0" />
+        <path class="chalk draw petal-2" pathLength="1" d="M0,0 C20,-22 48,-28 65,-15 C62,8 25,12 0,0" />
+        <path class="chalk draw petal-3" pathLength="1" d="M0,0 C20,18 30,42 18,62 C2,58 -10,25 0,0" />
+        <path class="chalk draw petal-4" pathLength="1" d="M0,0 C-20,22 -48,28 -62,15 C-58,-8 -22,-12 0,0" />
+        <circle class="chalk draw center" cx="0" cy="0" r="7" pathLength="1" fill="none" />
+      </g>
+
+      <!-- Flower 3: 6 small rounded petals (right) -->
+      <g class="flower-group flower-3" transform="translate(300, 80)">
+        <path class="chalk draw petal-1" pathLength="1" d="M0,0 C-10,-8 -18,-20 -12,-38 C-2,-40 8,-22 0,0" />
+        <path class="chalk draw petal-2" pathLength="1" d="M0,0 C10,-10 22,-15 32,-8 C30,5 12,8 0,0" />
+        <path class="chalk draw petal-3" pathLength="1" d="M0,0 C10,10 16,22 10,35 C-2,32 -5,12 0,0" />
+        <path class="chalk draw petal-4" pathLength="1" d="M0,0 C-10,10 -22,12 -32,5 C-28,-5 -10,-8 0,0" />
+        <path class="chalk draw petal-5" pathLength="1" d="M0,0 C-8,-10 -10,-25 -2,-38 C8,-32 8,-12 0,0" />
+        <path class="chalk draw petal-6" pathLength="1" d="M0,0 C8,10 14,22 16,35 C6,28 0,12 0,0" />
+        <circle class="chalk draw center" cx="0" cy="0" r="4" pathLength="1" fill="none" />
+      </g>
+    </svg>
+  </div>
 </section>
+
+<style is:global>
+  .chalk {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.55);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: url(#chalk-filter);
+  }
+
+  .draw, .center {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: fullCycle 74s ease-in-out infinite;
+  }
+
+  @keyframes fullCycle {
+    0%      { stroke-dashoffset: 1; }
+    2.7%    { stroke-dashoffset: 0; }
+    83.8%   { stroke-dashoffset: 0; }
+    86.5%   { stroke-dashoffset: 1; }
+    100%    { stroke-dashoffset: 1; }
+  }
+
+  /* Flower 1 delays */
+  .flower-1 .petal-1 { animation-delay: 0s; }
+  .flower-1 .petal-2 { animation-delay: 0.25s; }
+  .flower-1 .petal-3 { animation-delay: 0.5s; }
+  .flower-1 .petal-4 { animation-delay: 0.75s; }
+  .flower-1 .petal-5 { animation-delay: 1s; }
+  .flower-1 .center  { animation-delay: 1.3s; }
+
+  /* Flower 2 delays */
+  .flower-2 .petal-1 { animation-delay: 0.4s; }
+  .flower-2 .petal-2 { animation-delay: 0.7s; }
+  .flower-2 .petal-3 { animation-delay: 1s; }
+  .flower-2 .petal-4 { animation-delay: 1.3s; }
+  .flower-2 .center  { animation-delay: 1.6s; }
+
+  /* Flower 3 delays */
+  .flower-3 .petal-1 { animation-delay: 0.8s; }
+  .flower-3 .petal-2 { animation-delay: 1s; }
+  .flower-3 .petal-3 { animation-delay: 1.2s; }
+  .flower-3 .petal-4 { animation-delay: 1.4s; }
+  .flower-3 .petal-5 { animation-delay: 1.6s; }
+  .flower-3 .petal-6 { animation-delay: 1.8s; }
+  .flower-3 .center  { animation-delay: 2s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .draw, .center {
+      animation: none !important;
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
