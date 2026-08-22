@@ -1,7 +1,6 @@
 ---
 import { site } from "../data/site";
 import BrandLockup from "./BrandLockup.astro";
-import Button from "./Button.astro";
 import Copyright from "./Copyright.astro";
 import FooterHeading from "./FooterHeading.astro";
 import Icon from "./Icon.astro";
@@ -73,20 +72,7 @@ import SocialLinks from "./SocialLinks.astro";
             {site.contact.phone}
           </li>
         </ul>
-        <Button href={site.demoUrl} variant="link" class="mt-7">
-          Request a demo
-          <svg
-            class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </Button>
+
       </div>
     </div>
 
