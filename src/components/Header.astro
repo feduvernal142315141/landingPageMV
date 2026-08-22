@@ -252,13 +252,13 @@ import Icon from "./Icon.astro";
     }, { passive: true });
   }
 
-  const homeLink = document.querySelector<HTMLAnchorElement>("[data-home-link]");
-  if (homeLink) {
+  const homeLinks = document.querySelectorAll<HTMLAnchorElement>("[data-home-link]");
+  homeLinks.forEach((homeLink) => {
     homeLink.addEventListener("click", (e) => {
       if (window.location.pathname === "/") {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     });
-  }
+  });
 </script>
