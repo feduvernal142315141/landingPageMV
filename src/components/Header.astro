@@ -220,12 +220,6 @@ import Icon from "./Icon.astro";
 
   const headerOffset = 96;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const scrollToTarget = (href: string) => {
-    const target = document.querySelector(href);
-    if (!target) return;
-    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-    window.scrollTo({ top, behavior: reducedMotion ? "auto" : "smooth" });
-  };
 
   document
     .querySelectorAll<HTMLElement>("#mobile-menu a[href^='#'], header nav a[href^='#']")
@@ -235,7 +229,10 @@ import Icon from "./Icon.astro";
         if (href.length <= 1 || !document.querySelector(href)) return;
         e.preventDefault();
         setOpen(false);
-        setTimeout(() => scrollToTarget(href), 50);
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
+        }
       }),
     );
 
