@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import { site } from "../data/site";
 import logo from "../assets/MenteVior-logo.png";
+import Header from "../components/Header.astro";
 
 interface Props {
   title?: string;
@@ -43,6 +44,7 @@ const ogImage = `${site.url}/og-image.webp`;
     <title>{title}</title>
   </head>
   <body class="bg-navy-soft text-navy antialiased">
+    <Header />
     <slot />
   </body>
 </html>
