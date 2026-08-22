@@ -26,7 +26,7 @@ const { category, showExplore = true, baseUrl = "#", showModules = true, isFirst
 ---
 
 <section id={category.anchor} class="mt-20">
-  <div class={`group relative z-${isFirst ? '10' : '20'} rounded-2xl border border-white/10 bg-navy transition-all duration-300 hover:border-accent/30 hover:bg-navy hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:scale-105 animate-float-card ${isOverlapped ? 'mt-[-150px]' : ''} ${isFirst ? 'mt-[80px]' : ''} ${isMobile ? 'max-w-sm mx-auto' : 'max-w-sm'} ${horizontalOffset === 'left' ? 'lg:-translate-x-[10px]' : horizontalOffset === 'right' ? 'lg:translate-x-[252px]' : ''}`}>
+  <div class={`group relative z-${isFirst ? '10' : '20'} rounded-2xl border border-white/10 bg-navy transition-all duration-300 hover:border-accent/30 hover:bg-navy hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:scale-105 animate-float-card ${isOverlapped && !isMobile ? 'mt-[-150px]' : ''} ${isFirst ? 'mt-[80px]' : isMobile && !isFirst ? 'mt-16' : ''} ${isMobile ? 'max-w-sm mx-auto' : 'max-w-sm'} ${horizontalOffset === 'left' ? 'lg:-translate-x-[10px]' : horizontalOffset === 'right' ? 'lg:translate-x-[252px]' : ''}`}>
     <div class="p-5 md:p-6 lg:p-6 text-center">
       <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-400 mb-4 mx-auto">
         <Icon name={category.icon} class="h-8 w-8 text-white" />
