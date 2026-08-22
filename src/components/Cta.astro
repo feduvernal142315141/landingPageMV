@@ -22,11 +22,32 @@ import Button from "./Button.astro";
       Getting Ready Is Easy
     </h2>
     <p class="scroll-reveal slide-up mt-4 text-lg text-white/80">
-      Book a Personalized Walkthrough and Transform Your ABA Practice with MenteVior
+      Book a <span class="font-black">Personalized Walkthrough</span> and <span class="font-black">Transform Your ABA Practice</span> with MenteVior
     </p>
     <div class="scroll-reveal slide-up mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
-      <Button href={site.demoUrl} variant="white" icon="rocket">Request a Demo</Button>
+      <Button href={site.demoUrl} variant="white" icon="rocket" class="float-animation">Request a Demo</Button>
       <Button href="/contact" variant="hero">Contact Us</Button>
     </div>
   </div>
 </section>
+
+<style is:global>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .float-animation {
+      animation: none !important;
+    }
+  }
+</style>
