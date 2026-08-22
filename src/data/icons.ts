@@ -47,10 +47,24 @@ export const icons: Record<string, string> = {
     '<path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/>',
   sparkles:
     '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/>',
-  compass:
+compass:
     '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>',
   cloud:
     '<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>',
   smartphone:
     '<rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>',
-};
+  "building-2":
+    '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 9h2v2H9z"/><path d="M14 9h2v2h-2z"/><path d="M9 14h2v2H9z"/><path d="M14 14h2v2h-2z"/>',
+  database:
+    '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5"/><path d="M3 12a9 3 0 0 0 18 0"/><path d="M3 8a9 3 0 0 1 18 0"/>',
+  "map-pin":
+    '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
+  stethoscope:
+    '<path d="M3 11v-3a9 9 0 0 1 18 0v3"/><path d="M21 12a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>',
+  "calendar-clock":
+    '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="18" cy="18" r="4"/><path d="M18 16v4"/><path d="M20 18H16"/>',
+  "clipboard-list":
+    '<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><line x1="12" y1="10" x2="12" y2="14"/><line x1="12" y1="18" x2="12" y2="22"/>',
+  "folder-heart":
+    '<path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13.5"/><path d="M18.5 15.5a2.5 2.5 0 0 1 0 3.5 2.5 2.5 0 0 1-3.5 0 2.5 2.5 0 0 1 0-3.5 2.5 2.5 0 0 1 3.5 0z"/>',
+  };

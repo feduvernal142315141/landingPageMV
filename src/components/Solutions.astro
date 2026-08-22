@@ -1,7 +1,8 @@
 ---
-import { solutions } from "../data/solutions";
+import { solutionCategories } from "../data/solutions";
 import IconBadge from "./IconBadge.astro";
 import Section from "./Section.astro";
+import Icon from "./Icon.astro";
 ---
 
 <Section
@@ -27,15 +28,33 @@ import Section from "./Section.astro";
     </p>
   </div>
 
-  <ul class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    {
-      solutions.map((feature) => (
-        <li class="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-white/10">
-          <IconBadge name={feature.icon} />
-          <h3 class="mt-4 text-lg font-bold text-white">{feature.title}</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/70">{feature.description}</p>
-        </li>
-      ))
-    }
-  </ul>
+  {solutionCategories.map((category) => (
+    <section id={category.anchor} class="mt-20">
+      <div class="group rounded-2xl border border-white/10 bg-white/5 p-8 md:p-12 text-center transition">
+        <div class="inline-flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-white mb-6 mx-auto">
+          <Icon name={category.icon} class="h-12 w-12" />
+        </div>
+        <h3 class="text-2xl font-black text-white mb-3">{category.label}</h3>
+        <p class="text-lg text-white/80 mb-6 max-w-xl mx-auto">
+          {category.description}
+        </p>
+        <a
+          href={`#${category.anchor}`}
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300 font-bold text-sm uppercase tracking-widest"
+        >
+          Explore
+          <Icon name="compass" class="h-4 w-4" />
+        </a>
+      </div>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-center max-w-5xl mx-auto">
+        {category.modules.map((module) => (
+          <article class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition hover:border-accent/50 hover:bg-white/[0.08]">
+            <IconBadge name={module.icon} class="mb-4" />
+            <h4 class="font-bold text-white">{module.label}</h4>
+          </article>
+        ))}
+      </div>
+    </section>
+  ))}
 </Section>

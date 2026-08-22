@@ -108,6 +108,61 @@ export const whys = [
   },
 ] as const;
 
+export interface SolutionCategory {
+  id: string;
+  label: string;
+  icon: string;
+  description: string;
+  anchor: string;
+  modules: { label: string; href: string; icon: string }[];
+}
+
+export const solutionCategories = [
+  {
+    id: "clinical-options",
+    label: "Clinical Options",
+    icon: "stethoscope",
+    description: "Clinical workflows for ABA therapy: client records, assessments, session notes, data collection, supervision & progress tracking.",
+    anchor: "clinical-options",
+    modules: [
+      { label: "Clients", href: "/clients", icon: "contact" },
+      { label: "Users / Providers", href: "/users", icon: "users" },
+      { label: "Session Note", href: "/session-note", icon: "file-text" },
+      { label: "Schedules", href: "/schedules", icon: "calendar" },
+      { label: "Clinical Monthly", href: "/clinical-monthly", icon: "calendar-clock" },
+      { label: "Monthly Supervisions", href: "/monthly-supervisions", icon: "clipboard-check" },
+      { label: "Case Supervision Log", href: "/case-supervision-log", icon: "clipboard-list" },
+      { label: "Service Log", href: "/service-log", icon: "folder-heart" },
+      { label: "Assessment", href: "/assessment", icon: "gauge" },
+    ],
+  },
+  {
+    id: "company-configuration",
+    label: "Company Configuration",
+    icon: "building-2",
+    description: "Business operations & admin: billing, HR, scheduling, credentials, compliance tools & practice management.",
+    anchor: "company-configuration",
+    modules: [
+      { label: "Account Profile", href: "/my-company/account-profile", icon: "user-cog" },
+      { label: "Address", href: "/my-company/address", icon: "map-pin" },
+      { label: "Agreements", href: "/agreements", icon: "file-text" },
+      { label: "Applicants", href: "/applicants", icon: "user-plus" },
+      { label: "Billing", href: "/my-company/billing", icon: "dollar" },
+      { label: "Credentials", href: "/my-company/credentials", icon: "badge-check" },
+      { label: "Data Collection", href: "/data-collection", icon: "database" },
+      { label: "Documents", href: "/my-company/documents", icon: "folder-open" },
+      { label: "Referring Physicians", href: "/my-company/physicians", icon: "stethoscope" },
+      { label: "Roles", href: "/my-company/roles", icon: "shield" },
+      { label: "Service Plan", href: "/my-company/service-plans", icon: "clipboard" },
+      { label: "Services", href: "/my-company/services", icon: "clipboard-list" },
+      { label: "Session", href: "/my-company/session", icon: "calendar-clock" },
+      { label: "Signatures Caregiver", href: "/my-company/signatures-caregiver", icon: "signature" },
+      { label: "Supervision", href: "/my-company/events/supervision", icon: "users" },
+      { label: "Template Documents", href: "/template-documents", icon: "file-text" },
+    ],
+  },
+] as const;
+
 export const showcase = [
   {
     id: "reports",
