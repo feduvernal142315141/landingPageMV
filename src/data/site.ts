@@ -3,11 +3,11 @@ export const site = {
   tagline: "All-in-One ABA Practice Management",
   url: "https://landingpagemv.vercel.app",
   logo: "/logoMenteVior.png",
-  demoUrl: "#",
+  demoUrl: "/demo",
   nav: [
     { label: "Features", href: "#features" },
     { label: "Solutions", href: "#solutions" },
-    { label: "Contact Us", href: "#contact-section" },
+    { label: "Contact Us", href: "/contact" },
   ],
   contact: {
     email: "hello@mentevior.com",
