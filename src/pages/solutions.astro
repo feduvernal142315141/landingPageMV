@@ -11,9 +11,31 @@ import Footer from "../components/Footer.astro";
 >
   <main class="pt-16 min-h-screen bg-navy-dark">
     <div class="mx-auto max-w-7xl px-6 py-16">
-      {solutionCategories.map((category) => (
-        <SolutionCategory category={category} showExplore={true} baseUrl="" />
-      ))}
+      <!-- Clinical Options Section -->
+      <section class="mt-20">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl font-black tracking-tight text-white sm:text-4xl">
+            Clinical Options
+          </h2>
+          <p class="mt-4 text-lg text-white/70 font-normal tracking-wide text-center">
+            Clinical workflows for ABA therapy
+          </p>
+        </div>
+        <SolutionCategory category={solutionCategories[0]} showCard={false} showExplore={true} baseUrl="" />
+      </section>
+
+      <!-- Company Configuration Section -->
+      <section class="mt-20">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl font-black tracking-tight text-white sm:text-4xl">
+            Company Configuration
+          </h2>
+          <p class="mt-4 text-lg text-white/70 font-normal tracking-wide text-center">
+            Business operations & admin
+          </p>
+        </div>
+        <SolutionCategory category={solutionCategories[1]} showCard={false} showExplore={true} baseUrl="" />
+      </section>
     </div>
   </main>
   <Footer />

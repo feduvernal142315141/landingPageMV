@@ -16,35 +16,35 @@ interface Props {
   showExplore?: boolean;
   baseUrl?: string;
   showModules?: boolean;
-  isFirst?: boolean;
-  isOverlapped?: boolean;
-  horizontalOffset?: 'left' | 'right' | 'none';
+  showCard?: boolean;
 }
 
-const { category, showExplore = true, baseUrl = "#", showModules = true, isFirst = false, isOverlapped = false, horizontalOffset = 'none' } = Astro.props;
+const { category, showExplore = true, baseUrl = "#", showModules = true, showCard = true } = Astro.props;
 ---
 
 <section id={category.anchor} class="mt-20">
-  <div class={`group relative z-${isFirst ? '10' : '20'} rounded-2xl border border-white/10 bg-navy transition-all duration-300 hover:border-accent/30 hover:bg-navy hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:scale-105 animate-float-card max-w-sm mx-auto ${isFirst ? 'mt-[80px] lg:-translate-x-[60px]' : isOverlapped ? 'mt-16 lg:mt-[-150px] lg:translate-x-[202px]' : ''}`}>
-    <div class="p-5 md:p-6 lg:p-6 text-center">
-      <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-400 mb-4 mx-auto">
-        <Icon name={category.icon} class="h-8 w-8 text-white" />
+  {showCard && (
+    <div class="group relative z-10 rounded-2xl border border-white/10 bg-navy transition-all duration-300 hover:border-accent/30 hover:bg-navy hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:scale-105 animate-float-card max-w-sm mx-auto">
+      <div class="p-5 md:p-6 lg:p-6 text-center">
+        <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-400 mb-4 mx-auto">
+          <Icon name={category.icon} class="h-8 w-8 text-white" />
+        </div>
+        <h3 class="text-xl font-black text-white mb-2">{category.label}</h3>
+        <p class="text-sm text-white mb-4 max-w-xs mx-auto">
+          {category.description}
+        </p>
+        {showExplore && (
+          <a
+            href={`${baseUrl}#${category.anchor}`}
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-widest"
+          >
+            Explore
+            <Icon name="compass" class="h-3 w-3" />
+          </a>
+        )}
       </div>
-      <h3 class="text-xl font-black text-white mb-2">{category.label}</h3>
-      <p class="text-sm text-white mb-4 max-w-xs mx-auto">
-        {category.description}
-      </p>
-      {showExplore && (
-        <a
-          href={`${baseUrl}#${category.anchor}`}
-          class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-widest"
-        >
-          Explore
-          <Icon name="compass" class="h-3 w-3" />
-        </a>
-      )}
     </div>
-  </div>
+  )}
 
   {showModules && (
     <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-center max-w-5xl mx-auto">
