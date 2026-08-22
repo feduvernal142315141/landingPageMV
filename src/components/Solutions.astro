@@ -2,6 +2,7 @@
 import { solutionCategories } from "../data/solutions";
 import Section from "./Section.astro";
 import SolutionCategory from "./SolutionCategory.astro";
+import Icon from "./Icon.astro";
 ---
 
 <Section
@@ -13,20 +14,43 @@ import SolutionCategory from "./SolutionCategory.astro";
   <div slot="decor" aria-hidden="true" class="pointer-events-none absolute inset-0">
     <div class="absolute -top-24 right-1/4 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
     <div class="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+    <!-- Floating icons (small, navy, in empty spaces around content) -->
+    <Icon name="sparkles" class="absolute top-20 left-10 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -3s;" />
+    <Icon name="compass" class="absolute top-32 left-20 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -8s;" />
+    <Icon name="layout-dashboard" class="absolute top-20 right-12 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -1s;" />
+    <Icon name="book-open" class="absolute top-40 right-16 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -12s;" />
+    <!-- Upper middle area near title -->
+    <Icon name="sparkles" class="absolute top-28 left-1/2 -translate-x-1/2 h-5 w-5 text-white/10 animate-float-pulse" style="animation-delay: -4s;" />
+    <Icon name="compass" class="absolute top-44 left-1/2 -translate-x-1/2 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -11s;" />
+    <Icon name="layout-dashboard" class="absolute top-16 left-1/2 -translate-x-1/2 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -7s;" />
+    <Icon name="calendar" class="absolute left-8 top-1/2 h-5 w-5 text-white/10 animate-float-pulse" style="animation-delay: -5s;" />
+    <Icon name="layout-dashboard" class="absolute left-16 top-2/3 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -14s;" />
+    <Icon name="compass" class="absolute right-10 top-1/3 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -6s;" />
+    <Icon name="sparkles" class="absolute right-14 top-3/4 h-5 w-5 text-white/10 animate-float-pulse" style="animation-delay: -9s;" />
+    <Icon name="book-open" class="absolute bottom-20 left-1/3 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -10s;" />
+    <Icon name="calendar" class="absolute bottom-16 right-1/4 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -2s;" />
+    <!-- Additional 3 icons below subtitle (left side area) -->
+    <Icon name="sparkles" class="absolute top-52 left-1/4 h-5 w-5 text-white/10 animate-float-pulse" style="animation-delay: -2s;" />
+    <Icon name="layout-dashboard" class="absolute top-56 left-3/8 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -1s;" />
+    <Icon name="compass" class="absolute top-60 left-1/3 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -8s;" />
   </div>
 
-  <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+<div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+    <!-- Eyebrow centered at top -->
+    <div class="text-center mb-12 lg:mb-16">
+      <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-white">
+        Solutions
+      </span>
+    </div>
+
     <div class="lg:flex lg:items-start lg:justify-between">
       <!-- Left side: Title and subtitle -->
-      <div class="lg:w-1/2 lg:pr-12 lg:text-left text-center lg:text-left">
-        <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-white mb-3 block lg:inline-block">
-          Solutions
-        </span>
+      <div class="lg:w-1/2 lg:pr-12 lg:text-left">
         <h2 class="mt-3 text-3xl font-black tracking-tight sm:text-4xl text-white">
           All Your Workflows<br class="lg:hidden" /> Thoughtfully Connected
         </h2>
-        <p class="mt-4 text-lg text-blue-400 font-normal tracking-wide">
-          A full suite of integrated modules, designed to work together, out of the box.
+        <p class="mt-4 text-lg text-white/80 font-normal tracking-wide">
+          A full suite of integrated modules, designed to work together, out of the box. From scheduling and clinical notes to billing and compliance — everything connected.
         </p>
       </div>
 
