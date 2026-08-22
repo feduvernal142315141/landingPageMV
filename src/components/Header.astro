@@ -78,13 +78,23 @@ import Icon from "./Icon.astro";
       inverted
     />
     <ul class="mt-8 space-y-1">
+      <li>
+        <a
+          href="/"
+          class="menu-link block rounded-lg px-3 py-2 text-sm font-bold tracking-[-0.01em] text-white/90 -translate-x-4 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/5 hover:text-tertiary"
+          data-home-link
+          style="transition-delay: 100ms"
+        >
+          Home
+        </a>
+      </li>
       {
         site.nav.map((item, i) => (
           <li>
             <a
               href={item.href}
               class="menu-link block rounded-lg px-3 py-2 text-sm font-bold tracking-[-0.01em] text-white/90 -translate-x-4 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/5 hover:text-tertiary"
-              style={`transition-delay: ${100 + i * 70}ms`}
+              style={`transition-delay: ${100 + (i + 1) * 70}ms`}
             >
               {item.label}
             </a>
