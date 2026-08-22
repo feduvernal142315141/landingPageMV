@@ -15,9 +15,10 @@ interface Props {
   category: SolutionCategory;
   showExplore?: boolean;
   baseUrl?: string;
+  showModules?: boolean;
 }
 
-const { category, showExplore = true, baseUrl = "#" } = Astro.props;
+const { category, showExplore = true, baseUrl = "#", showModules = true } = Astro.props;
 ---
 
 <section id={category.anchor} class="mt-20">
@@ -40,12 +41,14 @@ const { category, showExplore = true, baseUrl = "#" } = Astro.props;
     )}
   </div>
 
-  <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-center max-w-5xl mx-auto">
-    {category.modules.map((module) => (
-      <article class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition hover:border-accent/50 hover:bg-white/[0.08]">
-        <IconBadge name={module.icon} class="mb-4" />
-        <h4 class="font-bold text-white">{module.label}</h4>
-      </article>
-    ))}
-  </div>
+  {showModules && (
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-center max-w-5xl mx-auto">
+      {category.modules.map((module) => (
+        <article class="group rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition hover:border-accent/50 hover:bg-white/[0.08]">
+          <IconBadge name={module.icon} class="mb-4" />
+          <h4 class="font-bold text-white">{module.label}</h4>
+        </article>
+      ))}
+    </div>
+  )}
 </section>
