@@ -17,14 +17,17 @@ interface Props {
   baseUrl?: string;
   showModules?: boolean;
   showCard?: boolean;
+  isFirst?: boolean;
+  isOverlapped?: boolean;
+  horizontalOffset?: 'left' | 'right' | 'none';
 }
 
-const { category, showExplore = true, baseUrl = "#", showModules = true, showCard = true } = Astro.props;
+const { category, showExplore = true, baseUrl = "#", showModules = true, showCard = true, isFirst = false, isOverlapped = false, horizontalOffset = 'none' } = Astro.props;
 ---
 
 <section id={category.anchor} class="mt-20">
   {showCard && (
-    <div class="group relative z-10 rounded-2xl border border-white/10 bg-navy transition-all duration-300 hover:border-accent/30 hover:bg-navy hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:scale-105 animate-float-card max-w-sm mx-auto">
+    <div class={`group relative z-${isFirst ? '10' : '20'} rounded-2xl border border-white/10 bg-navy transition-all duration-300 hover:border-accent/30 hover:bg-navy hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:scale-105 animate-float-card max-w-sm mx-auto ${isFirst ? 'mt-[80px] lg:-translate-x-[60px]' : isOverlapped ? 'mt-16 lg:mt-[-150px] lg:translate-x-[202px]' : ''}`}>
       <div class="p-5 md:p-6 lg:p-6 text-center">
         <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-400 mb-4 mx-auto">
           <Icon name={category.icon} class="h-8 w-8 text-white" />
