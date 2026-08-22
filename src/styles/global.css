@@ -63,3 +63,33 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
+.scroll-reveal {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.scroll-reveal.slide-left {
+  transform: translateX(-60px);
+}
+
+.scroll-reveal.slide-right {
+  transform: translateX(60px);
+}
+
+.scroll-reveal.slide-up {
+  transform: translateY(40px);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
