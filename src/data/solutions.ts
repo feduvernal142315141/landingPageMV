@@ -84,11 +84,7 @@ export const solutions: Solution[] = [
 export const whys = [
   {
     icon: "cloud",
-    title: "Enterprise-grade security in the cloud",
-  },
-  {
-    icon: "smartphone",
-    title: "Seamless on web, Android & iOS",
+    title: "Cloud Storage, Access Anywhere - Anytime",
   },
   {
     icon: "layers",
@@ -105,6 +101,10 @@ export const whys = [
   {
     icon: "trending-up",
     title: "Designed to scale with your practice",
+  },
+  {
+    icon: "lock",
+    title: "Enterprise-grade security",
   },
 ] as const;
 
