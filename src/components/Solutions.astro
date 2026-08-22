@@ -33,7 +33,7 @@ import Icon from "./Icon.astro";
 
 <div class="mx-auto max-w-7xl px-6 py-12 lg:py-16 -mt-20">
     <!-- Eyebrow centered at top - matching Features section gap -->
-    <div class="text-center">
+    <div class="scroll-reveal slide-up text-center">
       <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-white mb-3 block">
         Solutions
       </span>
@@ -41,7 +41,7 @@ import Icon from "./Icon.astro";
 
     <div class="lg:flex lg:items-start lg:justify-between">
       <!-- Left side: Title and subtitle -->
-      <div class="lg:w-1/2 lg:pr-12 lg:text-left">
+      <div class="scroll-reveal slide-left lg:w-1/2 lg:pr-12 lg:text-left">
         <h2 class="mt-15 text-3xl font-black tracking-tight sm:text-4xl text-white">
           All Your Workflows<br class="lg:hidden" /> Thoughtfully Connected
         </h2>
@@ -51,7 +51,7 @@ import Icon from "./Icon.astro";
       </div>
 
       <!-- Right side: Cards stacked with overlap -->
-      <div class="mt-4 lg:mt-0 lg:w-1/2 lg:pl-8">
+      <div class="scroll-reveal slide-right mt-4 lg:mt-0 lg:w-1/2 lg:pl-8">
         <div class="relative">
           {solutionCategories.map((category, index) => (
             <SolutionCategory
