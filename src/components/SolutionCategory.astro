@@ -14,9 +14,10 @@ interface SolutionCategory {
 interface Props {
   category: SolutionCategory;
   showExplore?: boolean;
+  baseUrl?: string;
 }
 
-const { category, showExplore = true } = Astro.props;
+const { category, showExplore = true, baseUrl = "#" } = Astro.props;
 ---
 
 <section id={category.anchor} class="mt-20">
@@ -30,7 +31,7 @@ const { category, showExplore = true } = Astro.props;
     </p>
     {showExplore && (
       <a
-        href={`#${category.anchor}`}
+        href={`${baseUrl}#${category.anchor}`}
         class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300 font-bold text-sm uppercase tracking-widest"
       >
         Explore
