@@ -1,12 +1,10 @@
 ---
-import { site } from "../data/site";
-import Button from "./Button.astro";
 ---
 
 <section
   id="contact"
   aria-label="Call to action"
-  class="relative overflow-hidden bg-gradient-to-b from-navy to-dark-accent"
+  class="relative overflow-hidden bg-navy"
 >
   <div
     aria-hidden="true"
@@ -19,13 +17,11 @@ import Button from "./Button.astro";
 
   <div class="relative mx-auto max-w-3xl px-6 py-20 text-center lg:py-28">
     <h2 class="text-3xl font-black tracking-tight text-white sm:text-4xl">
-      Let's start working together to transform your ABA practice
+      Getting Ready Is Easy
     </h2>
-    <p class="mt-4 text-lg text-white/70">
-      Talk to our team and discover what MenteVior can do for your practice.
+    <p class="mt-4 text-lg text-white/80">
+      Book a Personalized Walkthrough and Transform Your ABA Practice with MenteVior
     </p>
-    <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-      <Button href={`mailto:${site.contact.email}`} variant="white">Contact us</Button>
-    </div>
+    <div class="mt-8 h-12"></div>
   </div>
 </section>
