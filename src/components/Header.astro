@@ -38,6 +38,7 @@ import Icon from "./Icon.astro";
       href="/"
       class="hidden lg:flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-navy transition-colors hover:bg-surface lg:justify-self-end lg:mr-[4.5rem]"
       aria-label="Go to homepage"
+      data-home-link
     >
       <Icon name="home" class="h-7 w-7" />
     </a>
@@ -239,5 +240,15 @@ import Icon from "./Icon.astro";
     window.addEventListener("scroll", () => {
       siteHeader.classList.toggle("scrolled", window.scrollY > 50);
     }, { passive: true });
+  }
+
+  const homeLink = document.querySelector<HTMLAnchorElement>("[data-home-link]");
+  if (homeLink) {
+    homeLink.addEventListener("click", (e) => {
+      if (window.location.pathname === "/") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
   }
 </script>
