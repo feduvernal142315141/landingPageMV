@@ -14,7 +14,7 @@ import SocialLinks from "./SocialLinks.astro";
   ></div>
 
   <div class="relative mx-auto max-w-7xl px-6 py-16">
-    <div class="grid grid-cols-2 gap-10 lg:grid-cols-12 lg:gap-12">
+    <div class="grid grid-cols-1 gap-y-12 lg:grid-cols-12 lg:gap-12 lg:gap-y-0">
       <div class="col-span-2 lg:col-span-5">
         <BrandLockup inverted href="/" />
         <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
@@ -28,9 +28,9 @@ import SocialLinks from "./SocialLinks.astro";
         </div>
       </div>
 
-      <div class="lg:col-span-2">
+      <div class="lg:col-span-2 text-center lg:text-left">
         <FooterHeading>Product</FooterHeading>
-        <ul class="mt-5 space-y-3">
+        <ul class="mt-5 space-y-3 text-left">
           <li>
             <a href="/" class="text-sm text-white/60 transition hover:text-white">Home</a>
           </li>
@@ -43,9 +43,9 @@ import SocialLinks from "./SocialLinks.astro";
         </ul>
       </div>
 
-      <div class="lg:col-span-2">
+      <div class="lg:col-span-2 text-center lg:text-left">
         <FooterHeading>Legal</FooterHeading>
-        <ul class="mt-5 space-y-3">
+        <ul class="mt-5 space-y-3 text-left">
           <li>
             <a href="#" class="text-sm text-white/60 transition hover:text-white">Privacy</a>
           </li>
@@ -55,9 +55,9 @@ import SocialLinks from "./SocialLinks.astro";
         </ul>
       </div>
 
-      <div class="lg:col-span-3">
+      <div class="lg:col-span-3 text-center lg:text-left">
         <FooterHeading>Contact</FooterHeading>
-        <ul class="mt-5 space-y-3 text-sm text-white/60">
+        <ul class="mt-5 space-y-3 text-left">
           <li>
             <a
               href={`mailto:${site.contact.email}`}
