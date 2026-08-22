@@ -32,7 +32,7 @@ import SocialLinks from "./SocialLinks.astro";
         <FooterHeading>Product</FooterHeading>
         <ul class="mt-5 space-y-3 text-left">
           <li>
-            <a href="/" class="text-sm text-white/60 transition hover:text-white">Home</a>
+            <a href="/" class="text-sm text-white/60 transition hover:text-white" data-home-link>Home</a>
           </li>
           <li>
             <a href="#features" class="text-sm text-white/60 transition hover:text-white">Features</a>
@@ -81,3 +81,15 @@ import SocialLinks from "./SocialLinks.astro";
     </div>
   </div>
 </footer>
+
+<script>
+  const homeLinks = document.querySelectorAll<HTMLAnchorElement>("[data-home-link]");
+  homeLinks.forEach((homeLink) => {
+    homeLink.addEventListener("click", (e) => {
+      if (window.location.pathname === "/") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+  });
+</script>
