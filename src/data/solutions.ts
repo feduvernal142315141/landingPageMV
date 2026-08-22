@@ -121,7 +121,7 @@ export const solutionCategories = [
   {
     id: "clinical-options",
     label: "Clinical Options",
-    icon: "stethoscope",
+    icon: "clipboard-list",
     description: "Clinical workflows for ABA therapy: client records, assessments, session notes, data collection, supervision & progress tracking.",
     anchor: "clinical-options",
     modules: [
