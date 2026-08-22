@@ -16,29 +16,35 @@ interface Props {
   showExplore?: boolean;
   baseUrl?: string;
   showModules?: boolean;
+  isFirst?: boolean;
+  isOverlapped?: boolean;
+  isMobile?: boolean;
+  horizontalOffset?: 'left' | 'right' | 'none';
 }
 
-const { category, showExplore = true, baseUrl = "#", showModules = true } = Astro.props;
+const { category, showExplore = true, baseUrl = "#", showModules = true, isFirst = false, isOverlapped = false, isMobile = false, horizontalOffset = 'none' } = Astro.props;
 ---
 
 <section id={category.anchor} class="mt-20">
-  <div class="group rounded-2xl border border-white/10 bg-navy/60 p-8 md:p-12 text-center transition-all duration-300 hover:border-accent/30 hover:bg-navy/50 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)]">
-    <div class="inline-flex h-24 w-24 items-center justify-center rounded-2xl bg-blue-400 mb-6 mx-auto">
-      <Icon name={category.icon} class="h-12 w-12 text-white" />
+  <div class={`group relative z-${isFirst ? '10' : '20'} rounded-2xl border border-white/10 bg-navy/60 transition-all duration-300 hover:border-accent/30 hover:bg-navy/50 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] ${isOverlapped ? 'mt-[-60px]' : ''} ${isMobile ? 'max-w-sm mx-auto' : 'max-w-sm'} ${horizontalOffset === 'left' ? 'lg:-translate-x-10' : horizontalOffset === 'right' ? 'lg:translate-x-10' : ''}`}>
+    <div class="p-5 md:p-6 lg:p-6 text-center">
+      <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-400 mb-4 mx-auto">
+        <Icon name={category.icon} class="h-8 w-8 text-white" />
+      </div>
+      <h3 class="text-xl font-black text-white mb-2">{category.label}</h3>
+      <p class="text-sm text-white/80 mb-4 max-w-xs mx-auto">
+        {category.description}
+      </p>
+      {showExplore && (
+        <a
+          href={`${baseUrl}#${category.anchor}`}
+          class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-widest"
+        >
+          Explore
+          <Icon name="compass" class="h-3 w-3" />
+        </a>
+      )}
     </div>
-    <h3 class="text-2xl font-black text-white mb-3">{category.label}</h3>
-    <p class="text-lg text-white/80 mb-6 max-w-xl mx-auto">
-      {category.description}
-    </p>
-    {showExplore && (
-      <a
-        href={`${baseUrl}#${category.anchor}`}
-        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300 font-bold text-sm uppercase tracking-widest"
-      >
-        Explore
-        <Icon name="compass" class="h-4 w-4" />
-      </a>
-    )}
   </div>
 
   {showModules && (
