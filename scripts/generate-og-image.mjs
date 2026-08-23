@@ -25,9 +25,9 @@ async function generateOgImage() {
     <svg width="${OG_WIDTH}" height="${OG_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="${NAVY_SOFT}" stop-opacity="0.9" />
-          <stop offset="50%" stop-color="${NAVY_SOFT}" stop-opacity="0.8" />
-          <stop offset="100%" stop-color="${NAVY_SOFT}" stop-opacity="1.0" />
+          <stop offset="0%" stop-color="${NAVY_SOFT}" stop-opacity="0.85" />
+          <stop offset="50%" stop-color="${NAVY_SOFT}" stop-opacity="0.5" />
+          <stop offset="100%" stop-color="${NAVY_SOFT}" stop-opacity="0.95" />
         </linearGradient>
       </defs>
       <rect width="100%" height="100%" fill="url(#grad)" />
