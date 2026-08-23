@@ -10,8 +10,7 @@ const { name, class: className = "" } = Astro.props;
 ---
 
 <span
-  class={`inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white ${className}`}
+  class={`inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[hsl(var(--color-primary))] shadow-[0_4px_14px_-4px_hsl(var(--color-primary))] transition-all duration-300 hover:shadow-[0_8px_24px_-4px_hsl(var(--color-primary))] hover:-translate-y-0.5 ${className}`}
 >
-  <Icon name={name} />
+  <Icon name={name} class="h-6 w-6 text-[hsl(var(--color-primary-foreground))]" />
 </span>
-
