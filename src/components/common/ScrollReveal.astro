@@ -1,0 +1,76 @@
+---
+interface Props {
+  class?: string;
+  direction?: 'up' | 'left' | 'right';
+  threshold?: number;
+  once?: boolean;
+  children: import('astro').AstroHTMLSlots['default'];
+}
+
+const { class: className = '', direction = 'up', threshold = 0.15, once = true } = Astro.props;
+
+const directionClass = {
+  up: 'slide-up',
+  left: 'slide-left',
+  right: 'slide-right',
+}[direction];
+---
+
+<div class={`scroll-reveal ${directionClass} ${className}`} data-scroll-reveal data-threshold={threshold} data-once={once}>
+  <slot />
+</div>
+
+<script>
+  if (typeof window !== 'undefined') {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            if (once) {
+              observer.unobserve(entry.target);
+            }
+          }
+        });
+      },
+      { threshold }
+    );
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-scroll-reveal]').forEach((el) => {
+        const t = parseFloat(el.getAttribute('data-threshold') || '0.15');
+        const o = parseFloat(el.getAttribute('data-once') || '1');
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                if (o) obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: t }
+        );
+        obs.observe(el);
+      });
+    });
+  }
+</script>
+
+<style>
+  .scroll-reveal {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .scroll-reveal.slide-up { transform: translateY(40px); }
+  .scroll-reveal.slide-left { transform: translateX(-60px); }
+  .scroll-reveal.slide-right { transform: translateX(60px); }
+  .scroll-reveal.revealed { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
