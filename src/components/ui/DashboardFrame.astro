@@ -27,6 +27,9 @@ import { Image } from "astro:assets";
     
     <!-- Screen glare overlay -->
     <div class="dashboard-glare" aria-hidden="true"></div>
+    
+    <!-- Projected shadow on background -->
+    <div class="dashboard-shadow" aria-hidden="true"></div>
   </div>
 </div>
 
@@ -41,26 +44,26 @@ import { Image } from "astro:assets";
   .dashboard-frame-inner {
     /* Layout & 3D */
     transform-style: preserve-3d;
-    transform: perspective(1000px) rotateY(-3.75deg) translateZ(-20px);
+    transform: perspective(1000px) rotateY(-3.75deg) translateZ(-20px) translateY(-20px);
     transform-origin: center center;
     transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
     position: relative;
 
-    /* Subtle border & light shadow (Clinicia-style) */
-    border: 1px solid hsl(var(--color-border));
-    border-radius: 16px 16px 4px 4px;
+    /* Strong border & enhanced shadow (Clinicia-style) */
+    border: 2px solid hsl(var(--color-foreground) / 0.25);
+    border-radius: 16px;
     background: hsl(var(--color-bg-primary));
     box-shadow: 
-      0 4px 12px -2px rgba(15, 23, 42, 0.08),
-      0 2px 6px -2px rgba(15, 23, 42, 0.04),
-      0 0 0 1px rgba(226, 232, 240, 0.3);
+      0 16px 48px -8px rgba(15, 23, 42, 0.3),
+      0 8px 24px -8px rgba(15, 23, 42, 0.2),
+      0 0 0 2px rgba(226, 232, 240, 0.5);
     overflow: hidden;
     position: relative;
   }
 
   .dashboard-frame-3d:hover .dashboard-frame-inner {
-    transform: perspective(1000px) rotateY(0deg) translateZ(0);
+    transform: perspective(1000px) rotateY(0deg) translateZ(0) translateY(-20px);
   }
 
   .dashboard-header {
@@ -115,8 +118,8 @@ import { Image } from "astro:assets";
 
   .dashboard-display {
     overflow: hidden;
-    background: hsl(var(--color-bg-primary));
-    border-radius: 12px 12px 0 0;  /* Rounded corners on image */
+    background: hsl(var(--color-bg-primary));  /* OPAQUE - not transparent */
+    border-radius: 12px;  /* Rounded corners on all sides */
   }
 
   .dashboard-image {
@@ -124,7 +127,7 @@ import { Image } from "astro:assets";
     height: auto;
     display: block;
     object-fit: contain;  /* Show full image */
-    border-radius: 12px 12px 0 0;  /* Rounded corners on image */
+    border-radius: 12px;  /* Rounded corners on all sides */
   }
 
   /* Screen glare overlay */
@@ -145,29 +148,49 @@ import { Image } from "astro:assets";
     opacity: 0.4;
   }
 
+  /* Projected shadow on background - enhanced visibility */
+  .dashboard-shadow {
+    position: absolute;
+    bottom: -60px;
+    left: 10px;
+    right: 10px;
+    height: 120px;
+    background: radial-gradient(
+      ellipse at center bottom,
+      rgba(15, 23, 42, 0.45) 0%,
+      rgba(15, 23, 42, 0.25) 40%,
+      transparent 70%
+    );
+    filter: blur(12px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    transform: translateZ(-10px);
+  }
+
   /* 3D Tilt Animation */
   .dashboard-frame-inner {
     transform-style: preserve-3d;
-    transform: perspective(1000px) rotateY(-3.75deg) translateZ(-20px);
+    transform: perspective(1000px) rotateY(-3.75deg) translateZ(-20px) translateY(-20px);
     transform-origin: center center;
     transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
     position: relative;
 
-    /* Subtle border & light shadow (Clinicia-style) */
-    border: 1px solid hsl(var(--color-border));
-    border-radius: 16px 16px 4px 4px;
-    background: hsl(var(--color-bg-primary));
+    /* Strong border & enhanced shadow */
+    border: 2px solid hsl(var(--color-foreground) / 0.25);
+    border-radius: 16px;
+    background: hsl(var(--color-bg-primary));  /* OPAQUE - not transparent */
     box-shadow: 
-      0 4px 12px -2px rgba(15, 23, 42, 0.08),
-      0 2px 6px -2px rgba(15, 23, 42, 0.04),
-      0 0 0 1px rgba(226, 232, 240, 0.3);
+      0 20px 64px -12px rgba(15, 23, 42, 0.35),
+      0 8px 32px -8px rgba(15, 23, 42, 0.25),
+      0 0 0 2px rgba(226, 232, 240, 0.5);
     overflow: hidden;
     position: relative;
   }
 
   .dashboard-frame-3d:hover .dashboard-frame-inner {
-    transform: perspective(1000px) rotateY(0deg) translateZ(0);
+    transform: perspective(1000px) rotateY(0deg) translateZ(0) translateY(-20px);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -180,6 +203,70 @@ import { Image } from "astro:assets";
     }
   }
 
+  .dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 12px;
+    padding: 21px 16px 14px 16px;  /* Half thickness */
+    background: hsl(var(--color-bg-primary));
+    border-radius: 14px 14px 0 0;
+    border-bottom: 1px solid hsl(var(--color-border));
+  }
+
+  .dashboard-dots {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
+    margin-left: 0;
+  }
+
+  .dashboard-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-blue {
+    background: hsl(var(--color-primary));  /* Primary blue */
+    box-shadow: 0 0 0 2px hsl(var(--color-primary) / 0.2);
+  }
+
+  .dot-navy {
+    background: hsl(var(--color-foreground));  /* Navy */
+    box-shadow: 0 0 0 2px hsl(var(--color-foreground) / 0.2);
+  }
+
+  .dot-purple {
+    background: hsl(270 80% 55%);  /* Purple */
+    box-shadow: 0 0 0 2px hsl(270 80% 55% / 0.2);
+  }
+
+  .dashboard-title {
+    font: 700 1rem/1 "Satoshi", sans-serif;
+    color: hsl(var(--color-muted-foreground));  /* Gray for contrast */
+    white-space: nowrap;
+  }
+
+  .dashboard-display {
+    overflow: hidden;
+    background: hsl(var(--color-bg-primary));  /* OPAQUE - not transparent */
+    border-radius: 12px;  /* Rounded corners on all sides */
+  }
+
+  .dashboard-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;  /* Show full image */
+    border-radius: 12px;  /* Rounded corners on all sides */
+  }
+
   /* Screen glare overlay */
   .dashboard-glare {
     position: absolute;
@@ -196,6 +283,27 @@ import { Image } from "astro:assets";
     );
     border-radius: 14px 14px 0 0;
     opacity: 0.4;
+  }
+
+  /* Projected shadow on background - maximum visibility */
+  .dashboard-shadow {
+    position: absolute;
+    bottom: -80px;
+    left: 5px;
+    right: 5px;
+    height: 140px;
+    background: radial-gradient(
+      ellipse at center bottom,
+      rgba(15, 23, 42, 0.5) 0%,
+      rgba(15, 23, 42, 0.3) 35%,
+      rgba(15, 23, 42, 0.1) 65%,
+      transparent 80%
+    );
+    filter: blur(10px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    transform: translateZ(-10px);
   }
 
   /* Responsive */
