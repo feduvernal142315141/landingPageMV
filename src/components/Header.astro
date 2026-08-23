@@ -5,7 +5,7 @@ import MobileMenu from "./layout/MobileMenu.astro";
 import Icon from "./ui/Icon.astro";
 ---
 
-<header id="site-header" class="sticky top-0 z-50 w-full border-b border-[hsl(var(--color-border))] bg-white/95 backdrop-blur-xl shadow-sm transition-[box-shadow] duration-300 ease-in-out">
+<header id="site-header" class="sticky top-0 z-50 w-full border-b border-[hsl(var(--color-border))] bg-white/95 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(15,23,42,0.25)] transition-[box-shadow] duration-300 ease-in-out">
   <nav
     class="flex items-center justify-between gap-4 px-6 py-[22px] transition-[padding] duration-300 ease-in-out lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center"
     aria-label="Main navigation"
@@ -121,7 +121,7 @@ import Icon from "./ui/Icon.astro";
   }
 
   #site-header.scrolled {
-    box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.1);
+    box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.35), 0 8px 32px -8px rgba(15, 23, 42, 0.25), 0 0 0 2px rgba(226, 232, 240, 0.5);
   }
 </style>
 
