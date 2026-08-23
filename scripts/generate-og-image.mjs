@@ -27,7 +27,7 @@ async function generateOgImage() {
         <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stop-color="${NAVY_SOFT}" stop-opacity="0.85" />
           <stop offset="50%" stop-color="${NAVY_SOFT}" stop-opacity="0.5" />
-          <stop offset="100%" stop-color="${NAVY_SOFT}" stop-opacity="0.85" />
+          <stop offset="100%" stop-color="${NAVY_SOFT}" stop-opacity="0.425" />
         </linearGradient>
       </defs>
       <rect width="100%" height="100%" fill="url(#grad)" />
