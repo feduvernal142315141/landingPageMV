@@ -44,11 +44,11 @@ const { showDemoButton = false } = Astro.props;
     {showDemoButton ? (
       <a
         href={site.demoUrl}
-        class="hidden lg:inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-r from-primary via-accent to-tertiary px-6 py-3 text-sm font-bold text-white shadow-[0_8px_24px_rgba(3,126,204,0.4)] transition hover:shadow-[0_10px_28px_rgba(3,126,204,0.5)] lg:justify-self-end lg:mr-[4.5rem]"
+        class="hidden lg:inline-flex items-center gap-2 rounded-full border-3 border-[hsl(var(--color-foreground))] bg-white px-5 py-2.5 text-xs font-black text-[hsl(var(--color-foreground))] transition-all duration-300 hover:bg-[hsl(var(--color-foreground))] hover:text-white hover:border-[hsl(var(--color-foreground))] lg:justify-self-end lg:mr-[4.5rem]"
         data-demo-link
       >
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-        Request a Demo
+        <Icon name="calendar" class="h-6 w-6" />
+        Book a Demo
       </a>
     ) : (
       <a
