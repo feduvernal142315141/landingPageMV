@@ -1,8 +1,8 @@
 ---
-import { whys } from "../data/solutions";
-import IconBadge from "./IconBadge.astro";
+import { whys } from "../../data/solutions";
+import IconBadge from "../IconBadge.astro";
 import Section from "./Section.astro";
-import Icon from "./Icon.astro";
+import Icon from "../ui/Icon.astro";
 ---
 
 <Section
@@ -32,27 +32,6 @@ import Icon from "./Icon.astro";
     <Icon name="calendar" class="absolute bottom-16 right-1/4 h-5 w-5 text-navy/25 animate-float-rotate" style="animation-delay: -2s;" />
   </div>
 
-  <!-- Floating icons keyframes -->
-  <style is:global>
-    @keyframes float-rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes float-drift {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      25% { transform: translate(12px, -8px) rotate(2deg); }
-      50% { transform: translate(-8px, 12px) rotate(-1deg); }
-      75% { transform: translate(8px, -4px) rotate(1deg); }
-    }
-    @keyframes float-pulse {
-      0%, 100% { opacity: 0.015; transform: scale(1); }
-      50% { opacity: 0.04; transform: scale(1.02); }
-    }
-    .animate-float-rotate { animation: float-rotate 22s linear infinite; will-change: transform; }
-    .animate-float-drift { animation: float-drift 18s ease-in-out infinite; will-change: transform; }
-    .animate-float-pulse { animation: float-pulse 10s ease-in-out infinite; will-change: transform, opacity; }
-  </style>
-
 <div class="scroll-reveal slide-up flex flex-col items-center">
     <h2 class="text-3xl font-black tracking-tight text-white sm:text-4xl">
       Why Choose MenteVior?
@@ -75,3 +54,12 @@ import Icon from "./Icon.astro";
     }
   </div>
 </Section>
+
+
+
+
+
+
+
+
+

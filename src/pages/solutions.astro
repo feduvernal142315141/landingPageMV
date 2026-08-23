@@ -2,14 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import { solutionCategories } from "../data/solutions";
 import SolutionCategory from "../components/SolutionCategory.astro";
-import Cta from "../components/Cta.astro";
+import Cta from "../components/sections/Cta.astro";
 import Footer from "../components/Footer.astro";
-import Icon from "../components/Icon.astro";
+import Icon from "../components/ui/Icon.astro";
 ---
 
 <Layout
   title="Clinical Options & Company Configuration | MenteVior"
-  description="Explore MenteVior's Clinical Options and Company Configuration modules — a complete suite of integrated modules designed to work together, out of the box."
+  description="Two unified suites: Clinical Options (client records, assessments, session notes, data collection, supervision) + Company Configuration (billing, HR, scheduling, credentials, compliance). One platform, zero data silos."
 >
   <main class="relative pt-16 min-h-full bg-gradient-to-b from-navy to-dark-accent">
     <div aria-hidden="true" class="pointer-events-none absolute inset-0">
@@ -45,7 +45,7 @@ import Icon from "../components/Icon.astro";
           <h2 class="text-3xl font-black tracking-tight text-white sm:text-4xl">
             Clinical Options
           </h2>
-          <p class="mt-4 text-lg text-white/70 font-normal tracking-wide text-center">
+          <p class="mt-4 text-lg text-white/90 font-normal tracking-wide text-center">
             Clinical workflows for ABA therapy
           </p>
         </div>
@@ -58,7 +58,7 @@ import Icon from "../components/Icon.astro";
           <h2 class="text-3xl font-black tracking-tight text-white sm:text-4xl">
             Company Configuration
           </h2>
-          <p class="mt-4 text-lg text-white/70 font-normal tracking-wide text-center">
+          <p class="mt-4 text-lg text-white/90 font-normal tracking-wide text-center">
             Business operations & admin
           </p>
         </div>

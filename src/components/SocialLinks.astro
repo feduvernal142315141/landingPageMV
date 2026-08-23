@@ -1,6 +1,6 @@
 ---
 import { site } from "../data/site";
-import Icon from "./Icon.astro";
+import Icon from "./ui/Icon.astro";
 
 interface Props {
   class?: string;
@@ -9,7 +9,7 @@ interface Props {
 
 const {
   class: className = "flex items-center gap-3",
-  itemClass = "rounded-xl border border-white/10 bg-white/5 p-2.5 text-white/70 transition hover:-translate-y-0.5 hover:border-tertiary/50 hover:text-tertiary",
+  itemClass = "rounded-xl border border-white/10 bg-white/5 p-2.5 text-white/90 transition hover:-translate-y-0.5 hover:border-tertiary/50 hover:text-tertiary",
 } = Astro.props;
 ---
 
@@ -22,3 +22,4 @@ const {
     ))
   }
 </div>
+
