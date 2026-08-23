@@ -7,11 +7,13 @@ import Header from "../components/Header.astro";
 interface Props {
   title?: string;
   description?: string;
+  showDemoButton?: boolean;
 }
 
 const {
   title = "ABA Practice Management Software for Clinicians | MenteVior",
   description = "MenteVior is the HIPAA-compliant ABA practice management platform that unifies scheduling, session notes, data collection, billing & supervision — so clinicians save 10+ hrs/week and stay audit-ready.",
+  showDemoButton = false
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, site.url).href;
@@ -77,7 +79,7 @@ const ogImageWebp = "https://landingpagemv.vercel.app/og-image.webp";
     <!-- Analytics: replace with GA4/Plausible/other tracking script -->
   </head>
   <body class="bg-navy-soft text-navy antialiased">
-    <Header />
+    <Header showDemoButton={showDemoButton} />
     <slot />
   </body>
 </html>

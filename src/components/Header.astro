@@ -3,6 +3,13 @@ import { site } from "../data/site";
 import BrandLockup from "./BrandLockup.astro";
 import MobileMenu from "./layout/MobileMenu.astro";
 import Icon from "./ui/Icon.astro";
+import Button from "../ui/Button.astro";
+
+interface Props {
+  showDemoButton?: boolean;
+}
+
+const { showDemoButton = false } = Astro.props;
 ---
 
 <header id="site-header" class="sticky top-0 z-50 w-full border-b border-[hsl(var(--color-border))] bg-white/95 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(15,23,42,0.25)] transition-[box-shadow] duration-300 ease-in-out">
@@ -34,14 +41,25 @@ import Icon from "./ui/Icon.astro";
       }
     </ul>
 
-    <a
-      href="/"
-      class="hidden lg:flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-[hsl(var(--color-foreground))] transition-colors hover:bg-[hsl(var(--color-muted))] lg:justify-self-end lg:mr-[4.5rem]"
-      aria-label="Go to homepage"
-      data-home-link
-    >
-      <Icon name="home" class="h-7 w-7" />
-    </a>
+    {showDemoButton ? (
+      <a
+        href={site.demoUrl}
+        class="hidden lg:inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-r from-primary via-accent to-tertiary px-6 py-3 text-sm font-bold text-white shadow-[0_8px_24px_rgba(3,126,204,0.4)] transition hover:shadow-[0_10px_28px_rgba(3,126,204,0.5)] lg:justify-self-end lg:mr-[4.5rem]"
+        data-demo-link
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+        Request a Demo
+      </a>
+    ) : (
+      <a
+        href="/"
+        class="hidden lg:flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-[hsl(var(--color-foreground))] transition-colors hover:bg-[hsl(var(--color-muted))] lg:justify-self-end lg:mr-[4.5rem]"
+        aria-label="Go to homepage"
+        data-home-link
+      >
+        <Icon name="home" class="h-7 w-7" />
+      </a>
+    )}
 
     <button
       id="mobile-menu-button"
