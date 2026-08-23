@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import Section from "./Section.astro";
 import logo from "../../assets/MenteVior-logo.png";
 import dashboardDesktop from "../../assets/mentevior-dashboard.png";
-import dashboardMobile from "../../assets/mentevior-dashboard-mobile.png";
 import Icon from "../ui/Icon.astro";
 ---
 
@@ -65,22 +64,6 @@ import Icon from "../ui/Icon.astro";
               height={500}
               format="webp"
               class="h-full w-full object-contain object-top"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="iphone-frame absolute -bottom-6 right-0 z-20 lg:-bottom-10 lg:-right-4">
-        <div class="iphone-screen">
-          <div class="iphone-island"></div>
-          <div class="iphone-display">
-            <Image
-              src={dashboardMobile}
-              alt="MenteVior mobile dashboard"
-              width={300}
-              height={600}
-              format="webp"
-              class="h-full w-full object-cover object-top"
             />
           </div>
         </div>
@@ -157,38 +140,6 @@ import Icon from "../ui/Icon.astro";
     left: -10px;
   }
 
-  .iphone-frame {
-    width: 140px;
-    animation: float 4s ease-in-out infinite 1s;
-    border: 2px solid hsl(var(--color-foreground));
-    border-radius: 28px;
-    background: white;
-    box-shadow: 0 28px 72px -16px rgba(15,23,42,0.08), 0 10px 32px -10px rgba(15,23,42,0.06), 0 0 0 1px rgba(226,232,240,0.45);
-    overflow: hidden;
-  }
-
-  .iphone-screen {
-    border-radius: 24px;
-    padding: 8px;
-    position: relative;
-    background: hsl(var(--color-bg-primary));
-  }
-
-  .iphone-island {
-    width: 40px;
-    height: 10px;
-    background: hsl(var(--color-foreground));
-    border-radius: 10px;
-    margin: 4px auto 6px;
-  }
-
-  .iphone-display {
-    border-radius: 20px;
-    overflow: hidden;
-    aspect-ratio: 9 / 19.5;
-    background: hsl(var(--color-bg-primary));
-  }
-
   @keyframes float {
     0%, 100% {
       transform: translateY(0);
@@ -201,8 +152,7 @@ import Icon from "../ui/Icon.astro";
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .macbook-frame,
-    .iphone-frame {
+    .macbook-frame {
       animation: none;
     }
   }
