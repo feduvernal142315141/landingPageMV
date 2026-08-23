@@ -53,12 +53,16 @@ const { category, showExplore = true, baseUrl = "#", showModules = true, showCar
 
     {showModules && (
       <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-center max-w-5xl mx-auto">
-        {category.modules.map((module, i) => (
-          <article class="scroll-reveal slide-up rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition hover:-translate-y-1 hover:bg-white/10" style={`transition-delay: ${i * 100}ms`}>
-            <IconBadge name={module.icon} class="mb-4" />
-            <h4 class="font-bold text-white">{module.label}</h4>
-          </article>
-        ))}
+        {category.modules.map((module, i) => {
+          const isLast = i === category.modules.length - 1;
+          const centerLast = isLast && category.modules.length % 3 === 1;
+          return (
+            <article class={`scroll-reveal slide-up rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition hover:-translate-y-1 hover:bg-white/10 ${centerLast ? 'lg:col-start-2' : ''}`} style={`transition-delay: ${i * 100}ms`}>
+              <IconBadge name={module.icon} class="mb-4" />
+              <h4 class="font-bold text-white">{module.label}</h4>
+            </article>
+          );
+        })}
       </div>
     )}
   </section>
@@ -66,12 +70,16 @@ const { category, showExplore = true, baseUrl = "#", showModules = true, showCar
   <>
     {showModules && (
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-center max-w-5xl mx-auto">
-        {category.modules.map((module, i) => (
-          <article class="scroll-reveal slide-up rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition hover:-translate-y-1 hover:bg-white/10" style={`transition-delay: ${i * 100}ms`}>
-            <IconBadge name={module.icon} class="mb-4" />
-            <h4 class="font-bold text-white">{module.label}</h4>
-          </article>
-        ))}
+        {category.modules.map((module, i) => {
+          const isLast = i === category.modules.length - 1;
+          const centerLast = isLast && category.modules.length % 3 === 1;
+          return (
+            <article class={`scroll-reveal slide-up rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition hover:-translate-y-1 hover:bg-white/10 ${centerLast ? 'lg:col-start-2' : ''}`} style={`transition-delay: ${i * 100}ms`}>
+              <IconBadge name={module.icon} class="mb-4" />
+              <h4 class="font-bold text-white">{module.label}</h4>
+            </article>
+          );
+        })}
       </div>
     )}
   </>
