@@ -17,10 +17,10 @@ import SocialLinks from "./SocialLinks.astro";
     <div class="grid grid-cols-1 gap-y-12 lg:grid-cols-12 lg:gap-12 lg:gap-y-0">
       <div class="lg:col-span-5">
         <BrandLockup inverted href="/" />
-        <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/90">
           Patient care first. Everything else, handled.
         </p>
-        <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/90">
           HIPAA-compliant · Secure by design
         </p>
         <div class="mt-7">
@@ -32,13 +32,13 @@ import SocialLinks from "./SocialLinks.astro";
         <FooterHeading>Product</FooterHeading>
         <ul class="mt-5 space-y-3 text-left">
           <li>
-            <a href="/" class="text-sm text-white/60 transition hover:text-white" data-home-link>Home</a>
+            <a href="/" class="text-sm text-white/90 transition hover:text-white" data-home-link>Home</a>
           </li>
           <li>
-            <a href="/#features" class="text-sm text-white/60 transition hover:text-white">Features</a>
+            <a href="/#features" class="text-sm text-white/90 transition hover:text-white">Features</a>
           </li>
           <li>
-            <a href="/#solutions" class="text-sm text-white/60 transition hover:text-white">Solutions</a>
+            <a href="/#solutions" class="text-sm text-white/90 transition hover:text-white">Solutions</a>
           </li>
         </ul>
       </div>
@@ -47,10 +47,10 @@ import SocialLinks from "./SocialLinks.astro";
         <FooterHeading>Legal</FooterHeading>
         <ul class="mt-5 space-y-3 text-left">
           <li>
-            <a href="#" class="text-sm text-white/60 transition hover:text-white">Privacy</a>
+            <a href="#" class="text-sm text-white/90 transition hover:text-white">Privacy</a>
           </li>
           <li>
-            <a href="#" class="text-sm text-white/60 transition hover:text-white">Terms</a>
+            <a href="#" class="text-sm text-white/90 transition hover:text-white">Terms</a>
           </li>
         </ul>
       </div>
@@ -61,23 +61,22 @@ import SocialLinks from "./SocialLinks.astro";
           <li>
             <a
               href={`mailto:${site.contact.email}`}
-              class="group inline-flex items-center gap-2.5 text-sm text-white/60 transition hover:text-white"
+              class="group inline-flex items-center gap-2.5 text-sm text-white/90 transition hover:text-white"
             >
-              <Icon name="mail" class="h-4 w-4 text-white/70 transition group-hover:text-tertiary" />
-              <span class="text-white/60">{site.contact.email}</span>
+              <Icon name="mail" class="h-4 w-4 text-white/90 transition group-hover:text-tertiary" />
+              <span class="text-white/90">{site.contact.email}</span>
             </a>
           </li>
-          <li class="inline-flex items-center gap-2.5 text-white/60">
-            <Icon name="phone" class="h-4 w-4 text-white/70" />
+          <li class="inline-flex items-center gap-2.5 text-white/90">
+            <Icon name="phone" class="h-4 w-4 text-white/90" />
             <span class="text-sm">{site.contact.phone}</span>
           </li>
         </ul>
-
       </div>
     </div>
 
     <div class="mt-16 border-t border-white/10 pt-8">
-      <Copyright class="text-center text-xs text-white/70" />
+      <Copyright class="text-center text-xs text-white/90" />
     </div>
   </div>
 </footer>
