@@ -6,27 +6,27 @@ import Button from "../ui/Button.astro";
 <section
   id="contact"
   aria-label="Call to action"
-  class="relative overflow-hidden bg-navy"
+  class="relative overflow-hidden bg-[hsl(var(--color-primary))]"
 >
   <div
     aria-hidden="true"
-    class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-tertiary/60 to-transparent"
+    class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[hsl(var(--color-accent))]/60 to-transparent"
   ></div>
   <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-    <div class="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" />
-    <div class="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
+    <div class="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-[hsl(var(--color-accent))]/20 blur-3xl" />
+    <div class="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-[hsl(var(--color-primary))]/30 blur-3xl" />
   </div>
 
   <div class="relative mx-auto max-w-3xl px-6 py-20 text-center lg:py-28">
-    <h2 class="scroll-reveal slide-up text-3xl font-black tracking-tight text-white sm:text-4xl">
+    <h2 class="scroll-reveal slide-up text-3xl font-black tracking-tight text-[hsl(var(--color-primary-foreground))] sm:text-4xl">
       Getting Ready Is Easy
     </h2>
-    <p class="scroll-reveal slide-up mt-4 text-lg text-white/80">
+    <p class="scroll-reveal slide-up mt-4 text-lg text-[hsl(var(--color-primary-foreground))]/90">
       Book a <span class="font-black">Personalized Walkthrough</span> and <span class="font-black">Transform Your ABA Practice</span> with MenteVior
     </p>
     <div class="scroll-reveal slide-up mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
-      <Button href={site.demoUrl} variant="white" icon="rocket" class="float-animation">Request a Demo</Button>
-      <Button href="/contact" variant="hero">Contact Us</Button>
+      <Button href={site.demoUrl} variant="cta-primary" icon="rocket" class="float-animation">Request a Demo</Button>
+      <Button href="/contact" variant="cta-secondary">Contact Us</Button>
     </div>
   </div>
 </section>
@@ -51,8 +51,3 @@ import Button from "../ui/Button.astro";
     }
   }
 </style>
-
-
-
-
-

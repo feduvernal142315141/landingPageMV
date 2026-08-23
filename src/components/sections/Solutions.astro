@@ -2,39 +2,18 @@
 import { solutionCategories } from "../../data/solutions";
 import Section from "./Section.astro";
 import SolutionCategory from "../SolutionCategory.astro";
-import Icon from "../ui/Icon.astro";
 ---
 
 <Section
   id="solutions"
   ariaLabel="Solutions"
-  class="relative overflow-hidden bg-gradient-to-b from-navy to-dark-accent"
+  class="relative overflow-hidden bg-[hsl(var(--color-bg-primary))] bg-grid-pattern"
   containerClass="relative"
 >
-  <div slot="decor" aria-hidden="true" class="pointer-events-none absolute inset-0">
-    <div class="absolute -top-24 right-1/4 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
-    <div class="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
-    <!-- Floating icons (small, navy, in empty spaces around content) -->
-    <Icon name="sparkles" class="absolute top-20 left-10 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -3s;" />
-    <Icon name="compass" class="absolute top-32 left-20 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -8s;" />
-    <Icon name="layout-dashboard" class="absolute top-20 right-12 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -1s;" />
-    <Icon name="book-open" class="absolute top-40 right-16 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -12s;" />
-    <!-- Upper middle area near title -->
-    <Icon name="sparkles" class="absolute top-28 left-1/2 -translate-x-1/2 h-5 w-5 text-white/10 animate-float-pulse" style="animation-delay: -4s;" />
-    <Icon name="compass" class="absolute top-44 left-1/2 -translate-x-1/2 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -11s;" />
-    <Icon name="layout-dashboard" class="absolute top-16 left-1/2 -translate-x-1/2 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -7s;" />
-    <Icon name="calendar" class="absolute left-8 top-1/2 h-5 w-5 text-white/10 animate-float-pulse" style="animation-delay: -5s;" />
-    <Icon name="layout-dashboard" class="absolute left-16 top-2/3 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -14s;" />
-    <Icon name="compass" class="absolute right-10 top-1/3 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -6s;" />
-    <Icon name="sparkles" class="absolute right-14 top-3/4 h-5 w-5 text-white/10 animate-float-pulse" style="animation-delay: -9s;" />
-    <Icon name="book-open" class="absolute bottom-20 left-1/3 h-5 w-5 text-white/10 animate-float-drift" style="animation-delay: -10s;" />
-    <Icon name="calendar" class="absolute bottom-16 right-1/4 h-5 w-5 text-white/10 animate-float-rotate" style="animation-delay: -2s;" />
-  </div>
-
-<div class="mx-auto max-w-7xl px-6 py-12 lg:py-16 -mt-20">
+  <div class="mx-auto max-w-7xl px-6 py-12 lg:py-16 -mt-20">
     <!-- Eyebrow centered at top - matching Features section gap -->
     <div class="scroll-reveal slide-up text-center">
-      <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-white mb-3 block">
+      <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[hsl(var(--color-primary))]/10 border border-[hsl(var(--color-primary))]/20 text-xs font-bold uppercase tracking-widest text-[hsl(var(--color-primary))] mb-3 block">
         Solutions
       </span>
     </div>
@@ -42,13 +21,13 @@ import Icon from "../ui/Icon.astro";
     <div class="lg:flex lg:items-start lg:justify-between">
       <!-- Left side: Title and subtitle -->
       <div class="scroll-reveal slide-left lg:w-1/2 lg:pr-12 lg:text-left">
-        <h2 class="mt-15 text-3xl font-black tracking-tight sm:text-4xl text-white text-center lg:text-left">
+        <h2 class="mt-15 text-3xl font-black tracking-tight sm:text-4xl text-[hsl(var(--color-foreground))] text-center lg:text-left">
           All Your Workflows<br class="lg:hidden" /> Thoughtfully Connected
         </h2>
-        <p class="mt-4 text-xl text-accent-light font-medium text-center lg:text-left">
+        <p class="mt-4 text-xl text-[hsl(var(--color-primary))] font-medium text-center lg:text-left">
           Clinical processes and business operations, finally unified
         </p>
-        <p class="mt-6 text-lg text-white/80 font-normal tracking-wide">
+        <p class="mt-6 text-lg text-[hsl(var(--color-muted-foreground))] font-normal tracking-wide">
           <span class="lg:hidden">
             Two unified suites — Clinical Options<br />
             and Company Configuration — built<br />
@@ -113,12 +92,3 @@ import Icon from "../ui/Icon.astro";
     </div>
   </div>
 </Section>
-
-
-
-
-
-
-
-
-

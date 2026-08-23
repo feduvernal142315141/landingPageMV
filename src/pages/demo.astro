@@ -8,22 +8,22 @@ import { site } from "../data/site";
   title="Request a Demo | MenteVior"
   description="Book a personalized walkthrough of MenteVior's HIPAA-compliant ABA practice management platform. See scheduling, session notes, data collection, billing & supervision in action — and learn how clinicians save 10+ hrs/week."
 >
-  <main class="pt-16 min-h-screen bg-navy-soft">
-    <section class="relative overflow-hidden bg-navy">
+  <main class="pt-16 min-h-screen bg-[hsl(var(--color-bg-primary))] bg-grid-pattern">
+    <section class="relative overflow-hidden bg-[hsl(var(--color-primary))]">
       <div
         aria-hidden="true"
-        class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-tertiary/60 to-transparent"
+        class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[hsl(var(--color-accent))]/60 to-transparent"
       ></div>
       <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-        <div class="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" />
-        <div class="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
+        <div class="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-[hsl(var(--color-accent))]/20 blur-3xl" />
+        <div class="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-[hsl(var(--color-primary))]/30 blur-3xl" />
       </div>
 
       <div class="relative mx-auto max-w-3xl px-6 py-20 text-center lg:py-28">
-        <h1 class="text-3xl font-black tracking-tight text-white sm:text-4xl">
+        <h1 class="text-3xl font-black tracking-tight text-[hsl(var(--color-primary-foreground))] sm:text-4xl">
           Request a Demo
         </h1>
-        <p class="mt-4 text-lg text-white/90">
+        <p class="mt-4 text-lg text-[hsl(var(--color-primary-foreground))]/90">
           See how MenteVior can streamline your ABA practice. Fill out the form below and our team will schedule a personalized walkthrough.
         </p>
       </div>
@@ -33,51 +33,51 @@ import { site } from "../data/site";
       <form class="space-y-6" onsubmit="return false;">
         <div class="grid gap-6 sm:grid-cols-2">
           <div>
-            <label for="first-name" class="block text-sm font-bold text-navy">First Name</label>
+            <label for="first-name" class="block text-sm font-bold text-[hsl(var(--color-foreground))]">First Name</label>
             <input
               id="first-name"
               type="text"
               required
-              class="mt-2 block w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm text-navy shadow-sm transition placeholder:text-navy/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              class="mt-2 block w-full rounded-lg border border-[hsl(var(--color-input))] bg-white px-4 py-3 text-sm text-[hsl(var(--color-foreground))] shadow-sm transition placeholder:text-[hsl(var(--color-muted-foreground))] focus:border-[hsl(var(--color-ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-ring))]/20"
               placeholder="John"
             />
           </div>
           <div>
-            <label for="last-name" class="block text-sm font-bold text-navy">Last Name</label>
+            <label for="last-name" class="block text-sm font-bold text-[hsl(var(--color-foreground))]">Last Name</label>
             <input
               id="last-name"
               type="text"
               required
-              class="mt-2 block w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm text-navy shadow-sm transition placeholder:text-navy/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              class="mt-2 block w-full rounded-lg border border-[hsl(var(--color-input))] bg-white px-4 py-3 text-sm text-[hsl(var(--color-foreground))] shadow-sm transition placeholder:text-[hsl(var(--color-muted-foreground))] focus:border-[hsl(var(--color-ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-ring))]/20"
               placeholder="Doe"
             />
           </div>
         </div>
         <div>
-          <label for="email" class="block text-sm font-bold text-navy">Work Email</label>
+          <label for="email" class="block text-sm font-bold text-[hsl(var(--color-foreground))]">Work Email</label>
           <input
             id="email"
             type="email"
             required
-            class="mt-2 block w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm text-navy shadow-sm transition placeholder:text-navy/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            class="mt-2 block w-full rounded-lg border border-[hsl(var(--color-input))] bg-white px-4 py-3 text-sm text-[hsl(var(--color-foreground))] shadow-sm transition placeholder:text-[hsl(var(--color-muted-foreground))] focus:border-[hsl(var(--color-ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-ring))]/20"
             placeholder="you@clinic.com"
           />
         </div>
         <div>
-          <label for="company" class="block text-sm font-bold text-navy">Company Name</label>
+          <label for="company" class="block text-sm font-bold text-[hsl(var(--color-foreground))]">Company Name</label>
           <input
             id="company"
             type="text"
             required
-            class="mt-2 block w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm text-navy shadow-sm transition placeholder:text-navy/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            class="mt-2 block w-full rounded-lg border border-[hsl(var(--color-input))] bg-white px-4 py-3 text-sm text-[hsl(var(--color-foreground))] shadow-sm transition placeholder:text-[hsl(var(--color-muted-foreground))] focus:border-[hsl(var(--color-ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-ring))]/20"
             placeholder="Your ABA Practice"
           />
         </div>
         <div>
-          <label for="role" class="block text-sm font-bold text-navy">Role</label>
+          <label for="role" class="block text-sm font-bold text-[hsl(var(--color-foreground))]">Role</label>
           <select
             id="role"
-            class="mt-2 block w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm text-navy shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            class="mt-2 block w-full rounded-lg border border-[hsl(var(--color-input))] bg-white px-4 py-3 text-sm text-[hsl(var(--color-foreground))] shadow-sm transition focus:border-[hsl(var(--color-ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-ring))]/20"
           >
             <option>BCBA / Clinical Director</option>
             <option>Practice Owner / Administrator</option>
@@ -87,21 +87,21 @@ import { site } from "../data/site";
           </select>
         </div>
         <div>
-          <label for="message" class="block text-sm font-bold text-navy">Anything you'd like us to know?</label>
+          <label for="message" class="block text-sm font-bold text-[hsl(var(--color-foreground))]">Anything you'd like us to know?</label>
           <textarea
             id="message"
             rows="4"
-            class="mt-2 block w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm text-navy shadow-sm transition placeholder:text-navy/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            class="mt-2 block w-full rounded-lg border border-[hsl(var(--color-input))] bg-white px-4 py-3 text-sm text-[hsl(var(--color-foreground))] shadow-sm transition placeholder:text-[hsl(var(--color-muted-foreground))] focus:border-[hsl(var(--color-ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-ring))]/20"
             placeholder="Tell us about your practice size, current tools, or specific needs…"
           ></textarea>
         </div>
         <button
           type="submit"
-          class="inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-r from-primary via-accent to-tertiary px-8 py-3.5 text-sm font-bold text-white shadow-[0_8px_24px_rgba(3,126,204,0.4)] transition hover:shadow-[0_10px_28px_rgba(3,126,204,0.5)]"
+          class="inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(210_90%_65%)] px-8 py-3.5 text-sm font-bold text-[hsl(var(--color-primary-foreground))] shadow-[0_8px_24px_rgba(59,130,246,0.4)] transition hover:shadow-[0_10px_28px_rgba(59,130,246,0.5)]"
         >
           Submit Request
         </button>
-        <p class="text-xs text-navy/70">No spam. We'll only use your info to schedule your demo.</p>
+        <p class="text-xs text-[hsl(var(--color-muted-foreground))]">No spam. We'll only use your info to schedule your demo.</p>
       </form>
     </div>
   </main>

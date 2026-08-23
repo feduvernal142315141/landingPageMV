@@ -3,7 +3,7 @@ import Icon from "./Icon.astro";
 
 interface Props {
   href: string;
-  variant?: "primary" | "outline" | "white" | "link" | "hero";
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "hero" | "cta-primary" | "cta-secondary";
   icon?: string;
   class?: string;
 }
@@ -12,18 +12,29 @@ const { href, variant = "primary", icon, class: className = "" } = Astro.props;
 
 const variants: Record<string, string> = {
   primary:
-    "inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-r from-primary via-accent to-tertiary px-6 py-3 text-sm font-bold text-white shadow-[0_8px_24px_rgba(3,126,204,0.4)] transition hover:shadow-[0_10px_28px_rgba(3,126,204,0.5)]",
+    "inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(210_90%_65%)] px-6 py-3 text-sm font-bold text-[hsl(var(--color-primary-foreground))] shadow-[0_8px_24px_rgba(59,130,246,0.4)] transition hover:shadow-[0_10px_28px_rgba(59,130,246,0.5)] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(210_90%_60%)]",
+  secondary:
+    "inline-flex items-center gap-2.5 rounded-lg border border-[hsl(var(--color-border))] bg-white px-6 py-3 text-sm font-bold text-[hsl(var(--color-foreground))] transition hover:bg-[hsl(var(--color-muted))] hover:border-[hsl(var(--color-primary))]",
   outline:
-    "inline-flex items-center gap-2.5 rounded-lg border border-navy/10 bg-white px-6 py-3 text-sm font-bold text-navy/80 transition hover:border-primary/40 hover:text-primary",
-  white:
-    "inline-flex items-center gap-2.5 rounded-lg bg-white px-6 py-3 text-sm font-bold text-primary shadow-[0_8px_24px_rgba(3,126,204,0.4)] transition hover:shadow-[0_10px_28px_rgba(3,126,204,0.5)]",
-  link: "group inline-flex items-center gap-2 text-sm font-bold text-tertiary transition hover:text-white",
-  hero: "inline-flex items-center gap-2.5 rounded-lg border-[3px] border-white bg-transparent px-6 py-3 text-sm font-black tracking-wide text-white transition hover:bg-white/10",
+    "inline-flex items-center gap-2.5 rounded-lg border border-[hsl(var(--color-border))] bg-transparent px-6 py-3 text-sm font-bold text-[hsl(var(--color-foreground))] transition hover:bg-[hsl(var(--color-muted))] hover:border-[hsl(var(--color-primary))]",
+  ghost:
+    "inline-flex items-center gap-2.5 rounded-lg px-6 py-3 text-sm font-bold text-[hsl(var(--color-foreground))] transition hover:bg-[hsl(var(--color-muted))]",
+  hero:
+    "inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(210_90%_65%)] px-6 py-3 text-sm font-bold text-[hsl(var(--color-primary-foreground))] shadow-[0_8px_24px_rgba(59,130,246,0.4)] transition hover:shadow-[0_10px_28px_rgba(59,130,246,0.5)] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(210_90%_60%)]",
+  "cta-primary":
+    "inline-flex items-center gap-2.5 rounded-lg bg-[hsl(var(--color-primary-foreground))] px-6 py-3 text-sm font-bold text-[hsl(var(--color-primary))] shadow-[0_8px_24px_rgba(255,255,255,0.3)] transition hover:bg-[hsl(var(--color-primary-foreground))]/90 hover:shadow-[0_10px_28px_rgba(255,255,255,0.4)]",
+  "cta-secondary":
+    "inline-flex items-center gap-2.5 rounded-lg border-2 border-[hsl(var(--color-primary-foreground))] bg-transparent px-6 py-3 text-sm font-black tracking-wide text-[hsl(var(--color-primary-foreground))] transition hover:bg-[hsl(var(--color-primary-foreground))]/10",
 };
----
 
-<a href={href} class={`${variants[variant]} ${className}`.trim()}>
+const baseStyles = "inline-flex items-center justify-center";
+
+const dataAttrs = Object.fromEntries(
+  Object.entries(Astro.props).filter(([key]) => key.startsWith("data-"))
+);
+
+---
+<a href={href} class={`${variants[variant]} ${className} ${baseStyles}`.trim()} {...dataAttrs}>
   {icon && <Icon name={icon} class="h-4 w-4" />}
   <slot />
 </a>
-

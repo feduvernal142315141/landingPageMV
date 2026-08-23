@@ -7,6 +7,11 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "dev:start": "node scripts/dev-server.js start",
+    "dev:stop": "node scripts/dev-server.js stop",
+    "dev:restart": "node scripts/dev-server.js restart",
+    "dev:status": "node scripts/dev-server.js status",
+    "dev:logs": "node scripts/dev-server.js logs",
     "prebuild": "node scripts/generate-og-image.mjs",
     "build": "astro build",
     "preview": "astro preview",

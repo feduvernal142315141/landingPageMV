@@ -29,19 +29,19 @@ const { category, showExplore = true, baseUrl = "#", showModules = true, showCar
 {showWrapper ? (
   <section id={category.anchor} class="mt-20">
     {showCard && (
-      <div class={`group relative z-${isFirst ? '10' : '20'} rounded-2xl border border-white/10 bg-navy transition-all duration-300 hover:border-accent/30 hover:bg-navy hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:scale-105 animate-float-card max-w-sm mx-auto ${isFirst ? 'mt-[80px] lg:-translate-x-[60px]' : isOverlapped ? 'mt-16 lg:mt-[-150px] lg:translate-x-[202px]' : ''}`}>
+      <div class={`group relative z-${isFirst ? '10' : '20'} rounded-2xl border border-[hsl(var(--color-border))] bg-white transition-all duration-300 hover:border-[hsl(var(--color-primary))] hover:shadow-xl hover:scale-[1.02] animate-float-card max-w-sm mx-auto ${isFirst ? 'mt-[80px] lg:-translate-x-[60px]' : isOverlapped ? 'mt-16 lg:mt-[-150px] lg:translate-x-[202px]' : ''}`}>
         <div class="p-5 md:p-6 lg:p-6 text-center">
-          <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-400 mb-4 mx-auto">
-            <Icon name={category.icon} class="h-8 w-8 text-white" />
+          <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[hsl(var(--color-primary))]/10 mb-4 mx-auto">
+            <Icon name={category.icon} class="h-8 w-8 text-[hsl(var(--color-primary))]" />
           </div>
-          <h3 class="text-xl font-black text-white mb-2">{category.label}</h3>
-          <p class="text-sm text-white mb-4 max-w-xs mx-auto">
+          <h3 class="text-xl font-black text-[hsl(var(--color-foreground))] mb-2">{category.label}</h3>
+          <p class="text-sm text-[hsl(var(--color-muted-foreground))] mb-4 max-w-xs mx-auto">
             {category.description}
           </p>
           {showExplore && (
             <a
               href={`${baseUrl}#${category.anchor}`}
-              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-widest"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border-2 border-[hsl(var(--color-primary))] text-[hsl(var(--color-primary))] hover:bg-[hsl(var(--color-primary))] hover:text-[hsl(var(--color-primary-foreground))] transition-all duration-300 font-bold text-xs uppercase tracking-widest"
             >
               Explore
               <Icon name="compass" class="h-3 w-3" />
@@ -57,9 +57,9 @@ const { category, showExplore = true, baseUrl = "#", showModules = true, showCar
           const isLast = i === category.modules.length - 1;
           const centerLast = isLast && category.modules.length % 3 === 1;
           return (
-            <article class={`scroll-reveal slide-up rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition hover:-translate-y-1 hover:bg-white/10 ${centerLast ? 'lg:col-start-2' : ''}`} style={`transition-delay: ${i * 100}ms`}>
+            <article class={`scroll-reveal slide-up rounded-2xl border border-[hsl(var(--color-border))] bg-white p-8 text-center transition hover:-translate-y-1 hover:bg-[hsl(var(--color-muted))] ${centerLast ? 'lg:col-start-2' : ''}`} style={`transition-delay: ${i * 100}ms`}>
               <IconBadge name={module.icon} class="mb-4" />
-              <h4 class="font-bold text-white">{module.label}</h4>
+              <h4 class="font-bold text-[hsl(var(--color-foreground))]">{module.label}</h4>
             </article>
           );
         })}
@@ -74,9 +74,9 @@ const { category, showExplore = true, baseUrl = "#", showModules = true, showCar
           const isLast = i === category.modules.length - 1;
           const centerLast = isLast && category.modules.length % 3 === 1;
           return (
-            <article class={`scroll-reveal slide-up rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition hover:-translate-y-1 hover:bg-white/10 ${centerLast ? 'lg:col-start-2' : ''}`} style={`transition-delay: ${i * 100}ms`}>
+            <article class={`scroll-reveal slide-up rounded-2xl border border-[hsl(var(--color-border))] bg-white p-8 text-center transition hover:-translate-y-1 hover:bg-[hsl(var(--color-muted))] ${centerLast ? 'lg:col-start-2' : ''}`} style={`transition-delay: ${i * 100}ms`}>
               <IconBadge name={module.icon} class="mb-4" />
-              <h4 class="font-bold text-white">{module.label}</h4>
+              <h4 class="font-bold text-[hsl(var(--color-foreground))]">{module.label}</h4>
             </article>
           );
         })}
@@ -84,24 +84,3 @@ const { category, showExplore = true, baseUrl = "#", showModules = true, showCar
     )}
   </>
 )}
-
-<style>
-  @keyframes float-card {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
-  }
-
-  .animate-float-card {
-    animation: float-card 4s ease-in-out infinite;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .animate-float-card {
-      animation: none;
-    }
-  }
-</style>

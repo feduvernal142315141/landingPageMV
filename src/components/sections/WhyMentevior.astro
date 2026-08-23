@@ -2,43 +2,21 @@
 import { whys } from "../../data/solutions";
 import IconBadge from "../IconBadge.astro";
 import Section from "./Section.astro";
-import Icon from "../ui/Icon.astro";
 ---
 
 <Section
   id="why"
   ariaLabel="Why MenteVior"
-  class="relative overflow-hidden bg-gradient-to-b from-navy to-dark-accent"
+  class="relative overflow-hidden bg-[hsl(var(--color-bg-primary))] bg-grid-pattern"
   containerClass="relative"
 >
-  <div slot="decor" aria-hidden="true" class="pointer-events-none absolute inset-0">
-    <!-- Mesh gradient orbs -->
-    <div class="absolute -top-20 left-1/3 h-80 w-80 rounded-full bg-accent/10 blur-3xl animate-pulse" style="animation-duration: 6s;" />
-    <div class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl animate-pulse" style="animation-duration: 7s; animation-delay: 1s;" />
-    <!-- Floating icons (small, navy, in empty spaces around content) -->
-    <Icon name="sparkles" class="absolute top-20 left-10 h-5 w-5 text-navy/25 animate-float-rotate" style="animation-delay: -3s;" />
-    <Icon name="compass" class="absolute top-32 left-20 h-5 w-5 text-navy/25 animate-float-drift" style="animation-delay: -8s;" />
-    <Icon name="layout-dashboard" class="absolute top-20 right-12 h-5 w-5 text-navy/25 animate-float-drift" style="animation-delay: -1s;" />
-    <Icon name="book-open" class="absolute top-40 right-16 h-5 w-5 text-navy/25 animate-float-rotate" style="animation-delay: -12s;" />
-    <!-- Upper middle area near title -->
-    <Icon name="sparkles" class="absolute top-28 left-1/2 -translate-x-1/2 h-5 w-5 text-navy/25 animate-float-pulse" style="animation-delay: -4s;" />
-    <Icon name="compass" class="absolute top-44 left-1/2 -translate-x-1/2 h-5 w-5 text-navy/25 animate-float-rotate" style="animation-delay: -11s;" />
-    <Icon name="layout-dashboard" class="absolute top-16 left-1/2 -translate-x-1/2 h-5 w-5 text-navy/25 animate-float-drift" style="animation-delay: -7s;" />
-    <Icon name="calendar" class="absolute left-8 top-1/2 h-5 w-5 text-navy/25 animate-float-pulse" style="animation-delay: -5s;" />
-    <Icon name="layout-dashboard" class="absolute left-16 top-2/3 h-5 w-5 text-navy/25 animate-float-rotate" style="animation-delay: -14s;" />
-    <Icon name="compass" class="absolute right-10 top-1/3 h-5 w-5 text-navy/25 animate-float-drift" style="animation-delay: -6s;" />
-    <Icon name="sparkles" class="absolute right-14 top-3/4 h-5 w-5 text-navy/25 animate-float-pulse" style="animation-delay: -9s;" />
-    <Icon name="book-open" class="absolute bottom-20 left-1/3 h-5 w-5 text-navy/25 animate-float-drift" style="animation-delay: -10s;" />
-    <Icon name="calendar" class="absolute bottom-16 right-1/4 h-5 w-5 text-navy/25 animate-float-rotate" style="animation-delay: -2s;" />
-  </div>
-
-<div class="scroll-reveal slide-up flex flex-col items-center">
-    <h2 class="text-3xl font-black tracking-tight text-white sm:text-4xl">
+  <div class="scroll-reveal slide-up flex flex-col items-center">
+    <h2 class="text-3xl font-black tracking-tight text-[hsl(var(--color-foreground))] sm:text-4xl">
       Why Choose MenteVior?
     </h2>
   </div>
   <div class="scroll-reveal slide-up mt-6 mx-auto max-w-2xl text-center">
-<h3 class="text-lg text-white/80 font-normal tracking-wide">
+    <h3 class="text-lg text-[hsl(var(--color-muted-foreground))] font-normal tracking-wide">
       The reasons our clients <span class="font-black">stay with us</span>
     </h3>
   </div>
@@ -46,20 +24,11 @@ import Icon from "../ui/Icon.astro";
   <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {
       whys.map((item, i) => (
-        <div class="scroll-reveal slide-up group flex flex-col items-center rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/50 hover:bg-white/[0.08] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.45)]" style={`transition-delay: ${i * 100}ms`}>
+        <div class="scroll-reveal slide-up group flex flex-col items-center rounded-2xl border border-[hsl(var(--color-border))] bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1.5 hover:border-[hsl(var(--color-primary))] hover:shadow-lg" style={`transition-delay: ${i * 100}ms`}>
           <IconBadge name={item.icon} class="transition-transform duration-300 group-hover:scale-110" />
-          <h3 class="mt-4 text-lg font-bold text-white">{item.title}</h3>
+          <h3 class="mt-4 text-lg font-bold text-[hsl(var(--color-foreground))]">{item.title}</h3>
         </div>
       ))
     }
   </div>
 </Section>
-
-
-
-
-
-
-
-
-

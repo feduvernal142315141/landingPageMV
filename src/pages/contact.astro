@@ -9,22 +9,22 @@ import Icon from "../components/ui/Icon.astro";
   title="Contact Us | MenteVior"
   description="Contact the MenteVior team for sales, support, or partnerships. Get answers about our HIPAA-compliant ABA practice management platform — scheduling, session notes, data collection, billing & supervision."
 >
-  <main class="pt-16 min-h-screen bg-navy-soft">
-    <section class="relative overflow-hidden bg-navy">
+  <main class="pt-16 min-h-screen bg-[hsl(var(--color-bg-primary))] bg-grid-pattern">
+    <section class="relative overflow-hidden bg-[hsl(var(--color-primary))]">
       <div
         aria-hidden="true"
-        class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-tertiary/60 to-transparent"
+        class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[hsl(var(--color-accent))]/60 to-transparent"
       ></div>
       <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-        <div class="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" />
-        <div class="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
+        <div class="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-[hsl(var(--color-accent))]/20 blur-3xl" />
+        <div class="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-[hsl(var(--color-primary))]/30 blur-3xl" />
       </div>
 
       <div class="relative mx-auto max-w-3xl px-6 py-20 text-center lg:py-28">
-        <h1 class="text-3xl font-black tracking-tight text-white sm:text-4xl">
+        <h1 class="text-3xl font-black tracking-tight text-[hsl(var(--color-primary-foreground))] sm:text-4xl">
           Contact Us
         </h1>
-        <p class="mt-4 text-lg text-white/90">
+        <p class="mt-4 text-lg text-[hsl(var(--color-primary-foreground))]/90">
           Have a question or need support? Reach out and our team will get back to you within one business day.
         </p>
       </div>
@@ -33,33 +33,33 @@ import Icon from "../components/ui/Icon.astro";
     <div class="mx-auto max-w-5xl px-6 py-16">
       <div class="grid gap-12 lg:grid-cols-2">
         <div>
-          <h2 class="text-xl font-black text-navy">Send us a message</h2>
+          <h2 class="text-xl font-black text-[hsl(var(--color-foreground))]">Send us a message</h2>
           <form class="mt-8 space-y-6" onsubmit="return false;">
             <div>
-              <label for="contact-name" class="block text-sm font-bold text-navy">Full Name</label>
+              <label for="contact-name" class="block text-sm font-bold text-[hsl(var(--color-foreground))]">Full Name</label>
               <input
                 id="contact-name"
                 type="text"
                 required
-                class="mt-2 block w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm text-navy shadow-sm transition placeholder:text-navy/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                class="mt-2 block w-full rounded-lg border border-[hsl(var(--color-input))] bg-white px-4 py-3 text-sm text-[hsl(var(--color-foreground))] shadow-sm transition placeholder:text-[hsl(var(--color-muted-foreground))] focus:border-[hsl(var(--color-ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-ring))]/20"
                 placeholder="John Doe"
               />
             </div>
             <div>
-              <label for="contact-email" class="block text-sm font-bold text-navy">Email</label>
+              <label for="contact-email" class="block text-sm font-bold text-[hsl(var(--color-foreground))]">Email</label>
               <input
                 id="contact-email"
                 type="email"
                 required
-                class="mt-2 block w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm text-navy shadow-sm transition placeholder:text-navy/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                class="mt-2 block w-full rounded-lg border border-[hsl(var(--color-input))] bg-white px-4 py-3 text-sm text-[hsl(var(--color-foreground))] shadow-sm transition placeholder:text-[hsl(var(--color-muted-foreground))] focus:border-[hsl(var(--color-ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-ring))]/20"
                 placeholder="you@clinic.com"
               />
             </div>
             <div>
-              <label for="contact-subject" class="block text-sm font-bold text-navy">Subject</label>
+              <label for="contact-subject" class="block text-sm font-bold text-[hsl(var(--color-foreground))]">Subject</label>
               <select
                 id="contact-subject"
-                class="mt-2 block w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm text-navy shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                class="mt-2 block w-full rounded-lg border border-[hsl(var(--color-input))] bg-white px-4 py-3 text-sm text-[hsl(var(--color-foreground))] shadow-sm transition focus:border-[hsl(var(--color-ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-ring))]/20"
               >
                 <option>General Inquiry</option>
                 <option>Technical Support</option>
@@ -69,18 +69,18 @@ import Icon from "../components/ui/Icon.astro";
               </select>
             </div>
             <div>
-              <label for="contact-message" class="block text-sm font-bold text-navy">Message</label>
+              <label for="contact-message" class="block text-sm font-bold text-[hsl(var(--color-foreground))]">Message</label>
               <textarea
                 id="contact-message"
                 rows="5"
                 required
-                class="mt-2 block w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-sm text-navy shadow-sm transition placeholder:text-navy/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                class="mt-2 block w-full rounded-lg border border-[hsl(var(--color-input))] bg-white px-4 py-3 text-sm text-[hsl(var(--color-foreground))] shadow-sm transition placeholder:text-[hsl(var(--color-muted-foreground))] focus:border-[hsl(var(--color-ring))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-ring))]/20"
                 placeholder="How can we help you?"
               ></textarea>
             </div>
             <button
               type="submit"
-              class="inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-r from-primary via-accent to-tertiary px-8 py-3.5 text-sm font-bold text-white shadow-[0_8px_24px_rgba(3,126,204,0.4)] transition hover:shadow-[0_10px_28px_rgba(3,126,204,0.5)]"
+              class="inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(210_90%_65%)] px-8 py-3.5 text-sm font-bold text-[hsl(var(--color-primary-foreground))] shadow-[0_8px_24px_rgba(59,130,246,0.4)] transition hover:shadow-[0_10px_28px_rgba(59,130,246,0.5)]"
             >
               Send Message
             </button>
@@ -88,41 +88,41 @@ import Icon from "../components/ui/Icon.astro";
         </div>
 
         <div class="lg:pl-8">
-          <h2 class="text-xl font-black text-navy">Get in touch</h2>
-          <p class="mt-4 text-sm leading-relaxed text-navy/70">
+          <h2 class="text-xl font-black text-[hsl(var(--color-foreground))]">Get in touch</h2>
+          <p class="mt-4 text-sm leading-relaxed text-[hsl(var(--color-muted-foreground))]">
             We'd love to hear from you. Reach out through any of the channels below.
           </p>
           <ul class="mt-8 space-y-6">
             <li class="flex items-start gap-4">
-              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <Icon name="mail" class="h-5 w-5 text-primary" />
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[hsl(var(--color-primary))]/10">
+                <Icon name="mail" class="h-5 w-5 text-[hsl(var(--color-primary))]" />
               </div>
               <div>
-                <p class="text-sm font-bold text-navy">Email</p>
+                <p class="text-sm font-bold text-[hsl(var(--color-foreground))]">Email</p>
                 <a
                   href={`mailto:${site.contact.email}`}
-                  class="mt-1 text-sm text-navy/70 transition hover:text-primary"
+                  class="mt-1 text-sm text-[hsl(var(--color-muted-foreground))] transition hover:text-[hsl(var(--color-primary))]"
                 >
                   {site.contact.email}
                 </a>
               </div>
             </li>
             <li class="flex items-start gap-4">
-              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <Icon name="phone" class="h-5 w-5 text-primary" />
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[hsl(var(--color-primary))]/10">
+                <Icon name="phone" class="h-5 w-5 text-[hsl(var(--color-primary))]" />
               </div>
               <div>
-                <p class="text-sm font-bold text-navy">Phone</p>
-                <p class="mt-1 text-sm text-navy/70">{site.contact.phone}</p>
+                <p class="text-sm font-bold text-[hsl(var(--color-foreground))]">Phone</p>
+                <p class="mt-1 text-sm text-[hsl(var(--color-muted-foreground))]">{site.contact.phone}</p>
               </div>
             </li>
             <li class="flex items-start gap-4">
-              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <Icon name="calendar-clock" class="h-5 w-5 text-primary" />
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[hsl(var(--color-primary))]/10">
+                <Icon name="calendar-clock" class="h-5 w-5 text-[hsl(var(--color-primary))]" />
               </div>
               <div>
-                <p class="text-sm font-bold text-navy">Business Hours</p>
-                <p class="mt-1 text-sm text-navy/70">Monday – Friday, 9:00 AM – 6:00 PM EST</p>
+                <p class="text-sm font-bold text-[hsl(var(--color-foreground))]">Business Hours</p>
+                <p class="mt-1 text-sm text-[hsl(var(--color-muted-foreground))]">Monday – Friday, 9:00 AM – 6:00 PM EST</p>
               </div>
             </li>
           </ul>
