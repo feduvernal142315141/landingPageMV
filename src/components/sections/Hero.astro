@@ -44,7 +44,12 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
           <Button href="#features" variant="hero" icon="sparkles">Explore Features</Button>
           <Button href="#solutions" variant="hero" icon="compass">Explore Solutions</Button>
         </div>
-        <!-- Feature highlights row -->
+      </div>
+
+      <!-- Right column: Dashboard frame (Clinicia-style) -->
+      <div class="hero-dashboard hidden lg:block">
+        <DashboardFrame />
+        <!-- Feature highlights row - below dashboard -->
         <div class="mt-8 flex flex-wrap justify-start gap-x-6 gap-y-3 text-sm text-[hsl(var(--color-foreground))]">
           <span class="flex items-center gap-1.5 whitespace-nowrap">
             <span class="text-[hsl(var(--color-primary))] text-2xl">•</span>
@@ -59,11 +64,6 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
             <span>Crafted with BCBAs</span>
           </span>
         </div>
-      </div>
-
-      <!-- Right column: Dashboard frame (Clinicia-style) -->
-      <div class="hero-dashboard hidden lg:block">
-        <DashboardFrame />
       </div>
     </div>
   </div>
@@ -117,8 +117,10 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
   .hero-dashboard {
     grid-area: dashboard;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: flex-end;
+    gap: 2rem;
     padding-top: 2rem;
   }
 
@@ -134,6 +136,11 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
     .hero-content > div:last-child {
       justify-content: center;
       margin-left: 0;
+    }
+
+    /* Feature highlights mobile: 2 items first row, 1 item centered below */
+    .hero-dashboard > div > div > :nth-child(3) {
+      margin-left: auto;
     }
   }
 </style>
