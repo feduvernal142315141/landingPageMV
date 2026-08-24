@@ -4,6 +4,9 @@ import { Image } from "astro:assets";
 
 <div class="dashboard-frame-3d">
   <div class="dashboard-frame-inner">
+    <!-- Coin shine - fast clean beam -->
+    <div class="dashboard-coin-shine" aria-hidden="true"></div>
+    
     <!-- Browser header with 3 dots (brand colors) + title -->
     <div class="dashboard-header">
       <div class="dashboard-dots">
@@ -64,6 +67,63 @@ import { Image } from "astro:assets";
 
   .dashboard-frame-3d:hover .dashboard-frame-inner {
     transform: perspective(1000px) rotateY(0deg) translateZ(0) translateY(-20px);
+  }
+
+  /* Coin shine - single clean beam sweep via transform */
+  .dashboard-coin-shine {
+    position: absolute;
+    inset: 1px; /* Inside the border */
+    border-radius: 10px; /* Match frame 12px - 1px inset */
+    pointer-events: none;
+    z-index: 8;
+    overflow: hidden;
+  }
+
+  .dashboard-coin-shine::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* Single narrow beam at 35° */
+    background: linear-gradient(
+      35deg,
+      transparent 48%,
+      rgba(255, 255, 255, 0.95) 50%,
+      transparent 52%
+    );
+    /* Start off-screen left, sweep to off-screen right */
+    transform: translateX(-100%) rotate(35deg);
+    animation: coin-shine 8s ease-in-out infinite;
+    opacity: 0;
+  }
+
+  @keyframes coin-shine {
+    0% {
+      transform: translateX(-100%) rotate(35deg);
+      opacity: 0;
+    }
+    2% {
+      opacity: 1;
+    }
+    41.4% {
+      transform: translateX(100%) rotate(35deg);
+      opacity: 1;
+    }
+    43.4% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dashboard-coin-shine::before {
+      animation: none;
+      opacity: 0;
+    }
   }
 
   .dashboard-header {
