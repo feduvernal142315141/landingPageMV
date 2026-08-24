@@ -53,10 +53,9 @@ import Icon from "../ui/Icon.astro";
     </div>
 
     <div class="scroll-reveal slide-right relative flex justify-center lg:justify-end">
-      <div class="macbook-frame relative z-10">
-        <div class="macbook-screen">
-          <div class="macbook-camera"></div>
-          <div class="macbook-display">
+      <div class="monitor-frame relative z-10">
+        <div class="monitor-screen">
+          <div class="monitor-display">
             <Image
               src={dashboardDesktop}
               alt="MenteVior dashboard"
@@ -67,6 +66,8 @@ import Icon from "../ui/Icon.astro";
             />
           </div>
         </div>
+        <div class="monitor-stand"></div>
+        <div class="monitor-base"></div>
       </div>
     </div>
   </div>
@@ -97,47 +98,69 @@ import Icon from "../ui/Icon.astro";
 </Section>
 
 <style>
-  .macbook-frame {
+  .monitor-frame {
     width: 100%;
     max-width: 480px;
     animation: float 4s ease-in-out infinite;
-    border: 2px solid hsl(var(--color-foreground));
-    border-radius: 16px 16px 4px 4px;
-    background: white;
-    box-shadow: 0 28px 72px -16px rgba(15,23,42,0.08), 0 10px 32px -10px rgba(15,23,42,0.06), 0 0 0 1px rgba(226,232,240,0.45);
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
   }
 
-  .macbook-screen {
-    border-radius: 14px 14px 0 0;
-    padding: 10px 10px 0 10px;
+  .monitor-screen {
+    width: 100%;
+    aspect-ratio: 16 / 9.5;
+    background: hsl(var(--color-foreground));
+    border-radius: 8px 8px 4px 4px;
+    padding: 6px;
+    box-shadow: 
+      inset 0 1px 0 hsl(0 0% 100% / 0.1),
+      0 4px 24px -4px rgba(15, 23, 42, 0.4),
+      0 0 0 1px hsl(var(--color-foreground) / 0.8);
     position: relative;
-    background: hsl(var(--color-bg-primary));
   }
 
-  .macbook-camera {
-    width: 6px;
-    height: 6px;
-    background: hsl(var(--color-muted-foreground));
-    border-radius: 50%;
-    margin: 0 auto 6px;
-  }
-
-  .macbook-display {
-    border-radius: 4px 4px 0 0;
-    overflow: hidden;
-    background: hsl(var(--color-bg-primary));
-  }
-
-  .macbook-frame::after {
+  .monitor-screen::before {
     content: "";
-    display: block;
-    height: 12px;
-    background: hsl(var(--color-muted));
-    border-radius: 0 0 8px 8px;
-    margin: 0 -20px;
-    position: relative;
-    left: -10px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: hsl(var(--color-foreground) / 0.6);
+    border-radius: 2px;
+  }
+
+  .monitor-display {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    background: hsl(var(--color-bg-primary));
+  }
+
+  .monitor-stand {
+    width: 8px;
+    height: 32px;
+    background: linear-gradient(180deg, hsl(210 10% 45%) 0%, hsl(210 10% 35%) 100%);
+    border-radius: 2px;
+    margin-top: -2px;
+    box-shadow: 
+      inset 0 1px 0 hsl(0 0% 100% / 0.1),
+      0 2px 8px rgba(15, 23, 42, 0.2);
+  }
+
+  .monitor-base {
+    width: 120px;
+    height: 10px;
+    background: linear-gradient(180deg, hsl(210 10% 50%) 0%, hsl(210 10% 40%) 100%);
+    border-radius: 5px;
+    box-shadow: 
+      inset 0 1px 0 hsl(0 0% 100% / 0.15),
+      0 4px 16px rgba(15, 23, 42, 0.15),
+      0 0 0 1px hsl(210 10% 30%);
   }
 
   @keyframes float {
@@ -152,7 +175,7 @@ import Icon from "../ui/Icon.astro";
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .macbook-frame {
+    .monitor-frame {
       animation: none;
     }
   }
