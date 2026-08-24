@@ -9,5 +9,23 @@ export default defineConfig({
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
+    cacheDir: '.vite-cache',
+    build: {
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          },
+        },
+      },
+    },
   },
+  image: process.env.NODE_ENV === 'development' ? {
+    service: { entrypoint: 'astro/assets/services/noop' }
+  } : {
+    service: { entrypoint: 'astro/assets/services/sharp' }
+  }
 });

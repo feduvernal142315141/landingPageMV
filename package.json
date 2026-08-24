@@ -6,18 +6,17 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "dev:start": "node scripts/dev-server.js start",
+    "dev": "node scripts/dev-server.js start",
     "dev:stop": "node scripts/dev-server.js stop",
     "dev:restart": "node scripts/dev-server.js restart",
     "dev:status": "node scripts/dev-server.js status",
     "dev:logs": "node scripts/dev-server.js logs",
-    "prebuild": "node scripts/generate-og-image.mjs",
-    "build": "astro build",
+    "build": "node scripts/optimize-assets.js && astro build",
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro",
-    "generate:og": "node scripts/generate-og-image.mjs"
+    "generate:og": "node scripts/generate-og-image.mjs",
+    "optimize:assets": "node scripts/optimize-assets.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
@@ -29,6 +28,7 @@
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
+    "glob": "^13.0.6",
     "sharp": "^0.35.3"
   }
 }
