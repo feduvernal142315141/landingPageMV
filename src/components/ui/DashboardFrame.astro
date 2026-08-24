@@ -50,14 +50,13 @@ import { Image } from "astro:assets";
     will-change: transform;
     position: relative;
 
-    /* Strong border & enhanced shadow (Clinicia-style) */
-    border: 2px solid hsl(var(--color-foreground) / 0.25);
-    border-radius: 16px;
+    /* Clean border & shadow */
+    border: 1px solid hsl(var(--color-border));
+    border-radius: 12px;
     background: hsl(var(--color-bg-primary));
     box-shadow: 
       0 20px 64px -12px rgba(15, 23, 42, 0.35),
-      0 8px 32px -8px rgba(15, 23, 42, 0.25),
-      0 0 0 2px rgba(226, 232, 240, 0.5);
+      0 8px 32px -8px rgba(15, 23, 42, 0.25);
     overflow: hidden;
     position: relative;
     aspect-ratio: 1366 / 777;
@@ -74,9 +73,12 @@ import { Image } from "astro:assets";
     position: relative;
     gap: 12px;
     padding: 21px 16px 14px 16px;  /* Half thickness */
-    background: hsl(var(--color-bg-primary));
-    border-radius: 14px 14px 0 0;
-    border-bottom: 1px solid hsl(var(--color-border));
+    background: linear-gradient(180deg,
+      hsl(210 15% 94%) 0%,
+      hsl(210 10% 90%) 100%
+    );
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid hsl(210 15% 75% / 0.5);
   }
 
   .dashboard-dots {
@@ -120,7 +122,7 @@ import { Image } from "astro:assets";
   .dashboard-display {
     overflow: hidden;
     background: hsl(var(--color-bg-primary));  /* OPAQUE - not transparent */
-    border-radius: 12px;  /* Rounded corners on all sides */
+    border-radius: 0 0 12px 12px;  /* Square top, rounded bottom */
   }
 
   .dashboard-image {
@@ -128,7 +130,7 @@ import { Image } from "astro:assets";
     height: 100%;
     display: block;
     object-fit: contain;  /* Show full image */
-    border-radius: 12px;  /* Rounded corners on all sides */
+    border-radius: 0 0 12px 12px;  /* Square top, rounded bottom */
   }
 
   /* Screen glare overlay */
@@ -145,7 +147,7 @@ import { Image } from "astro:assets";
       transparent 50%,
       rgba(0, 0, 0, 0.05) 100%
     );
-    border-radius: 14px 14px 0 0;
+    border-radius: 12px 12px 0 0;
     opacity: 0.4;
   }
 
