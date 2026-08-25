@@ -29,17 +29,17 @@ import Section from "./Section.astro";
           <IconBadge name={feature.icon} />
           <h3 class="mt-4 text-lg font-bold text-[hsl(var(--color-foreground))]">{feature.title}</h3>
           <ul class="mt-4 space-y-2 text-left">
-            <li class="flex items-start gap-2 text-base leading-relaxed text-[hsl(var(--color-foreground))]">
-              <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[hsl(var(--color-primary))]" />
+            <li class="flex items-center gap-3 text-base leading-relaxed text-[hsl(var(--color-foreground))]">
+              <span class="h-1 w-1 shrink-0 rounded-full bg-[hsl(var(--color-primary))]" />
               {feature.points[0]}
             </li>
-            <li class="flex items-start gap-2 text-base leading-relaxed text-[hsl(var(--color-foreground))]">
-              <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[hsl(var(--color-primary))]" />
+            <li class="flex items-center gap-3 text-base leading-relaxed text-[hsl(var(--color-foreground))]">
+              <span class="h-1 w-1 shrink-0 rounded-full bg-[hsl(var(--color-primary))]" />
               {feature.points[1]}
             </li>
             {feature.points[2] && (
-              <li class="flex items-start gap-2 text-base leading-relaxed text-[hsl(var(--color-foreground))]">
-                <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[hsl(var(--color-primary))]" />
+              <li class="flex items-center gap-3 text-base leading-relaxed text-[hsl(var(--color-foreground))]">
+                <span class="h-1 w-1 shrink-0 rounded-full bg-[hsl(var(--color-primary))]" />
                 {feature.points[2]}
               </li>
             )}
