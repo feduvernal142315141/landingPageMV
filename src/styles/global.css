@@ -176,8 +176,8 @@ h1, h2, h3, h4, h5, h6,
 /* Grid pattern utility */
 .bg-grid-pattern {
   background-image:
-    linear-gradient(hsl(var(--color-primary) / 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(var(--color-primary) / 0.04) 1px, transparent 1px);
+    linear-gradient(hsl(var(--color-primary) / 0.08) 2px, transparent 2px),
+    linear-gradient(90deg, hsl(var(--color-primary) / 0.08) 2px, transparent 2px);
   background-size: 48px 48px;
 }
 
