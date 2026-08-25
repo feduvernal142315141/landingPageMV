@@ -41,7 +41,7 @@ import Icon from "../ui/Icon.astro";
     </div>
     <div class="scroll-reveal slide-up mt-16 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
       <Button href={site.demoUrl} variant="cta-primary" icon="calendar" class="float-animation font-black">Book a Demo</Button>
-      <Button href="/contact" variant="cta-secondary">Contact Us</Button>
+      <Button href={`mailto:${site.contact.email}`} variant="cta-secondary">Contact Us</Button>
     </div>
   </div>
 </section>
