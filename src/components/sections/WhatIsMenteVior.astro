@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Section from "./Section.astro";
 import logo from "../../assets/MenteVior-logo.png";
 import dashboardDesktop from "../../assets/mentevior-dashboard.png";
+import Icon from "../ui/Icon.astro";
 ---
 
 <Section
@@ -11,6 +12,29 @@ import dashboardDesktop from "../../assets/mentevior-dashboard.png";
   class="relative overflow-hidden bg-[hsl(var(--color-bg-warm-half))]"
   containerClass="relative"
 >
+  <div slot="decor" aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+    <!-- Icon 1: layout-dashboard (Command center) - LEFT -->
+    <Icon name="layout-dashboard" class="absolute top-[8%] left-[5%] h-8 w-8 text-[hsl(var(--color-primary))] opacity-25 animate-float-drift" style="animation-delay: -2s;" />
+    <!-- Icon 2: calendar (Scheduling) - RIGHT -->
+    <Icon name="calendar" class="absolute top-[12%] right-[2%] h-7 w-7 text-[hsl(var(--color-primary))] opacity-25 animate-float-pulse" style="animation-delay: -4s;" />
+    <!-- Icon 3: file-text (Session notes/docs) - LEFT -->
+    <Icon name="file-text" class="absolute top-[20%] left-[3%] h-7 w-7 text-[hsl(var(--color-primary))] opacity-25 animate-float-rotate" style="animation-delay: -6s;" />
+    <!-- Icon 4: chart-line (Progress/data) - RIGHT -->
+    <Icon name="chart-line" class="absolute top-[25%] right-[4%] h-7 w-7 text-[hsl(var(--color-primary))] opacity-25 animate-float-drift" style="animation-delay: -8s;" />
+    <!-- Icon 5: users (Team/collaboration) - LEFT -->
+    <Icon name="users" class="absolute top-[35%] left-[2%] h-8 w-8 text-[hsl(var(--color-primary))] opacity-25 animate-float-pulse" style="animation-delay: -10s;" />
+    <!-- Icon 6: shield (Compliance/security) - RIGHT -->
+    <Icon name="shield" class="absolute top-[45%] right-[1%] h-8 w-8 text-[hsl(var(--color-primary))] opacity-25 animate-float-rotate" style="animation-delay: -12s;" />
+    <!-- Icon 7: credit-card (Billing) - LEFT -->
+    <Icon name="credit-card" class="absolute top-[55%] left-[8%] h-7 w-7 text-[hsl(var(--color-primary))] opacity-25 animate-float-drift" style="animation-delay: -14s;" />
+    <!-- Icon 8: book-open (Supervision/plans) - RIGHT -->
+    <Icon name="book-open" class="absolute top-[65%] right-[3%] h-8 w-8 text-[hsl(var(--color-primary))] opacity-25 animate-float-pulse" style="animation-delay: -16s;" />
+    <!-- Icon 9: database (Data collection) - LEFT -->
+    <Icon name="database" class="absolute top-[75%] left-[4%] h-8 w-8 text-[hsl(var(--color-primary))] opacity-25 animate-float-rotate" style="animation-delay: -18s;" />
+    <!-- Icon 10: check-circle (Audit-ready) - RIGHT -->
+    <Icon name="check-circle" class="absolute top-[85%] right-[1%] h-7 w-7 text-[hsl(var(--color-primary))] opacity-25 animate-float-drift" style="animation-delay: -20s;" />
+  </div>
+
   <div class="scroll-reveal slide-up flex flex-col items-center gap-6">
     <Image src={logo} alt="MenteVior logo" width={249} height={250} format="webp" class="h-20 w-auto" />
     <h2 class="text-[2.025rem] font-bold tracking-tight sm:text-[2.7rem] text-[hsl(var(--color-foreground))]">
