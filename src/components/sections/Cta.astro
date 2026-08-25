@@ -1,6 +1,7 @@
 ---
 import { site } from "../../data/site";
 import Button from "../ui/Button.astro";
+import Icon from "../ui/Icon.astro";
 ---
 
 <section
@@ -17,14 +18,28 @@ import Button from "../ui/Button.astro";
     <div class="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-[hsl(var(--color-primary))]/30 blur-3xl" />
   </div>
 
-  <div class="relative mx-auto max-w-3xl px-6 py-20 text-center lg:py-28">
-    <h2 class="scroll-reveal slide-up text-3xl font-black tracking-tight text-[hsl(var(--color-primary-foreground))] sm:text-4xl">
+  <div class="relative mx-auto max-w-4xl px-6 py-20 text-center lg:py-28">
+    <h2 class="scroll-reveal slide-up text-4xl font-black tracking-tight text-[hsl(var(--color-primary-foreground))] sm:text-5xl">
       Getting Ready Is Easy
     </h2>
-    <p class="scroll-reveal slide-up mt-4 text-lg text-[hsl(var(--color-primary-foreground))]/90">
-      Book a 30 min <span class="font-black">Personalized Walkthrough</span>, and <span class="font-black">Evaluate Your Own Workflows</span> with MenteVior
+    <p class="scroll-reveal slide-up mt-6 text-base sm:text-lg lg:text-xl text-[hsl(var(--color-primary-foreground))]/90 w-full">
+      Book a 30 min <span class="font-black">Personalized Walkthrough</span> and <span class="font-black">Evaluate Your Own Workflows</span> with MenteVior
     </p>
-    <div class="scroll-reveal slide-up mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+    <div class="scroll-reveal slide-up mt-12 flex flex-wrap items-center justify-center gap-8">
+      <div class="flex flex-col items-center gap-1">
+        <Icon name="credit-card" class="h-12 w-12 text-[hsl(var(--color-primary-foreground))]" />
+        <span class="text-xl text-[hsl(var(--color-primary-foreground))]">No Credit Card</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <Icon name="badge-check" class="h-12 w-12 text-[hsl(var(--color-primary-foreground))]" />
+        <span class="text-xl text-[hsl(var(--color-primary-foreground))]">No Setup Fee To Evaluate</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <Icon name="headset" class="h-12 w-12 text-[hsl(var(--color-primary-foreground))]" />
+        <span class="text-xl text-[hsl(var(--color-primary-foreground))]">Dedicated Support</span>
+      </div>
+    </div>
+    <div class="scroll-reveal slide-up mt-16 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
       <Button href={site.demoUrl} variant="cta-primary" icon="rocket" class="float-animation">Request a Demo</Button>
       <Button href="/contact" variant="cta-secondary">Contact Us</Button>
     </div>
