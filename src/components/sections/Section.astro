@@ -4,12 +4,13 @@ interface Props {
   ariaLabel?: string;
   class?: string;
   containerClass?: string;
+  style?: string;
 }
 
-const { id, ariaLabel, class: className = "", containerClass = "" } = Astro.props;
+const { id, ariaLabel, class: className = "", containerClass = "", style = "" } = Astro.props;
 ---
 
-<section id={id} aria-label={ariaLabel} class={className}>
+<section id={id} aria-label={ariaLabel} class={className} style={style}>
   <slot name="decor" />
   <div class={`mx-auto max-w-7xl px-6 py-20 lg:py-28 ${containerClass}`}>
     <slot />
