@@ -3,7 +3,7 @@ interface Props {
   eyebrow: string;
   title: string;
   description: string;
-  bullets: string[];
+  bullets: { text: string; icon: string }[];
   screenshot: string;
   alt: string;
   reversed?: boolean;
@@ -11,6 +11,8 @@ interface Props {
 }
 
 const { eyebrow, title, description, bullets, screenshot, alt, reversed = false, id } = Astro.props;
+
+import { icons } from "../../data/icons";
 ---
 
 <section
@@ -31,13 +33,11 @@ const { eyebrow, title, description, bullets, screenshot, alt, reversed = false,
     <p class="text-lg text-[hsl(var(--color-muted-foreground))] leading-relaxed">
       {description}
     </p>
-    <ul class="space-y-3">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
       {bullets.map((bullet) => (
-        <li class="flex items-start gap-3">
-          <svg class="mt-1 h-5 w-5 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 6 9 17l-5-5" />
-          </svg>
-          <span class="text-[hsl(var(--color-foreground))]">{bullet}</span>
+        <li class="flex items-start gap-3 rounded-xl bg-[hsl(var(--color-primary))]/5 border border-[hsl(var(--color-primary))]/10 p-4">
+          <svg class="mt-0.5 h-5 w-5 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[bullet.icon]} />
+          <span class="font-bold text-[hsl(var(--color-foreground))]">{bullet.text}</span>
         </li>
       ))}
     </ul>

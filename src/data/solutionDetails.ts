@@ -3,7 +3,7 @@ export interface SolutionDetailData {
   eyebrow: string;
   title: string;
   description: string;
-  bullets: string[];
+  bullets: { text: string; icon: string }[];
   screenshot: string;
   alt: string;
 }
@@ -14,13 +14,13 @@ export const solutionDetails: SolutionDetailData[] = [
     eyebrow: "Document",
     title: "Create Once, Use Everywhere",
     description:
-      "One clinical record powers every document in the system. Session notes, treatment plans, assessments, and monthly reports all flow from the same entry point — eliminating duplication and keeping your documentation audit-ready.",
+      "One appointment, one complete record. Session notes capture everything — teaching method, interventions, data, and signatures — tied to a single billing code.\n\nAI cleans up your rough notes into clinical language, structured per billing code, powered by AWS Bedrock. Lock the note and service logs generate automatically. Clinical monthly reports pull progress over time. No re-entry, no reconciling.",
     bullets: [
-      "Session notes with billing-code-aware templates (97153, 97155, 97156)",
-      "Clinical monthly reports generated from existing records",
-      "Service logs auto-created from locked session notes",
-      "Configurable document templates for every note type",
-      "Digital caregiver signatures — paperless and compliant",
+      { text: "Forms that adapt to each billing code", icon: "file-text" },
+      { text: "AI cleans rough notes in one click", icon: "sparkles" },
+      { text: "Locked notes generate service logs automatically", icon: "lock" },
+      { text: "Monthly reports from each client's data", icon: "line-chart" },
+      { text: "Signatures follow the record into billing", icon: "signature" },
     ],
     screenshot: "/images/mentevior-dashboard.webp",
     alt: "MenteVior document management showing session notes and clinical records",
@@ -32,11 +32,11 @@ export const solutionDetails: SolutionDetailData[] = [
     description:
       "Capture behavioral data in real time with flexible datasheet types and live graphs that update as you record. Trend analysis and date-range filtering turn raw data into actionable clinical insight.",
     bullets: [
-      "Five datasheet types: Percentage, Frequency, Duration, Interval, Rate",
-      "Live charts with trend lines and gap analysis",
-      "On-site collection grid for field sessions",
-      "Date-range filtering and period comparison",
-      "Inline chart panels directly in session notes",
+      { text: "Five datasheet types: Percentage, Frequency, Duration, Interval, Rate", icon: "database" },
+      { text: "Live charts with trend lines and gap analysis", icon: "line-chart" },
+      { text: "On-site collection grid for field sessions", icon: "clipboard" },
+      { text: "Date-range filtering and period comparison", icon: "calendar" },
+      { text: "Inline chart panels directly in session notes", icon: "file-text" },
     ],
     screenshot: "/images/mentevior-dashboard.webp",
     alt: "MenteVior data collection with live graphs and trend analysis",
@@ -48,11 +48,11 @@ export const solutionDetails: SolutionDetailData[] = [
     description:
       "Scheduling, authorization, and billing move together in a single connected flow. From appointment creation to claim submission, every step references the same data — no re-keying, no reconciling.",
     bullets: [
-      "Week and month calendar views with appointment cards",
-      "Payer management with catalog search and manual entry",
-      "Authorization tracking linked to scheduled events",
-      "Service plans configured at company and client level",
-      "Applicant pipeline from application to onboarding",
+      { text: "Week and month calendar views with appointment cards", icon: "calendar" },
+      { text: "Payer management with catalog search and manual entry", icon: "users" },
+      { text: "Authorization tracking linked to scheduled events", icon: "shield" },
+      { text: "Service plans configured at company and client level", icon: "clipboard" },
+      { text: "Applicant pipeline from application to onboarding", icon: "user-plus" },
     ],
     screenshot: "/images/mentevior-dashboard.webp",
     alt: "MenteVior scheduling calendar and billing workflow",
@@ -64,11 +64,11 @@ export const solutionDetails: SolutionDetailData[] = [
     description:
       "Supervision and compliance are tracked automatically across every record. Monthly supervision reports, case supervision logs, and dashboard compliance widgets keep your practice audit-ready without manual follow-up.",
     bullets: [
-      "Monthly supervision reports with configurable checklists",
-      "Case supervision log per client and supervisor",
-      "Dashboard compliance widgets with expiring-item alerts",
-      "Document compliance meters and authorization utilization",
-      "Credential tracking with expiration notifications",
+      { text: "Monthly supervision reports with configurable checklists", icon: "clipboard-check" },
+      { text: "Case supervision log per client and supervisor", icon: "clipboard" },
+      { text: "Dashboard compliance widgets with expiring-item alerts", icon: "shield" },
+      { text: "Document compliance meters and authorization utilization", icon: "badge-check" },
+      { text: "Credential tracking with expiration notifications", icon: "calendar-clock" },
     ],
     screenshot: "/images/mentevior-dashboard.webp",
     alt: "MenteVior compliance tracking and supervision reports",
@@ -80,11 +80,11 @@ export const solutionDetails: SolutionDetailData[] = [
     description:
       "Set permissions, templates, and service plans once — then enforced across the entire platform. A bitmask-based role system with 37 permission modules gives you granular control over who sees what.",
     bullets: [
-      "37 permission modules with bitmask-based access control",
-      "Role management with granular CRUD + BLOCK + READ permissions",
-      "Service plan templates with category and item configuration",
-      "Company-wide settings for sessions, credentials, and addresses",
-      "Section completion tracking for onboarding visibility",
+      { text: "37 permission modules with bitmask-based access control", icon: "shield" },
+      { text: "Role management with granular CRUD + BLOCK + READ permissions", icon: "users" },
+      { text: "Service plan templates with category and item configuration", icon: "clipboard" },
+      { text: "Company-wide settings for sessions, credentials, and addresses", icon: "building-2" },
+      { text: "Section completion tracking for onboarding visibility", icon: "list-checks" },
     ],
     screenshot: "/images/mentevior-dashboard.webp",
     alt: "MenteVior configuration panel with roles and permissions",
