@@ -33,12 +33,13 @@ const cards = [
   <div class="hidden lg:flex items-center justify-center gap-4">
     {cards.map((card, index) => (
       <div class="flex items-center gap-3">
-        <article class="flex flex-col items-center text-center rounded-2xl p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-white/20 flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]" style="background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);">
-          <h3 class="text-xl font-black text-white">{card.title}</h3>
-          <p class="mt-2 text-[19px] text-white/80 leading-normal">{card.body}</p>
+        <article class="card-coin-shine group relative flex flex-col items-center text-center rounded-2xl p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-white/20 flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]" style="background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);">
+          <span class="coin-shine pointer-events-none absolute inset-0 overflow-hidden rounded-2xl" aria-hidden="true"></span>
+          <h3 class="relative z-10 text-xl font-black text-white">{card.title}</h3>
+          <p class="relative z-10 mt-2 text-[19px] text-white/80 leading-normal">{card.body}</p>
           <a
             href={card.href}
-            class="mt-4 inline-flex items-center gap-2 rounded-lg border-2 border-white bg-transparent px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white hover:text-[#0f172a]"
+            class="relative z-10 mt-4 inline-flex items-center gap-2 rounded-lg border-2 border-white bg-transparent px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white hover:text-[#0f172a]"
           >
             Explore
           </a>
@@ -56,12 +57,13 @@ const cards = [
   <div class="flex flex-col items-center gap-3 lg:hidden">
     {cards.map((card, index) => (
       <div class="flex flex-col items-center w-full">
-        <article class="flex flex-col items-center text-center rounded-2xl p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-white/20 w-full max-w-[320px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]" style="background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);">
-          <h3 class="text-xl font-black text-white">{card.title}</h3>
-          <p class="mt-2 text-[19px] text-white/80 leading-normal">{card.body}</p>
+        <article class="card-coin-shine group relative flex flex-col items-center text-center rounded-2xl p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-white/20 w-full max-w-[320px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]" style="background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);">
+          <span class="coin-shine pointer-events-none absolute inset-0 overflow-hidden rounded-2xl" aria-hidden="true"></span>
+          <h3 class="relative z-10 text-xl font-black text-white">{card.title}</h3>
+          <p class="relative z-10 mt-2 text-[19px] text-white/80 leading-normal">{card.body}</p>
           <a
             href={card.href}
-            class="mt-4 inline-flex items-center gap-2 rounded-lg border-2 border-white bg-transparent px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white hover:text-[#0f172a]"
+            class="relative z-10 mt-4 inline-flex items-center gap-2 rounded-lg border-2 border-white bg-transparent px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white hover:text-[#0f172a]"
           >
             Explore
           </a>
@@ -75,3 +77,54 @@ const cards = [
     ))}
   </div>
 </div>
+
+<style>
+  .card-coin-shine .coin-shine::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      35deg,
+      transparent 48%,
+      rgba(255, 255, 255, 0.95) 50%,
+      transparent 52%
+    );
+    transform: translateX(-100%) rotate(35deg);
+    opacity: 1;
+    transition: none;
+  }
+
+  .card-coin-shine:hover .coin-shine::before {
+    animation: card-coin-shine 2.33s ease-in-out infinite;
+  }
+
+  @keyframes card-coin-shine {
+    0% {
+      transform: translateX(-100%) rotate(35deg);
+      opacity: 0;
+    }
+    4% {
+      opacity: 1;
+    }
+    41.4% {
+      transform: translateX(100%) rotate(35deg);
+      opacity: 1;
+    }
+    45.4% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-coin-shine:hover .coin-shine::before {
+      animation: none;
+      opacity: 0;
+    }
+  }
+</style>
