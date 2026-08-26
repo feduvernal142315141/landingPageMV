@@ -1,7 +1,6 @@
 ---
-import { solutionCategories } from "../../data/solutions";
 import Section from "./Section.astro";
-import SolutionCategory from "../SolutionCategory.astro";
+import WorkflowCards from "./WorkflowCards.astro";
 ---
 
 <Section
@@ -18,77 +17,17 @@ import SolutionCategory from "../SolutionCategory.astro";
         </span>
     </div>
 
-    <div class="lg:flex lg:items-start lg:justify-between">
-      <!-- Left side: Title and subtitle -->
-      <div class="scroll-reveal slide-left lg:w-1/2 lg:pr-12 lg:text-left">
-        <h2 class="mt-15 text-3xl font-black tracking-tight sm:text-4xl text-[hsl(var(--color-foreground))] text-center lg:text-left">
-          All Your Workflows<br class="lg:hidden" /> Thoughtfully Connected
-        </h2>
-        <p class="mt-4 text-xl text-[hsl(var(--color-primary))] font-medium text-center lg:text-left">
-          Clinical processes and business operations, finally unified
-        </p>
-        <p class="mt-6 text-lg text-[hsl(var(--color-muted-foreground))] font-normal tracking-wide">
-          <span class="lg:hidden">
-            Two unified suites — Clinical Options<br />
-            and Company Configuration — built<br />
-            to work together from day one, sharing<br />
-            a single source of truth across your<br />
-            entire practice. Data flows seamlessly<br />
-            from client intake through assessments,<br />
-            session notes, supervision, and billing,<br />
-            no duplicate entry, no gaps. Scheduling<br />
-            a session feeds data that informs the<br />
-            service plan, populates live progress<br />
-            graphs, and queues the claim.<br />
-            Supervision hours link to staff<br />
-            credentials. Caregiver signatures attach<br />
-            to the service plan. Assessments prefill<br />
-            service plans. Scheduling is designed<br />
-            to respect authorizations. Billing pulls<br />
-            from documented sessions. Credentials<br />
-            help keep certifications current. Every<br />
-            module talks to the others, so your team<br />
-            spends less time on admin and more<br />
-            time delivering care. One platform, zero<br />
-            data silos, complete audit trail — from<br />
-            first intake to final reimbursement.
-          </span>
-          <span class="hidden lg:block">
-            Two unified suites — Clinical Options and Company<br />
-            Configuration — built to work together from day one,<br />
-            sharing a single source of truth across your entire practice.<br />
-            Data flows seamlessly from client intake through<br />
-            assessments, session notes, supervision, and billing —<br />
-            no duplicate entry, no gaps. Scheduling a session feeds data<br />
-            that informs the service plan, populates live progress graphs,<br />
-            and queues the claim. Supervision hours link to staff credentials.<br />
-            Caregiver signatures attach to the service plan. Assessments<br />
-            prefill service plans. Scheduling is designed to respect<br />
-            authorizations. Billing pulls from documented sessions.<br />
-            Credentials help keep certifications current. Every module talks<br />
-            to the others, so your team spends less time on admin<br />
-            and more time delivering care. One platform, zero data silos,<br />
-            complete audit trail — from first intake to final reimbursement.
-          </span>
-        </p>
-      </div>
-
-      <!-- Right side: Cards stacked with overlap -->
-      <div class="scroll-reveal slide-right mt-4 lg:mt-0 lg:w-1/2 lg:pl-8">
-        <div class="relative">
-          {solutionCategories.map((category, index) => (
-            <SolutionCategory
-              category={category}
-              showExplore={true}
-              baseUrl="/solutions"
-              showModules={false}
-              isFirst={index === 0}
-              isOverlapped={index > 0}
-              horizontalOffset={index === 0 ? 'left' : 'right'}
-            />
-          ))}
-        </div>
-      </div>
+    <div class="scroll-reveal slide-left max-w-3xl mx-auto text-center lg:text-left">
+      <h2 class="mt-6 text-3xl font-black tracking-tight sm:text-4xl text-[hsl(var(--color-foreground))]">
+        All Your Workflows<br class="lg:hidden" /> Thoughtfully Connected
+      </h2>
+      <p class="mt-4 text-center text-xl text-[hsl(var(--color-primary))] font-medium">
+        Document once. Everything else follows.
+      </p>
+      <p class="mt-6 text-center text-lg text-[hsl(var(--color-muted-foreground))] font-normal tracking-wide">
+        Two unified suites — Clinical Options and Company Configuration — built to work together from day one, sharing a single source of truth across your entire practice. One record moves through the whole practice — no re-typing, no reconciling, no version of the truth per system.
+      </p>
+      <WorkflowCards />
     </div>
   </div>
 </Section>
