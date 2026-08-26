@@ -1,0 +1,144 @@
+---
+import { icons } from "../../data/icons";
+import Icon from "./Icon.astro";
+import AccordionItem from "./AccordionItem.astro";
+
+interface Props {
+  items: { question: string; answer: string }[];
+  multiple?: boolean;
+  class?: string;
+}
+
+const { items, multiple = true, class: className = "" } = Astro.props;
+---
+
+<div class={`space-y-4 ${className}`} role="region" aria-label="Frequently asked questions">
+  {items.map((item, index) => (
+    <AccordionItem item={item} index={index} multiple={multiple} />
+  ))}
+</div>
+
+<script>
+  // Initialize accordions after DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.accordion-item');
+    
+    accordions.forEach((item) => {
+      const trigger = item.querySelector('.accordion-trigger');
+      const content = item.querySelector('.accordion-content');
+      const icon = item.querySelector('.accordion-icon');
+      
+      if (!trigger || !content) return;
+      
+      // Set initial state
+      const isOpen = item.classList.contains('open');
+      if (isOpen) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.style.opacity = '1';
+        icon?.classList.add('rotate-180');
+      } else {
+        content.style.maxHeight = '0';
+        content.style.opacity = '0';
+      }
+      
+      trigger.addEventListener('click', () => {
+        const isOpen = item.classList.toggle('open');
+        
+        if (isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+        } else {
+          content.style.maxHeight = '0';
+          content.style.opacity = '0';
+        }
+        
+        // Toggle icon rotation
+        const icon = item.querySelector('.accordion-icon');
+        if (icon) {
+          icon.classList.toggle('rotate-180');
+        }
+      });
+      
+      // Keyboard support
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          trigger.click();
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .accordion-item {
+    border: 1px solid hsl(var(--color-border));
+    border-radius: 0.75rem;
+    background: white;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .accordion-item:hover {
+    box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.1);
+  }
+  
+  .accordion-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: hsl(var(--color-foreground));
+    cursor: pointer;
+    text-align: left;
+    gap: 1rem;
+  }
+  
+  .accordion-trigger:focus-visible {
+    outline: 2px solid hsl(var(--color-primary));
+    outline-offset: -2px;
+  }
+  
+  .accordion-icon {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: hsl(var(--color-primary));
+    transition: transform 0.2s ease;
+  }
+  
+  .accordion-icon.rotate-180 {
+    transform: rotate(180deg);
+  }
+  
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+  
+  .accordion-item.open .accordion-content {
+    max-height: 1000px;
+    opacity: 1;
+  }
+  
+  .accordion-body {
+    padding: 0 1.5rem 1.5rem;
+    color: hsl(var(--color-muted-foreground));
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .accordion-content {
+      transition: none;
+    }
+  }
+</style>

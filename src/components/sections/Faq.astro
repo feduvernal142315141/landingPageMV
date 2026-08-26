@@ -1,0 +1,36 @@
+---
+import { site } from "../../data/site";
+import Section from "./Section.astro";
+---
+
+<Section
+  id="faq"
+  ariaLabel="Frequently Asked Questions"
+  class="bg-[hsl(var(--color-bg-warm))]"
+  containerClass="relative"
+>
+  <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+    <div class="text-center mb-16">
+      <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[hsl(var(--color-primary))]/10 border border-[hsl(var(--color-primary))]/20 text-sm font-bold uppercase tracking-widest text-[hsl(var(--color-primary))] mb-3 block">
+        FAQ
+      </span>
+      <h2 class="text-3xl font-black tracking-tight text-[hsl(var(--color-foreground))] sm:text-4xl">
+        Questions, answered
+      </h2>
+    </div>
+    
+    <!-- Demo link section -->
+    <div class="mt-16 text-center">
+      <p class="text-lg text-[hsl(var(--color-muted-foreground))]">
+        Have questions?&nbsp;
+        <a href={site.demoUrl} class="text-[hsl(var(--color-primary))] font-semibold hover:underline">
+          Ask us in a demo
+        </a>
+        .&nbsp;Prefer email?&nbsp;
+        <a href={`mailto:${site.contact.email}`} class="text-[hsl(var(--color-primary))] font-semibold hover:underline">
+          We'd love to hear from you
+        </a>
+      </p>
+    </div>
+  </div>
+</Section>

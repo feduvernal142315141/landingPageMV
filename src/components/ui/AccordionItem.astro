@@ -1,0 +1,40 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  item: { question: string; answer: string };
+  index: number;
+  multiple?: boolean;
+}
+
+const { item, index, multiple } = Astro.props;
+---
+
+<div class="accordion-item" data-accordion-item>
+  <button 
+    type="button"
+    class="accordion-trigger w-full"
+    aria-expanded="false"
+    aria-controls={`accordion-content-${index}`}
+    id={`accordion-trigger-${index}`}
+  >
+    <span class="text-left w-full">{item.question}</span>
+    <Icon name="chevron-down" class="accordion-icon" aria-hidden="true" />
+  </button>
+  
+  <div 
+    id={`accordion-content-${index}`}
+    role="region"
+    aria-labelledby={`accordion-trigger-${index}`}
+    class="accordion-content"
+  >
+    <div class="accordion-body">
+      {item.answer}
+    </div>
+  </div>
+</div>
+
+<script>
+  // This script will be included in the parent Accordion component
+  // The actual toggle logic is handled in the parent component
+</script>

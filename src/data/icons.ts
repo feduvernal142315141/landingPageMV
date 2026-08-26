@@ -37,6 +37,8 @@ export const icons: Record<string, string> = {
     '<path d="m21 17-2.156-1.228A3 3 0 0 0 17 15.376V13"/><path d="M3 3v12a2 2 0 0 0 2 2h2"/><path d="m21 3-8.5 8.5"/><path d="m11 11 4 4"/><path d="M3 21h18"/>',
   "badge-check":
     '<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/>',
+  "chevron-down": '<polyline points="6 9 12 15 18 9"/>',
+  "chevron-up": '<polyline points="18 15 12 9 6 15"/>',
   "user-plus":
     '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/>',
   "layout-dashboard":
