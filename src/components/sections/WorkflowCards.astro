@@ -33,12 +33,12 @@ const cards = [
   <div class="hidden lg:flex items-center justify-center gap-4">
     {cards.map((card, index) => (
       <div class="flex items-center gap-3">
-        <article class="flex flex-col items-center text-center rounded-2xl bg-white/80 backdrop-blur-sm p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-[hsl(var(--color-border))] flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]">
-          <h3 class="text-xl font-black text-[hsl(var(--color-foreground))]">{card.title}</h3>
-          <p class="mt-2 text-sm text-[hsl(var(--color-muted-foreground))] leading-normal">{card.body}</p>
+        <article class="flex flex-col items-center text-center rounded-2xl p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-white/20 flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]" style="background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);">
+          <h3 class="text-xl font-black text-white">{card.title}</h3>
+          <p class="mt-2 text-[19px] text-white/80 leading-normal">{card.body}</p>
           <a
             href={card.href}
-            class="mt-4 inline-flex items-center gap-2 rounded-lg bg-[hsl(var(--color-primary))] px-5 py-2.5 text-sm font-bold text-[hsl(var(--color-primary-foreground))] transition hover:bg-[hsl(var(--color-primary))]/90"
+            class="mt-4 inline-flex items-center gap-2 rounded-lg border-2 border-white bg-transparent px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white hover:text-[#0f172a]"
           >
             Explore
           </a>
@@ -56,12 +56,12 @@ const cards = [
   <div class="flex flex-col items-center gap-3 lg:hidden">
     {cards.map((card, index) => (
       <div class="flex flex-col items-center w-full">
-        <article class="flex flex-col items-center text-center rounded-2xl bg-white/80 backdrop-blur-sm p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-[hsl(var(--color-border))] w-full max-w-[320px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]">
-          <h3 class="text-xl font-black text-[hsl(var(--color-foreground))]">{card.title}</h3>
-          <p class="mt-2 text-sm text-[hsl(var(--color-muted-foreground))] leading-normal">{card.body}</p>
+        <article class="flex flex-col items-center text-center rounded-2xl p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-white/20 w-full max-w-[320px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]" style="background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);">
+          <h3 class="text-xl font-black text-white">{card.title}</h3>
+          <p class="mt-2 text-[19px] text-white/80 leading-normal">{card.body}</p>
           <a
             href={card.href}
-            class="mt-4 inline-flex items-center gap-2 rounded-lg bg-[hsl(var(--color-primary))] px-5 py-2.5 text-sm font-bold text-[hsl(var(--color-primary-foreground))] transition hover:bg-[hsl(var(--color-primary))]/90"
+            class="mt-4 inline-flex items-center gap-2 rounded-lg border-2 border-white bg-transparent px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white hover:text-[#0f172a]"
           >
             Explore
           </a>
