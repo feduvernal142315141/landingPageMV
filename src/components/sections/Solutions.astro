@@ -1,6 +1,8 @@
 ---
 import Section from "./Section.astro";
 import WorkflowCards from "./WorkflowCards.astro";
+import SolutionDetail from "../ui/SolutionDetail.astro";
+import { solutionDetails } from "../../data/solutionDetails";
 ---
 
 <Section
@@ -30,5 +32,21 @@ import WorkflowCards from "./WorkflowCards.astro";
     </div>
 
     <WorkflowCards />
+
+    <!-- Detail sections -->
+    <div class="mt-16">
+      {solutionDetails.map((detail, index) => (
+        <SolutionDetail
+          id={detail.id}
+          eyebrow={detail.eyebrow}
+          title={detail.title}
+          description={detail.description}
+          bullets={detail.bullets}
+          screenshot={detail.screenshot}
+          alt={detail.alt}
+          reversed={index % 2 === 1}
+        />
+      ))}
+    </div>
   </div>
 </Section>
