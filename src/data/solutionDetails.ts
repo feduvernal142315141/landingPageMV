@@ -12,7 +12,7 @@ export const solutionDetails: SolutionDetailData[] = [
   {
     id: "document",
     eyebrow: "Document",
-    title: "Create Once, Use Everywhere",
+    title: "Clinical documentation shaped for ABA",
     description:
       "One appointment, one complete record. Session notes capture everything — teaching method, interventions, data, and signatures — tied to a single billing code.\n\nAI cleans up your rough notes into clinical language, structured per billing code, powered by AWS Bedrock. Lock the note and service logs generate automatically. Clinical monthly reports pull progress over time. No re-entry, no reconciling.",
     bullets: [
@@ -28,7 +28,7 @@ export const solutionDetails: SolutionDetailData[] = [
   {
     id: "collect",
     eyebrow: "Collect",
-    title: "Data That Drives Decisions",
+    title: "Data collection that keeps up with sessions",
     description:
       "Datasheets and on-site counters built for the pace of a real session. Five methods — frequency, percentage, duration, interval, and rate — each with its own grid and live chart.\n\nEvery occurrence lands on a graph the moment it's recorded. Trend analysis evaluates objectives against SMART criteria automatically. No export, no transcription, no waiting for the monthly report.",
     bullets: [
@@ -44,7 +44,7 @@ export const solutionDetails: SolutionDetailData[] = [
   {
     id: "operate",
     eyebrow: "Operate",
-    title: "One Connected Workflow",
+    title: "Scheduling, authorization, and billing that talk to each other",
     description:
       "Scheduling, authorization, and billing move as one flow. Book an appointment and the system checks conflicts, pulls billing codes from the prior authorization, and validates units — all before you save.\n\nCompleted appointments auto-transition. Session notes lock into billing-ready records. Service plans cascade from company to client, with billing codes. Payers come from catalog or manually — rates and plans stay linked.",
     bullets: [
