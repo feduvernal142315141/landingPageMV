@@ -9,7 +9,7 @@ import WorkflowCards from "./WorkflowCards.astro";
   class="relative overflow-hidden bg-[hsl(var(--color-bg-warm))]"
   containerClass="relative"
 >
-  <div class="mx-auto max-w-7xl px-6 py-12 lg:py-16 -mt-20">
+  <div class="mx-auto max-w-7xl py-12 lg:py-16 -mt-20">
     <!-- Eyebrow centered at top - matching Features section gap -->
     <div class="scroll-reveal slide-up text-center">
 <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[hsl(var(--color-primary))]/10 border border-[hsl(var(--color-primary))]/20 text-sm font-bold uppercase tracking-widest text-[hsl(var(--color-primary))] mb-3 block">
@@ -17,17 +17,18 @@ import WorkflowCards from "./WorkflowCards.astro";
         </span>
     </div>
 
-    <div class="scroll-reveal slide-left max-w-3xl mx-auto text-center lg:text-left">
+    <div class="scroll-reveal slide-left max-w-3xl mx-auto text-center">
       <h2 class="mt-6 text-3xl font-black tracking-tight sm:text-4xl text-[hsl(var(--color-foreground))]">
-        All Your Workflows<br class="lg:hidden" /> Thoughtfully Connected
+        All Your Workflows Thoughtfully Connected
       </h2>
-      <p class="mt-4 text-center text-xl text-[hsl(var(--color-primary))] font-medium">
+      <p class="mt-4 text-xl text-[hsl(var(--color-primary))] font-medium">
         Document once. Everything else follows.
       </p>
-      <p class="mt-6 text-center text-lg text-[hsl(var(--color-muted-foreground))] font-normal tracking-wide">
+      <p class="mt-6 text-lg text-[hsl(var(--color-muted-foreground))] font-normal tracking-wide">
         Two unified suites — Clinical Options and Company Configuration — built to work together from day one, sharing a single source of truth across your entire practice. One record moves through the whole practice — no re-typing, no reconciling, no version of the truth per system.
       </p>
-      <WorkflowCards />
     </div>
+
+    <WorkflowCards />
   </div>
 </Section>
