@@ -21,6 +21,19 @@ export const smartFeatures: SmartFeature[] = [
     ],
   },
   {
+    icon: "sparkles",
+    number: "02",
+    title: "AI-powered session narratives, improved<br/>in one click",
+    description:
+      "Rough notes become clean clinical prose without leaving the editor. The suggestion is structured to the note's billing code and summary type — face-to-face observation, protocol adjustments, active direction — powered by AWS Bedrock. The clinician stays the author.",
+    bullets: [
+      { text: "Structured per billing code", icon: "file-text" },
+      { text: "CASP-aligned guidance built in", icon: "clipboard-check" },
+      { text: "Suggestions land in the editor", icon: "sparkles" },
+      { text: "97153, 97155, 97156 formats", icon: "list-checks" },
+    ],
+  },
+  {
     icon: "shield",
     number: "03",
     title: "Enterprise-grade security for the data you're<br/>responsible for",
@@ -31,19 +44,6 @@ export const smartFeatures: SmartFeature[] = [
       { text: "Role-based access control", icon: "lock" },
       { text: "Encrypted in transit and at rest", icon: "database" },
       { text: "Full audit trail", icon: "clipboard-list" },
-    ],
-  },
-  {
-    icon: "users",
-    number: "02",
-    title: "Every BCBA, RBT, and owner sees exactly what<br/>they need",
-    description:
-      "MenteVior adapts to every role in your practice. BCBA, RBT, practice owner, or billing specialist — each sees exactly what they need, nothing more. Roles in MenteVior are defined by your clinic with 37 configurable modules.",
-    bullets: [
-      { text: "Granular module permissions", icon: "shield" },
-      { text: "Custom clinic roles", icon: "lock" },
-      { text: "Module-level CRUD", icon: "users" },
-      { text: "Role-specific views", icon: "user-plus" },
     ],
   },
 ];
