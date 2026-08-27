@@ -3,8 +3,6 @@ import { site } from "../data/site";
 import BrandLockup from "./BrandLockup.astro";
 import Copyright from "./Copyright.astro";
 import FooterHeading from "./FooterHeading.astro";
-import Icon from "./ui/Icon.astro";
-import SocialLinks from "./SocialLinks.astro";
 ---
 
 <footer id="footer" class="relative overflow-hidden bg-[hsl(var(--color-footer-bg))]">
@@ -23,59 +21,40 @@ import SocialLinks from "./SocialLinks.astro";
         <p class="mt-5 max-w-sm text-sm leading-relaxed text-[hsl(var(--color-footer-muted))]">
           Made for the ABA Comunity
         </p>
-        <div class="mt-7">
-          <SocialLinks />
-        </div>
       </div>
 
       <div class="lg:col-span-2 text-center lg:text-left">
         <FooterHeading class="text-[hsl(var(--color-footer-text))]">Product</FooterHeading>
         <ul class="mt-5 space-y-3 text-left">
           <li>
-            <a href="/" class="text-sm text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]" data-home-link>Home</a>
+            <a href="/" class="text-base text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]" data-home-link>Home</a>
           </li>
           <li>
-            <a href="/#solutions" class="text-sm text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Solutions</a>
+            <a href="/#solutions" class="text-base text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Solutions</a>
           </li>
           <li>
-            <a href="/#features" class="text-sm text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Features</a>
+            <a href="/#features" class="text-base text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Features</a>
           </li>
           <li>
-            <a href="/#pricing" class="text-sm text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Pricing</a>
+            <a href="/#pricing" class="text-base text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Pricing</a>
           </li>
         </ul>
       </div>
 
-      <div class="lg:col-span-2 text-center lg:text-left">
+      <div class="lg:col-span-5 text-center lg:text-left">
         <FooterHeading class="text-[hsl(var(--color-footer-text))]">Company</FooterHeading>
         <ul class="mt-5 space-y-3 text-left">
           <li>
-            <a href="/#faq" class="text-sm text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">FAQ</a>
+            <a href="/#faq" class="text-base text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">FAQ</a>
           </li>
           <li>
-            <a href="#" class="text-sm text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Privacy</a>
+            <a href="#" class="text-base text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Privacy</a>
           </li>
           <li>
-            <a href="#" class="text-sm text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Terms</a>
+            <a href="#" class="text-base text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Terms</a>
           </li>
-        </ul>
-      </div>
-
-      <div class="lg:col-span-3 text-center lg:text-left">
-        <FooterHeading class="text-[hsl(var(--color-footer-text))]">Contact</FooterHeading>
-        <ul class="mt-5 space-y-3 text-left">
           <li>
-            <a
-              href={`mailto:${site.contact.email}`}
-              class="group inline-flex items-center gap-2.5 text-sm text-[hsl(var(--color-footer-muted))] transition hover:text-[hsl(var(--color-primary))]"
-            >
-              <Icon name="mail" class="h-4 w-4 text-[hsl(var(--color-footer-muted))] transition group-hover:text-[hsl(var(--color-primary))]" />
-              <span class="text-[hsl(var(--color-footer-muted))]">{site.contact.email}</span>
-            </a>
-          </li>
-          <li class="inline-flex items-center gap-2.5 text-[hsl(var(--color-footer-muted))]">
-            <Icon name="phone" class="h-4 w-4 text-[hsl(var(--color-footer-muted))]" />
-            <span class="text-sm">{site.contact.phone}</span>
+            <a href={`mailto:${site.contact.email}`} class="text-base text-[hsl(var(--color-footer-text))] transition hover:text-[hsl(var(--color-primary))]">Contact</a>
           </li>
         </ul>
       </div>

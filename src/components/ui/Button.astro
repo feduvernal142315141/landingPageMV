@@ -24,9 +24,9 @@ const variants: Record<string, string> = {
   "cta-primary":
     "inline-flex items-center gap-2.5 rounded-lg bg-[hsl(var(--color-primary))] px-6 py-3 text-sm font-bold text-[hsl(var(--color-primary-foreground))] shadow-[0_8px_24px_rgba(59,130,246,0.4)] transition hover:bg-[hsl(var(--color-primary))]/90 hover:shadow-[0_10px_28px_rgba(59,130,246,0.5)]",
   "cta-primary-outline":
-    "inline-flex items-center gap-2.5 rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-bold text-[hsl(var(--color-primary))] shadow-[0_8px_24px_rgba(255,255,255,0.3)] transition hover:bg-white/90 hover:shadow-[0_10px_28px_rgba(255,255,255,0.4)]",
+    "inline-flex items-center gap-2.5 rounded-2xl border-2 border-white bg-white px-6 py-3 text-sm font-bold text-[hsl(var(--color-primary))] shadow-[0_8px_24px_rgba(255,255,255,0.3)] transition hover:bg-white/90 hover:shadow-[0_10px_28px_rgba(255,255,255,0.4)]",
   "cta-secondary":
-    "inline-flex items-center gap-2.5 rounded-lg border-4 border-[hsl(var(--color-primary-foreground))] bg-transparent px-6 py-3 text-sm font-bold tracking-wide text-[hsl(var(--color-primary-foreground))] transition hover:bg-[hsl(var(--color-foreground))] hover:border-[hsl(var(--color-foreground))]",
+    "inline-flex items-center gap-2.5 rounded-2xl border-2 border-[hsl(var(--color-primary-foreground))] bg-transparent px-6 py-3 text-sm font-bold tracking-wide text-[hsl(var(--color-primary-foreground))] transition hover:bg-[hsl(var(--color-foreground))] hover:border-[hsl(var(--color-foreground))]",
   "cta-navy":
     "inline-flex items-center gap-2.5 rounded-lg border-2 border-[hsl(var(--color-foreground))] bg-[hsl(var(--color-bg-warm))] px-6 py-3 text-sm font-bold tracking-wide text-[hsl(var(--color-foreground))]",
 };
@@ -53,6 +53,11 @@ const dataAttrs = Object.fromEntries(
   }
 
   a.rounded-2xl.border-2.border-\[hsl\(210\,80\%\,60\%\)\] {
+    border-top-width: 3px;
+    border-left-width: 3px;
+  }
+
+  a.rounded-2xl.border-2.border-\[hsl\(var\(--color-primary-foreground\)\)\] {
     border-top-width: 3px;
     border-left-width: 3px;
   }
