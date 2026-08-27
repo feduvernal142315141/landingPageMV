@@ -45,13 +45,15 @@ import { icons } from "../../data/icons";
 
   <!-- Screenshot -->
   <div class="flex-1">
-    <div class="relative overflow-hidden rounded-2xl border border-[hsl(var(--color-border))] shadow-[0_4px_24px_rgba(15,23,42,0.08)]">
-      <img
-        src={screenshot}
-        alt={alt}
-        class="h-auto w-full object-cover"
-        loading="lazy"
-      />
+    <div class="rounded-2xl p-[10px] bg-[hsl(32,12%,97%)] border border-[hsl(240,20%,85%)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(15,23,42,0.18)] hover:-translate-y-2">
+      <div class="relative overflow-hidden rounded-2xl border border-[hsl(240,20%,85%)] shadow-[0_4px_24px_rgba(15,23,42,0.08)]">
+        <img
+          src={screenshot}
+          alt={alt}
+          class="h-auto w-full object-cover"
+          loading="lazy"
+        />
+      </div>
     </div>
   </div>
 </section>
