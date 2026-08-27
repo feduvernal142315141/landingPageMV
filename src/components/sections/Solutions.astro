@@ -44,7 +44,8 @@ import { solutionDetails } from "../../data/solutionDetails";
           bullets={detail.bullets}
           screenshot={detail.screenshot}
           alt={detail.alt}
-          reversed={index % 2 === 1}
+          reversed={index === 1 || index === 2 || index === 4}
+          animate={index <= 4}
         />
       ))}
     </div>
