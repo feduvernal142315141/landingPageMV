@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Section from "./Section.astro";
 import logo from "../../assets/MenteVior-logo.png";
 import dashboardDesktop from "../../assets/mentevior-dashboard.png";
+import { icons } from "../../data/icons";
 import Icon from "../ui/Icon.astro";
 ---
 
@@ -107,15 +108,15 @@ import Icon from "../ui/Icon.astro";
   <div class="scroll-reveal slide-up mt-14 flex justify-center">
     <ul class="flex flex-col md:flex-row gap-6 text-left text-lg font-medium leading-relaxed text-[hsl(var(--color-muted-foreground))] max-w-5xl">
       <li class="flex-1 flex items-start gap-3 rounded-xl bg-[hsl(var(--color-primary)/0.08)] p-4">
-        <svg class="mt-1.5 h-5 w-5 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg class="mt-1.5 h-5 w-5 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons.layers}/>
         <span class="whitespace-nowrap"><strong class="text-[hsl(var(--color-foreground))]">Five systems replaced by one</strong></span>
       </li>
       <li class="flex-1 flex items-start gap-3 rounded-xl bg-[hsl(var(--color-primary)/0.08)] p-4">
-        <svg class="mt-1.5 h-5 w-5 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg class="mt-1.5 h-5 w-5 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons.shield}/>
         <span class="whitespace-nowrap"><strong class="text-[hsl(var(--color-foreground))]">Denials prevented, not reacted to</strong></span>
       </li>
       <li class="flex-1 flex items-start gap-3 rounded-xl bg-[hsl(var(--color-primary)/0.08)] p-4">
-        <svg class="mt-1.5 h-5 w-5 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg class="mt-1.5 h-5 w-5 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons["refresh-cw"]}/>
         <span class="whitespace-nowrap"><strong class="text-[hsl(var(--color-foreground))]">Zero re-entry, No wasted hours</strong></span>
       </li>
     </ul>
