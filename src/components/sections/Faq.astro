@@ -28,12 +28,12 @@ import Section from "./Section.astro";
             data-index={index}
           >
             <span class="text-lg font-semibold text-[hsl(var(--color-foreground))] pr-4">{faq.question}</span>
-            <svg class:list={["faq-chevron h-5 w-5 shrink-0 text-[hsl(var(--color-primary))] transition-transform duration-300", { "rotate-90": index === 0 }]} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6" />
+            <svg class="faq-chevron h-5 w-5 shrink-0 text-[hsl(var(--color-primary))] transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
             </svg>
           </button>
           <div class="faq-answer overflow-hidden transition-all duration-300" style={index === 0 ? "max-height: 500px;" : "max-height: 0;"}>
-            <p class="px-4 pb-5 text-[hsl(var(--color-muted-foreground))] leading-relaxed">
+            <p class="px-4 pb-5 text-lg text-[hsl(var(--color-muted-foreground))] leading-relaxed">
               {faq.answer}
             </p>
           </div>
@@ -59,29 +59,21 @@ import Section from "./Section.astro";
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".faq-button");
+    const firstChevron = document.querySelector(".faq-chevron") as HTMLElement;
+    if (firstChevron) firstChevron.style.transform = "rotate(0deg)";
 
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        const index = button.getAttribute("data-index");
         const answer = button.parentElement?.querySelector(".faq-answer") as HTMLElement;
         const chevron = button.querySelector(".faq-chevron") as HTMLElement;
         const isOpen = answer.style.maxHeight !== "0px" && answer.style.maxHeight !== "";
 
-        // Close all other answers
-        document.querySelectorAll(".faq-answer").forEach((el, i) => {
-          if (i !== Number(index)) {
-            (el as HTMLElement).style.maxHeight = "0px";
-            document.querySelectorAll(".faq-chevron")[i].style.transform = "rotate(0deg)";
-          }
-        });
-
-        // Toggle current answer
         if (isOpen) {
           answer.style.maxHeight = "0px";
-          chevron.style.transform = "rotate(0deg)";
+          chevron.style.transform = "rotate(180deg)";
         } else {
           answer.style.maxHeight = answer.scrollHeight + "px";
-          chevron.style.transform = "rotate(90deg)";
+          chevron.style.transform = "rotate(0deg)";
         }
       });
     });
