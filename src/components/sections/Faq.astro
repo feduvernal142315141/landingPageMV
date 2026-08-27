@@ -12,17 +12,17 @@ import Section from "./Section.astro";
 >
   <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
     <div class="text-center mb-16">
-      <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[hsl(var(--color-primary))]/10 border border-[hsl(var(--color-primary))]/20 text-sm font-bold uppercase tracking-widest text-[hsl(var(--color-primary))] mb-3 block">
+      <span class="scroll-reveal slide-up inline-flex items-center px-4 py-1.5 rounded-full bg-[hsl(var(--color-primary))]/10 border border-[hsl(var(--color-primary))]/20 text-sm font-bold uppercase tracking-widest text-[hsl(var(--color-primary))] mb-3 block" style="transition-delay: 0ms;">
         FAQ
       </span>
-      <h2 class="text-3xl font-black tracking-tight text-[hsl(var(--color-foreground))] sm:text-4xl">
+      <h2 class="scroll-reveal slide-up text-3xl font-black tracking-tight text-[hsl(var(--color-foreground))] sm:text-4xl" style="transition-delay: 100ms;">
         Questions, answered
       </h2>
     </div>
 
     <div class="mx-auto max-w-3xl">
       {faqs.map((faq, index) => (
-        <div class="faq-item border-b border-[hsl(var(--color-border))]">
+        <div class="scroll-reveal slide-right faq-item border-b border-[hsl(var(--color-border))]" style={`transition-delay: ${index * 150}ms;`}>
           <button
             class="faq-button w-full flex items-center justify-between py-5 text-left transition-colors hover:bg-[hsl(var(--color-primary)/0.05)] px-4 rounded-lg"
             data-index={index}
@@ -32,7 +32,7 @@ import Section from "./Section.astro";
               <polyline points="6 9 12 15 18 9" />
             </svg>
           </button>
-          <div class="faq-answer overflow-hidden transition-all duration-300" style={index === 0 ? "max-height: 500px;" : "max-height: 0;"}>
+          <div class="faq-answer overflow-hidden transition-all duration-300" style="max-height: 0;">
             <p class="px-4 pb-5 text-lg text-[hsl(var(--color-muted-foreground))] leading-relaxed">
               {faq.answer}
             </p>
@@ -59,8 +59,6 @@ import Section from "./Section.astro";
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".faq-button");
-    const firstChevron = document.querySelector(".faq-chevron") as HTMLElement;
-    if (firstChevron) firstChevron.style.transform = "rotate(0deg)";
 
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
@@ -70,10 +68,10 @@ import Section from "./Section.astro";
 
         if (isOpen) {
           answer.style.maxHeight = "0px";
-          chevron.style.transform = "rotate(180deg)";
+          chevron.style.transform = "rotate(0deg)";
         } else {
           answer.style.maxHeight = answer.scrollHeight + "px";
-          chevron.style.transform = "rotate(0deg)";
+          chevron.style.transform = "rotate(180deg)";
         }
       });
     });
