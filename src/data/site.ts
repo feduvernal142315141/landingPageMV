@@ -5,9 +5,10 @@ export const site = {
   logo: "/logoMenteVior.png",
   demoUrl: "https://calendly.com/mentevior/demo",
   nav: [
-    { label: "Features", href: "/#features" },
     { label: "Solutions", href: "/#solutions" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "Features", href: "/#features" },
+    { label: "Pricing", href: "/#pricing" },
+    { label: "FAQ", href: "/#faq" },
   ],
   contact: {
     email: "hello@mentevior.com",

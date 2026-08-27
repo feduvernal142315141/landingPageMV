@@ -7,9 +7,10 @@ import Section from "./Section.astro";
 <Section
   id="features"
   ariaLabel="Features"
-  class="relative overflow-hidden bg-white bg-grid-pattern"
+  class="relative overflow-hidden bg-grid-pattern"
   containerClass="relative"
 >
+  <div class="absolute top-0 left-0 right-0 h-px bg-gray-300"></div>
   <div class="scroll-reveal slide-up mx-auto max-w-2xl text-center">
     <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[hsl(var(--color-primary))]/10 border border-[hsl(var(--color-primary))]/20 text-sm font-bold uppercase tracking-widest text-[hsl(var(--color-primary))] mb-3 block">
       Features
@@ -25,7 +26,7 @@ import Section from "./Section.astro";
   <ul class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
     {
       features.map((feature, i) => (
-        <li class="scroll-reveal slide-up rounded-2xl border-2 border-[hsl(var(--color-border))] bg-[hsl(var(--color-bg-warm-half))] p-8 text-center transition hover:-translate-y-1 hover:border-[hsl(var(--color-primary))] hover:bg-[hsl(var(--color-muted))]" style={`transition-delay: ${i * 100}ms`}>
+        <li class="scroll-reveal slide-up rounded-2xl border border-[#0f172a] p-8 text-center transition hover:-translate-y-1 hover:border-[hsl(var(--color-primary))] hover:bg-[hsl(var(--color-muted))]" style={`transition-delay: ${i * 100}ms; background: hsl(32, 60%, 97%);`}>
           <IconBadge name={feature.icon} />
           <h3 class="mt-4 text-lg font-bold text-[hsl(var(--color-foreground))]">{feature.title}</h3>
           <ul class="mt-4 space-y-2 text-left">
