@@ -24,10 +24,10 @@ export const smartFeatures: SmartFeature[] = [
     description:
       "MenteVior adapts to every role in your practice. BCBA, RBT, practice owner, or billing specialist — each sees exactly what they need, nothing more. Roles in MenteVior are defined by your clinic with 37 configurable modules.",
     bullets: [
-      { text: "Permissions per module & action", icon: "shield" },
-      { text: "Custom roles defined by your clinic", icon: "lock" },
-      { text: "Read, create, edit, delete per module", icon: "users" },
-      { text: "Each role sees exactly what it needs", icon: "user-plus" },
+      { text: "Granular module permissions", icon: "shield" },
+      { text: "Custom clinic roles", icon: "lock" },
+      { text: "Module-level CRUD", icon: "users" },
+      { text: "Role-specific views", icon: "user-plus" },
     ],
   },
   {
