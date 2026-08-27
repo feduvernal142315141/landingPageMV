@@ -20,7 +20,7 @@ const variants: Record<string, string> = {
   ghost:
     "inline-flex items-center gap-2.5 rounded-lg px-6 py-3 text-sm font-bold text-[hsl(var(--color-foreground))] transition hover:bg-[hsl(var(--color-muted))]",
   hero:
-    "inline-flex items-center gap-2.5 rounded-lg border-3 border-[hsl(var(--color-primary))] bg-[hsl(var(--color-bg-warm))] px-6 py-3 text-base font-bold text-[hsl(var(--color-primary))] transition-all duration-300 hover:bg-[hsl(var(--color-primary))] hover:text-[hsl(var(--color-primary-foreground))] hover:border-[hsl(var(--color-primary))]",
+    "inline-flex items-center gap-2.5 rounded-2xl border-2 border-[hsl(210,80%,60%)] bg-gradient-to-r from-white via-white to-[hsl(210,60%,92%)] px-6 py-3 text-base font-bold text-[hsl(210,80%,60%)] transition-all duration-300 hover:bg-none hover:bg-[hsl(210,70%,55%)] hover:text-white hover:border-[hsl(210,70%,55%)]",
   "cta-primary":
     "inline-flex items-center gap-2.5 rounded-lg bg-[hsl(var(--color-primary))] px-6 py-3 text-sm font-bold text-[hsl(var(--color-primary-foreground))] shadow-[0_8px_24px_rgba(59,130,246,0.4)] transition hover:bg-[hsl(var(--color-primary))]/90 hover:shadow-[0_10px_28px_rgba(59,130,246,0.5)]",
   "cta-primary-outline":
@@ -50,6 +50,11 @@ const dataAttrs = Object.fromEntries(
   .btn-hero-icon .h-4.w-4 {
     width: 1.5rem !important;
     height: 1.5rem !important;
+  }
+
+  a.rounded-2xl.border-2.border-\[hsl\(210\,80\%\,60\%\)\] {
+    border-top-width: 3px;
+    border-left-width: 3px;
   }
 
   .btn-coin-shine {
