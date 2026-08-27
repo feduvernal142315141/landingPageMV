@@ -26,6 +26,16 @@ const cards = [
     href: "#configure",
   },
 ];
+
+function cardDelay(i: number): number {
+  if (i === 0) return 0;
+  if (i === 1) return 150;
+  return (2 * i - 1) * 150;
+}
+
+function arrowDelay(i: number): number {
+  return (2 * i + 2) * 150;
+}
 ---
 
 <div class="mt-16">
@@ -33,7 +43,7 @@ const cards = [
   <div class="hidden lg:flex items-center justify-center gap-4">
     {cards.map((card, index) => (
       <div class="flex items-center gap-3">
-        <article class="card-coin-shine group relative flex flex-col items-center text-center rounded-2xl p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-white/20 flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]" style="background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);">
+        <article class="scroll-reveal slide-up card-coin-shine group relative flex flex-col items-center text-center rounded-2xl p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-white/20 flex-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]" style={`background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%); transition-delay: ${cardDelay(index)}ms;`}>
           <span class="coin-shine pointer-events-none absolute inset-0 overflow-hidden rounded-2xl" aria-hidden="true"></span>
           <h3 class="relative z-10 text-xl font-bold text-white">{card.title}</h3>
           <p class="relative z-10 mt-2 text-[19px] text-white/80 leading-normal">{card.body}</p>
@@ -45,7 +55,7 @@ const cards = [
           </a>
         </article>
         {index < cards.length - 1 && (
-          <svg class="h-6 w-6 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="scroll-reveal slide-left h-6 w-6 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style={`transition-delay: ${arrowDelay(index)}ms;`}>
             <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
           </svg>
         )}
@@ -57,7 +67,7 @@ const cards = [
   <div class="flex flex-col items-center gap-3 lg:hidden">
     {cards.map((card, index) => (
       <div class="flex flex-col items-center w-full">
-        <article class="card-coin-shine group relative flex flex-col items-center text-center rounded-2xl p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-white/20 w-full max-w-[320px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]" style="background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);">
+        <article class="scroll-reveal slide-up card-coin-shine group relative flex flex-col items-center text-center rounded-2xl p-5 shadow-[0_4px_24px_rgba(15,23,42,0.08)] border border-white/20 w-full max-w-[320px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(15,23,42,0.12)]" style={`background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%); transition-delay: ${cardDelay(index)}ms;`}>
           <span class="coin-shine pointer-events-none absolute inset-0 overflow-hidden rounded-2xl" aria-hidden="true"></span>
           <h3 class="relative z-10 text-xl font-bold text-white">{card.title}</h3>
           <p class="relative z-10 mt-2 text-[19px] text-white/80 leading-normal">{card.body}</p>
@@ -69,7 +79,7 @@ const cards = [
           </a>
         </article>
         {index < cards.length - 1 && (
-          <svg class="h-5 w-5 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="scroll-reveal slide-up h-5 w-5 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style={`transition-delay: ${arrowDelay(index)}ms;`}>
             <path d="M12 5v14" /><path d="m19 12-7 7-7-7" />
           </svg>
         )}

@@ -13,7 +13,7 @@ const { href, children, class: className = '', isHome = false } = Astro.props;
 
 <a
   href={href}
-  class={`menu-link block rounded-lg px-3 py-2 text-sm font-bold tracking-[-0.01em] text-white/90 -translate-x-4 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/5 hover:text-tertiary ${className}`.trim()}
+  class={`menu-link block rounded-lg px-3 py-2 text-sm font-medium tracking-[-0.01em] text-white/90 -translate-x-4 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/5 hover:text-tertiary ${className}`.trim()}
   {isHome && 'data-home-link'}
 >
   {children}
