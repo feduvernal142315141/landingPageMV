@@ -1,59 +1,51 @@
 ---
-import { features } from "../../data/features";
-import IconBadge from "../IconBadge.astro";
-import Section from "./Section.astro";
+import { smartFeatures } from "../../data/smartFeatures";
+import { icons } from "../../data/icons";
 ---
 
-<Section
-  id="features"
-  ariaLabel="Features"
-  class="relative overflow-hidden bg-grid-pattern"
-  containerClass="relative"
->
-  <div class="absolute top-0 left-0 right-0 h-px bg-gray-300"></div>
-  <div class="scroll-reveal slide-up mx-auto max-w-2xl text-center">
-    <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[hsl(var(--color-primary))]/10 border border-[hsl(var(--color-primary))]/20 text-sm font-bold uppercase tracking-widest text-[hsl(var(--color-primary))] mb-3 block">
-      Features
-    </span>
-    <h2 class="mt-3 text-3xl font-black tracking-tight sm:text-4xl text-[hsl(var(--color-foreground))]">
-      Smart Features To Elevate Your Care
-    </h2>
-    <p class="mt-4 text-lg text-[hsl(var(--color-primary))] font-normal tracking-wide">
-      The operating system for <span class="font-bold">modern ABA practices</span>
-    </p>
+<section id="features" aria-label="Features" class="scroll-mt-[-20px] relative overflow-hidden bg-[hsl(var(--color-bg-warm-half))] bg-grid-pattern">
+  <div class="bg-[hsl(var(--color-bg-warm-half))] py-16 sm:py-20">
+    <div class="scroll-reveal slide-right mx-auto max-w-7xl px-6">
+      <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[hsl(var(--color-primary))]/10 border border-[hsl(var(--color-primary))]/20 text-sm font-bold uppercase tracking-widest text-[hsl(var(--color-primary))] mb-3 block" style="transition-delay: 0ms;">
+        Features
+      </span>
+      <h2 class="mt-3 text-3xl font-black tracking-tight sm:text-4xl bg-gradient-to-r from-[#0f172a] to-[hsl(var(--color-primary))] bg-clip-text text-transparent" style="transition-delay: 100ms;">
+        Smart Features To Elevate Your Care
+      </h2>
+      <p class="mt-4 text-xl text-[hsl(var(--color-foreground))] font-normal tracking-wide" style="transition-delay: 200ms;">
+        The operating system for <span class="font-bold">modern ABA practices</span>
+      </p>
+    </div>
   </div>
 
-  <ul class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-    {
-      features.map((feature, i) => (
-        <li class="scroll-reveal slide-up rounded-2xl border border-[#0f172a] p-8 text-center transition hover:-translate-y-1 hover:border-[hsl(var(--color-primary))] hover:bg-[hsl(var(--color-muted))]" style={`transition-delay: ${i * 100}ms; background: hsl(32, 60%, 97%);`}>
-          <IconBadge name={feature.icon} />
-          <h3 class="mt-4 text-lg font-bold text-[hsl(var(--color-foreground))]">{feature.title}</h3>
-          <ul class="mt-4 space-y-2 text-left">
-            <li class="flex items-center gap-3 text-base leading-relaxed text-[hsl(var(--color-foreground))]">
-              <span class="h-1 w-1 shrink-0 rounded-full bg-[hsl(var(--color-primary))]" />
-              {feature.points[0]}
-            </li>
-            <li class="flex items-center gap-3 text-base leading-relaxed text-[hsl(var(--color-foreground))]">
-              <span class="h-1 w-1 shrink-0 rounded-full bg-[hsl(var(--color-primary))]" />
-              {feature.points[1]}
-            </li>
-            {feature.points[2] && (
-              <li class="flex items-center gap-3 text-base leading-relaxed text-[hsl(var(--color-foreground))]">
-                <span class="h-1 w-1 shrink-0 rounded-full bg-[hsl(var(--color-primary))]" />
-                {feature.points[2]}
-              </li>
-            )}
-          </ul>
-        </li>
-      ))
-    }
-  </ul>
-</Section>
-
-<style>
-  li:hover .inline-flex.h-11.w-11 {
-    box-shadow: 0 8px 24px -4px hsl(var(--color-primary));
-    transform: translateY(-0.5rem);
-  }
-</style>
+  <div class="mx-auto max-w-7xl px-6 pt-8 pb-20 lg:pt-10 lg:pb-28">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+      {smartFeatures.map((feature, i) => (
+        <div class:list={[
+          "scroll-reveal relative rounded-2xl border border-[#0f172a] p-6 sm:p-8",
+          i === 0 && "slide-left",
+          i === 1 && "slide-right",
+          i === 2 && "slide-up md:col-span-2 md:mx-auto md:w-1/2"
+        ]}
+        style={`background: hsl(32, 30%, 97%); transition-delay: ${i === 2 ? 300 : i * 150}ms;`}>
+          <svg class="absolute left-5 top-5 h-7 w-7 text-[hsl(210,80%,70%)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[feature.icon]} />
+          <span class="absolute right-5 top-5 text-xl font-bold text-[hsl(210,80%,70%)]">{feature.number}</span>
+          <div class="flex flex-col items-center text-center justify-between h-full">
+            <h3 class="text-lg font-bold tracking-tight sm:text-xl text-[#0f172a]" set:html={feature.title} />
+            <p class="mt-3 text-lg text-[hsl(var(--color-foreground))] leading-relaxed text-left">
+              {feature.description}
+            </p>
+            <ul class="mt-6 grid w-full grid-cols-1 gap-2 sm:grid-cols-2 flex-grow">
+              {feature.bullets.map((bullet) => (
+                <li class="flex items-start gap-2 rounded-lg bg-[#0f172a] p-3 text-left">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[bullet.icon]} />
+                  <span class="text-sm font-bold text-white">{bullet.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
