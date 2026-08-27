@@ -3,7 +3,7 @@ export const site = {
   tagline: "All-in-One ABA Practice Management",
   url: "https://landingpagemv.vercel.app",
   logo: "/logoMenteVior.png",
-  demoUrl: "/demo",
+  demoUrl: "https://calendly.com/mentevior/demo",
   nav: [
     { label: "Features", href: "/#features" },
     { label: "Solutions", href: "/#solutions" },

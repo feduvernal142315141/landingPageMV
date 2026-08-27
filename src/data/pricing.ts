@@ -21,7 +21,7 @@ export const pricingPlans = [
       "Generated PDF reports"
     ],
     ctaText: "Book a demo",
-    ctaHref: "/demo",
+    ctaHref: "https://calendly.com/mentevior/demo",
   },
   {
     name: "Pro",
@@ -36,7 +36,7 @@ export const pricingPlans = [
       "Role-based permissions"
     ],
     ctaText: "Book a demo",
-    ctaHref: "/demo",
+    ctaHref: "https://calendly.com/mentevior/demo",
     popular: true,
   },
   {
