@@ -10,7 +10,7 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
       <!-- Left column: Title, subtitle, CTAs -->
       <div class="hero-content lg:-translate-y-5">
         <!-- Eyebrow with floating effect -->
-        <div class="hidden lg:inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[hsl(var(--color-primary)/0.1)] text-[hsl(var(--color-primary))] text-[0.95rem] font-medium animate-float-pulse-more border border-[hsl(var(--color-primary)/0.35)] translate-y-[-30px]" style="font-family: var(--font-heading);">
+        <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[hsl(var(--color-primary)/0.1)] text-[hsl(var(--color-primary))] text-[0.95rem] font-medium animate-float-pulse-more border border-[hsl(var(--color-primary)/0.35)] lg:translate-y-[-30px]" style="font-family: var(--font-heading);">
           <Icon name="users" class="h-4 w-4" />
           <span>Made-to-measure for ABA Providers</span>
         </div>
@@ -40,9 +40,9 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
             supervision, and billing.
           </span>
         </p>
-        <div class="mt-8 flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap lg:justify-start lg:ml-10">
-          <Button href="#features" variant="hero" icon="sparkles">Explore Features</Button>
-          <Button href="#solutions" variant="hero" icon="compass">Explore Solutions</Button>
+        <div class="mt-8 flex flex-row items-center justify-center gap-3 lg:flex-wrap lg:justify-start lg:ml-10">
+          <Button href="#features" variant="hero" icon="sparkles" class="!text-sm !px-4 !py-2">Explore Features</Button>
+          <Button href="#solutions" variant="hero" icon="compass" class="!text-sm !px-4 !py-2">Explore Solutions</Button>
         </div>
       </div>
 
@@ -132,7 +132,11 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
   @media (max-width: 1023px) {
     .hero-content {
       grid-area: auto;
-      text-align: center;
+      text-align: left;
+    }
+
+    .hero-content > .inline-flex {
+      margin-bottom: 1rem;
     }
 
     .hero-content .flex {

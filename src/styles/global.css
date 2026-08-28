@@ -240,3 +240,7 @@ h1, h2, h3, h4, h5, h6,
 @media (prefers-reduced-motion: reduce) {
   .animate-float-rotate, .animate-float-drift, .animate-float-pulse { animation: none; }
 }
+
+@media (max-width: 1023px) {
+  .animate-float-pulse-more { animation: none; }
+}
