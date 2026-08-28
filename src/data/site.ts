@@ -9,11 +9,11 @@ export const site = {
       label: "Solutions",
       href: "/#solutions",
       children: [
-        { label: "Document", href: "/#document", icon: "file-text" },
-        { label: "Collect", href: "/#collect", icon: "database" },
-        { label: "Operate", href: "/#operate", icon: "calendar" },
-        { label: "Comply", href: "/#comply", icon: "shield" },
-        { label: "Configure", href: "/#configure", icon: "settings" },
+        { label: "Document", href: "/#document", icon: "file-text", description: "Session notes shaped for ABA billing" },
+        { label: "Collect", href: "/#collect", icon: "database", description: "Live data capture with instant graphs" },
+        { label: "Operate", href: "/#operate", icon: "calendar", description: "Scheduling, auth, and billing in one flow" },
+        { label: "Comply", href: "/#comply", icon: "shield", description: "Audit-ready supervision and reports" },
+        { label: "Configure", href: "/#configure", icon: "settings", description: "Roles, templates, and permissions per org" },
       ]
     },
     { label: "Features", href: "/#features" },

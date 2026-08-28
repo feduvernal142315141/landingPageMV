@@ -40,15 +40,20 @@ const { showDemoButton = false } = Astro.props;
                   {item.label}
                   <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                 </a>
-                <div class="solutions-dropdown absolute left-1/2 top-full z-50 mt-3 w-80 -translate-x-[40%] rounded-xl border border-[hsl(var(--color-border))] bg-white p-2 shadow-[0_12px_40px_rgba(15,23,42,0.15)]">
+                <div class="solutions-dropdown absolute left-1/2 top-full z-50 mt-3 w-[420px] -translate-x-[40%] rounded-xl border border-[hsl(var(--color-border))] bg-white p-2 shadow-[0_12px_40px_rgba(15,23,42,0.15)]">
                   <div class="grid grid-cols-2 gap-1">
                     {item.children.map((child) => (
                       <a
                         href={child.href}
-                        class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[hsl(var(--color-foreground))] transition hover:bg-[hsl(var(--color-primary)/0.08)] hover:text-[hsl(var(--color-primary))]"
+                        class="flex items-start gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[hsl(var(--color-foreground))] transition hover:bg-[hsl(var(--color-primary)/0.08)] hover:text-[hsl(var(--color-primary))]"
                       >
-                        <svg class="h-4 w-4 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[child.icon]}/>
-                        {child.label}
+                        <svg class="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[child.icon]}/>
+                        <div>
+                          <div class="text-lg font-semibold">{child.label}</div>
+                          {child.description && (
+                            <div class="text-sm font-normal text-[hsl(var(--color-muted-foreground))] leading-snug mt-0.5">{child.description}</div>
+                          )}
+                        </div>
                       </a>
                     ))}
                   </div>
