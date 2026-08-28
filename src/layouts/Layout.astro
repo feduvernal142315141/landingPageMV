@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { site } from "../data/site";
+import { faqs } from "../data/faq";
 import logo from "../assets/MenteVior-logo.png";
 import Header from "../components/Header.astro";
 
@@ -32,6 +33,8 @@ const ogImageWebp = "https://landingpagemv.vercel.app/og-image.webp";
     <meta name="theme-color" content="#037ECC" />
     <meta name="color-scheme" content="light dark" />
     <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="MenteVior" />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
@@ -54,27 +57,48 @@ const ogImageWebp = "https://landingpagemv.vercel.app/og-image.webp";
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/Satoshi-Bold.woff2" />
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/Satoshi-Black.woff2" />
     <!-- JSON-LD structured data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "MenteVior",
-      "applicationCategory": "BusinessApplication",
-      "applicationSubCategory": "Medical Practice Management",
-      "operatingSystem": "Cloud",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "price": "0",
-        "priceCurrency": "USD"
+    <script type="application/ld+json" set:html={JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "MenteVior",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Medical Practice Management",
+        "operatingSystem": "Cloud",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": description,
+        "url": site.url,
+        "logo": `${site.url}${logo.src}`,
+        "image": ogImageJpg,
+        "featureList": [
+          "ABA Session Notes (CPT 97153, 97155, 97156)",
+          "Real-time Data Collection & Graphing",
+          "Scheduling & Authorization Management",
+          "Insurance Billing & Claim Submission",
+          "Supervision & Audit-ready Documentation",
+          "Multi-site Organization Support",
+          "HIPAA Compliant Platform",
+          "Caregiver Digital Signature"
+        ]
       },
-      "description": description,
-      "url": site.url,
-      "logo": `${site.url}${logo.src}`,
-      "image": ogImageJpg,
-      // "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "127" },
-      // "featureList": ["Scheduling", "Session Notes", "Data Collection", "Billing", "Supervision", "HIPAA Compliance"],
-      // "screenshot": ["https://example.com/screenshot1.png", "https://example.com/screenshot2.png"]
-    })} />
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }
+    ])} />
     <title>{title}</title>
     <!-- Analytics: replace with GA4/Plausible/other tracking script -->
   </head>
