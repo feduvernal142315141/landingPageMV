@@ -155,16 +155,25 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
       align-items: center;
       justify-content: flex-start;
       padding-top: 0;
-      gap: 1rem;
-    }
-
-    .hero-dashboard > div:first-child {
-      max-width: 100%;
+      margin-top: -1rem;
+      gap: 2.5rem;
     }
 
     .hero-dashboard > div > div > :nth-child(3) {
       margin-left: auto;
       margin-right: auto;
+    }
+  }
+</style>
+
+<style is:global>
+  @media (max-width: 1023px) {
+    .hero-dashboard > div:first-child {
+      order: 2;
+    }
+
+    .hero-dashboard > div:last-child {
+      order: 1;
     }
   }
 </style>
