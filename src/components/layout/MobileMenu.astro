@@ -33,7 +33,7 @@ import Icon from "../ui/Icon.astro";
                   {item.children.map((child) => (
                     <a
                       href={child.href}
-                      class="mobile-menu-link flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-[hsl(var(--color-foreground))] transition hover:bg-[hsl(var(--color-primary)/0.06)] hover:text-[hsl(var(--color-primary))]"
+                      class="mobile-menu-link flex items-center gap-3 rounded-lg px-4 py-2.5 text-base font-semibold text-[hsl(var(--color-foreground))] transition hover:bg-[hsl(var(--color-primary)/0.06)] hover:text-[hsl(var(--color-primary))]"
                     >
                       <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[hsl(var(--color-primary)/0.1)]">
                         <svg class="h-3.5 w-3.5 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[child.icon]}/>
