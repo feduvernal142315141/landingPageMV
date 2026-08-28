@@ -5,7 +5,17 @@ export const site = {
   logo: "/logoMenteVior.png",
   demoUrl: "https://calendly.com/mentevior/demo",
   nav: [
-    { label: "Solutions", href: "/#solutions" },
+    {
+      label: "Solutions",
+      href: "/#solutions",
+      children: [
+        { label: "Document", href: "/#document", icon: "file-text" },
+        { label: "Collect", href: "/#collect", icon: "database" },
+        { label: "Operate", href: "/#operate", icon: "calendar" },
+        { label: "Comply", href: "/#comply", icon: "shield" },
+        { label: "Configure", href: "/#configure", icon: "settings" },
+      ]
+    },
     { label: "Features", href: "/#features" },
     { label: "Pricing", href: "/#pricing" },
     { label: "FAQ", href: "/#faq" },

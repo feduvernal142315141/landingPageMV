@@ -4,6 +4,7 @@ import BrandLockup from "./BrandLockup.astro";
 import MobileMenu from "./layout/MobileMenu.astro";
 import Icon from "./ui/Icon.astro";
 import Button from "../ui/Button.astro";
+import { icons } from "../data/icons";
 
 interface Props {
   showDemoButton?: boolean;
@@ -26,16 +27,41 @@ const { showDemoButton = false } = Astro.props;
       />
     </div>
 
-    <ul class="hidden items-center gap-6 lg:flex lg:justify-center">
+    <ul class="hidden items-center gap-10 lg:flex lg:justify-center">
       {
         site.nav.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              class="text-lg font-medium tracking-[-0.01em] text-[hsl(var(--color-foreground))] transition hover:text-[hsl(var(--color-primary))]"
-            >
-              {item.label}
-            </a>
+          <li class="relative solutions-trigger">
+            {item.children ? (
+              <>
+                <a
+                  href={item.href}
+                  class="inline-flex items-center gap-1.5 text-lg font-medium tracking-[-0.01em] text-[hsl(var(--color-foreground))] transition hover:text-[hsl(var(--color-primary))]"
+                >
+                  {item.label}
+                  <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="solutions-dropdown absolute left-1/2 top-full z-50 mt-3 w-80 -translate-x-[40%] rounded-xl border border-[hsl(var(--color-border))] bg-white p-2 shadow-[0_12px_40px_rgba(15,23,42,0.15)]">
+                  <div class="grid grid-cols-2 gap-1">
+                    {item.children.map((child) => (
+                      <a
+                        href={child.href}
+                        class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[hsl(var(--color-foreground))] transition hover:bg-[hsl(var(--color-primary)/0.08)] hover:text-[hsl(var(--color-primary))]"
+                      >
+                        <svg class="h-4 w-4 shrink-0 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[child.icon]}/>
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <a
+                href={item.href}
+                class="text-lg font-medium tracking-[-0.01em] text-[hsl(var(--color-foreground))] transition hover:text-[hsl(var(--color-primary))]"
+              >
+                {item.label}
+              </a>
+            )}
           </li>
         ))
       }
@@ -152,6 +178,32 @@ const { showDemoButton = false } = Astro.props;
   .demo-btn-nav:hover {
     background: #0f172a;
     border-color: #0f172a;
+  }
+
+  .solutions-dropdown {
+    opacity: 0;
+    transform: translateY(4px) translateX(-40%);
+    pointer-events: none;
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  .solutions-trigger:hover .solutions-dropdown {
+    opacity: 1;
+    transform: translateY(0) translateX(-40%);
+    pointer-events: auto;
+  }
+
+  .solutions-trigger:hover > a > svg {
+    transform: rotate(180deg);
+  }
+
+  .solutions-trigger::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 12px;
   }
 </style>
 
