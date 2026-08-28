@@ -47,10 +47,10 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
       </div>
 
       <!-- Right column: Dashboard frame (Clinicia-style) -->
-      <div class="hero-dashboard hidden lg:block">
+      <div class="hero-dashboard lg:block">
         <DashboardFrame />
         <!-- Feature highlights row -->
-        <div class="mt-[64px] flex flex-wrap justify-start gap-x-6 gap-y-3 text-sm text-[hsl(var(--color-foreground))]">
+        <div class="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-[hsl(var(--color-foreground))] lg:mt-[64px] lg:justify-start">
           <span class="flex items-center gap-1.5 whitespace-nowrap">
             <svg class="h-4 w-4 text-[hsl(var(--color-primary))]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             <span>HIPAA compliant</span>
@@ -106,15 +106,21 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
       grid-template-areas: 
         "content dashboard";
     }
+
+    .hero-content {
+      grid-area: content;
+    }
+
+    .hero-dashboard {
+      grid-area: dashboard;
+    }
   }
 
   .hero-content {
-    grid-area: content;
     text-align: left;
   }
 
   .hero-dashboard {
-    grid-area: dashboard;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -125,21 +131,36 @@ import DashboardFrame from "../ui/DashboardFrame.astro";
 
   @media (max-width: 1023px) {
     .hero-content {
+      grid-area: auto;
       text-align: center;
     }
-    
+
     .hero-content .flex {
       justify-content: center;
     }
-    
+
     .hero-content > div:last-child {
       justify-content: center;
       margin-left: 0;
     }
 
-    /* Feature highlights mobile: 2 items first row, 1 item centered below */
+    .hero-dashboard {
+      grid-area: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 0;
+      gap: 1rem;
+    }
+
+    .hero-dashboard > div:first-child {
+      max-width: 100%;
+    }
+
     .hero-dashboard > div > div > :nth-child(3) {
       margin-left: auto;
+      margin-right: auto;
     }
   }
 </style>
