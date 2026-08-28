@@ -10,7 +10,7 @@ export const smartFeatures: SmartFeature[] = [
   {
     icon: "sparkles",
     number: "01",
-    title: "AI-powered session narratives, improved<br/>in one click",
+    title: "AI-powered session narratives,<br/>improved in one click",
     description:
       "Rough notes become clean clinical prose without leaving the editor. The suggestion is structured to the note's billing code and summary type — face-to-face observation, protocol adjustments, active direction — powered by AWS Bedrock. The clinician stays the author.",
     bullets: [
@@ -23,7 +23,7 @@ export const smartFeatures: SmartFeature[] = [
   {
     icon: "users",
     number: "02",
-    title: "Every BCBA, RBT, and owner sees exactly what<br/>they need",
+    title: "Every BCBA, RBT, and owner sees<br/>exactly what they need",
     description:
       "MenteVior adapts to every role in your practice. BCBA, RBT, practice owner, or billing specialist — each sees exactly what they need, nothing more. Roles in MenteVior are defined by your clinic with 37 configurable modules. Roles can be created, modified, or deactivated in real-time as your team evolves.",
     bullets: [
@@ -36,7 +36,7 @@ export const smartFeatures: SmartFeature[] = [
   {
     icon: "shield",
     number: "03",
-    title: "Enterprise-grade security for the data you're<br/>responsible for",
+    title: "Enterprise-grade security for the<br/>data you're responsible for",
     description:
       "MenteVior is built from the ground up for protected health information. Every safeguard HIPAA requires is part of the architecture, not an afterthought.",
     bullets: [
